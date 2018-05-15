@@ -35,14 +35,13 @@
                             {
                                 case 3: //Administrador
                                     echo '<div class="dropdown">
-                                            <button type="button" class="btn btn-success dropdown-toggle" id="dropdownHuerta" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-
-                                                    Huertas
+                                            <button type="button" class="btn btn-success dropdown-toggle" id="dropdownCentro" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    Centros
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
-                                                <a class="dropdown-item" href="crearHuerta.php">Nueva huerta</a>
-                                                <a class="dropdown-item" href="editHuerta.php">Editar huertas</a>
-                                                <a class="dropdown-item" href="verHuertas.php">Ver huertas</a>
+                                                <a class="dropdown-item" href="crearCentroa.php">Nuevo centro</a>
+                                                <a class="dropdown-item" href="editCentro.php">Editar centros</a>
+                                                <a class="dropdown-item" href="verCentros.php">Ver centros</a>
                                             </div>
                                         </div>
                 					    <li class="nav-item">
@@ -52,9 +51,17 @@
                                     echo '<li class="nav-item">
               							    <a class="nav-link" href="#">Colaboradores</a>
               					        </li>
-                                        <li class="nav-item">
-                  							<a class="nav-link" href="#">Estadisticas</a>
-                  					    </li>
+                                <div class="dropdown">
+                                        <button type="button" class="btn btn-success dropdown-toggle" id="dropdownEstadisticas" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                Estadisticas
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
+                                            <a class="dropdown-item" href="#">Usuarios</a>
+                                            <a class="dropdown-item" href="#">Comercios</a>
+                                            <a class="dropdown-item" href="#">Productos</a>
+                                            <a class="dropdown-item" href="#">Top 5</a>
+                                        </div>
+                                    </div>
                                         <li class="nav-item">
                 							<a class="nav-link" href="#">Compra/Venta</a>
                 						</li>';
