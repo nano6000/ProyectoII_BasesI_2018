@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="form-group col-md-10">
-                    <input name="name-input" type="text" class="form-control" placeholder="Nombre de la huerta" required>
+                    <input name="name-input" type="text" class="form-control" placeholder="Nombre del centro de acopio" required>
                     <div class="invalid-feedback">
                         Por favor, ingrese información válida.
                     </div>
