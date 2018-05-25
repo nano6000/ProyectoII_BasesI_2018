@@ -12,7 +12,7 @@
 	<body>
 
 		<header class="sticky-top">
-			<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #168016;">
+			<nav class="navbar navbar-expand-sm navbar-light bg-primary">
 				<a class="navbar-brand" href="home.php">
 					AppHuerta
 				</a>

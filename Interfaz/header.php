@@ -16,7 +16,7 @@
 
 <body>
 	<header class="sticky-top">
-		<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #168016;">
+		<nav class="navbar navbar-expand-sm navbar-light bg-primary">
 			<a class="navbar-brand" href="homeUser.php">
                 <img src="logo.png" alt="logo" height="50" width="42">
 				AppHuerta
@@ -35,11 +35,11 @@
                             {
                                 case 3: //Administrador
                                     echo '<div class="dropdown">
-                                            <button type="button" class="btn btn-success dropdown-toggle" id="dropdownCentro" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <button type="button" class="btn btn-outline-dark dropdown-toggle" id="dropdownCentro" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                                     Centros
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
-                                                <a class="dropdown-item" href="crearCentroa.php">Nuevo centro</a>
+                                                <a class="dropdown-item" href="crearCentroAcopio.php">Nuevo centro</a>
                                                 <a class="dropdown-item" href="editCentro.php">Editar centros</a>
                                                 <a class="dropdown-item" href="verCentros.php">Ver centros</a>
                                             </div>
@@ -52,7 +52,7 @@
               							    <a class="nav-link" href="#">Colaboradores</a>
               					        </li>
                                 <div class="dropdown">
-                                        <button type="button" class="btn btn-success dropdown-toggle" id="dropdownEstadisticas" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <button type="button" class="btn btn-outline-dark dropdown-toggle" id="dropdownEstadisticas" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                                 Estadisticas
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
@@ -81,7 +81,7 @@
                 						</li>';
                                     if ($tipo == 3)
                                         echo '<div class="dropdown">
-                                                <button type="button" class="btn btn-success dropdown-toggle" id="dropdownPlanta" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                <button type="button" class="btn btn-outline-dark dropdown-toggle" id="dropdownPlanta" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                                         Plantas
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
@@ -95,7 +95,7 @@
                                             </div>';
                                     else
                                         echo '<div class="dropdown">
-                                                <button type="button" class="btn btn-success dropdown-toggle" id="dropdownPlanta" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                <button type="button" class="btn btn-outline-dark dropdown-toggle" id="dropdownPlanta" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                                         Plantas
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownHuerta">

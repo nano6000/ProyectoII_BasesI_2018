@@ -1,5 +1,5 @@
 <?php
-include_once('scripts/conexion.inc');
+	//include_once('scripts/conexion.inc');
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ include_once('scripts/conexion.inc');
 	<body>
 
 		<header class="sticky-top">
-			<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #168016;">
+			<nav class="navbar navbar-expand-sm navbar-light bg-primary">
 				<a class="navbar-brand" href="home.php">
 					AppHuerta
 				</a>
@@ -100,19 +100,19 @@ include_once('scripts/conexion.inc');
 						<label>Nacionalidad:</label>
 						<select name="citizenship" name="citizenship" class="custom-select" required>
 							<?php
-								if (isset($_GET['pais']))
-									$pais = $_GET['pais'];
-								else
-									$pais = "";
-								$matriz = oci_parse($conn, "select * from huerta.pais");
-								oci_execute($matriz);
-								while ($fila = oci_fetch_array($matriz, OCI_NUM+OCI_RETURN_NULLS))
-								{
-									if ($fila[0] == $pais)
-										echo "<option value='" . $fila[0] . "' selected>" . $fila[1] . " (" . $fila[0] . ")" . "</option>";
-									else
-										echo "<option value='" . $fila[0] . "'>" . $fila[1] . " (" . $fila[0] . ")" . "</option>";
-								}
+								// if (isset($_GET['pais']))
+								// 	$pais = $_GET['pais'];
+								// else
+								// 	$pais = "";
+								// $matriz = oci_parse($conn, "select * from huerta.pais");
+								// oci_execute($matriz);
+								// while ($fila = oci_fetch_array($matriz, OCI_NUM+OCI_RETURN_NULLS))
+								// {
+								// 	if ($fila[0] == $pais)
+								// 		echo "<option value='" . $fila[0] . "' selected>" . $fila[1] . " (" . $fila[0] . ")" . "</option>";
+								// 	else
+								// 		echo "<option value='" . $fila[0] . "'>" . $fila[1] . " (" . $fila[0] . ")" . "</option>";
+								// }
 							?>
 						</select>
 						<div class="invalid-feedback">

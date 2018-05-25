@@ -21,7 +21,7 @@
 	<body>
 
 		<header class="sticky-top">
-			<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #168016;">
+			<nav class="navbar navbar-expand-sm navbar-light bg-primary">
 				<a class="navbar-brand" href="home.php">
 					AppHuerta
 				</a>
@@ -37,7 +37,7 @@
 					</ul>
 				</div>
 				<form class="form-inline">
-					<button class="btn my-2 my-sm-0 btn-secondary" onclick="location.href='login.php'" type="button">Login</button>
+					<button class="btn my-2 my-sm-0 btn-outline-light" onclick="location.href='login.php'" type="button">Login</button>
 				</form>
 			</nav>
 		</header>
@@ -48,7 +48,7 @@
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><b>Centros de Acopio</b></li>
 					<li class="list-group-item">
-						<div id="map" style="margin: 5px 0 10px 0 ; width:100%;height:300px;background:gray"></div>
+						<div id="map" style="margin: 5px 0 10px 0 ; width:100%;height:600px;background:gray"></div>
 					</li>
 				</ul>
 			</div>

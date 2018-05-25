@@ -1,24 +1,22 @@
 <?php
     //parametros de conexion (opcionales)
-    $basedatos = "localhost/orcl";
-    $usuario   = "huerta";
-    $contra    = "huerta";
-
-    //suprime advertencias
-    error_reporting(0);
+    $server = "localhost";
+    $usuario   = "root";
+    $contra    = "";
+    $basedatos= "prueba";
 
 	//proceso para conectar con el servidor
-    $conn = oci_pconnect($usuario, $contra, $basedatos);
-    if (!$conn)
-    {
-        $m = oci_error();
-        echo $m['message'], "\n";
-        exit;
-    }
-    else
-    {
-        // echo "Connected to Oracle!";
 
+    try
+    {
+        $conn = new PDO("mysql:host=$server;dbname=$basedatos", $username, $password);
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo "Connected successfully";
     }
-    //oci_close($conn);
+    catch(PDOException $e)
+    {
+        echo "Connection failed: " . $e->getMessage();
+    }
+
 ?>

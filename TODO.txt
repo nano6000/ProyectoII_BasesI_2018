@@ -1,0 +1,11 @@
+TODO:
+
+Procedimientos para la interfaz:
+
+    + Obtener localizacion de los centros de acopio
+    + Obtener todos los paises/distritos/cantones/provincias, con su codigo
+    + Insert persona/usuario
+    + Login y que retorne el tipo de usuario
+    + Insertar centro de acopio
+    + Editar centro de acopio
+    + Ver centros de acopio
