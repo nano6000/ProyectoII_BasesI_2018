@@ -9,7 +9,7 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST")
         {
             $username = $_POST["username-input"];
-            $passwd = $_POST["password-input"];
+            $passwd = $_POST["passwd-input"];
             $hashPsswd = password_hash($passwd, PASSWORD_DEFAULT);
 
             $result = 0;
@@ -28,7 +28,6 @@
             //     header("Location: ../login.php?login=error&username=$username");
             $_SESSION['username'] = $username;
             $_SESSION['tipo'] = 3; //Administrador
-            oci_close($conn);
             header("Location: ../homeUser.php?login=success");
 
         }
