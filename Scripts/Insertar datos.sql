@@ -412,21 +412,21 @@ INSERT INTO `comercio`(`nombreComercio`, `nombreEncargado`, `contacto`, `descrip
 -- -----------------------------------------------------
 -- Insert Producto
 -- -----------------------------------------------------
-INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES (LOAD_FILE('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png'),1500,'Churchileta');
-INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES (LOAD_FILE('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png'),1250,'Paleta de menta con chocolate');
-INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES (LOAD_FILE('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png'),1000,'Paleta de coco');
+INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',1500,'Churchileta');
+INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',1250,'Paleta de menta con chocolate');
+INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',1000,'Paleta de coco');
 
-INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES (LOAD_FILE('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png'),12500,'Set de sabanas');
-INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES (LOAD_FILE('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png'),10000,'Almohada ortopedica');
-INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES (LOAD_FILE('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png'),7500,'Cobija térmica');
+INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',12500,'Set de sabanas');
+INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',10000,'Almohada ortopedica');
+INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',7500,'Cobija térmica');
 
-INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES (LOAD_FILE('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png'),2000,'Helado sabor Moyo con toppings');
-INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES (LOAD_FILE('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png'),2100,'Helado sabor del mes con toppings');
-INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES (LOAD_FILE('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png'),1600,'Helado sabor del mes sin toppings');
+INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',2000,'Helado sabor Moyo con toppings');
+INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',2100,'Helado sabor del mes con toppings');
+INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',1600,'Helado sabor del mes sin toppings');
 
-INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES (LOAD_FILE('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png'),1500,'Entrada individual');
-INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES (LOAD_FILE('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png'),2800,'Entrada Doble');
-INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES (LOAD_FILE('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png'),2500,'Combo Palomitas grandes y 2 refrescos');
+INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',1500,'Entrada individual');
+INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',2800,'Entrada Doble');
+INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',2500,'Combo Palomitas grandes y 2 refrescos');
 
 INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES (LOAD_FILE('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png'),500,'Yuquitas');
 INSERT INTO `producto`(`foto`, `precio`, `descripcion`) VALUES (LOAD_FILE('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png'),750,'Coca-Cola');
