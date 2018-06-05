@@ -374,19 +374,19 @@ INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `nombre`) VALUES (1,1250,'E
 -- -----------------------------------------------------
 -- Insert Persona
 -- -----------------------------------------------------
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `Pais_idPais`) VALUES (117094679,'Alejandro','Garita','Cruz',1);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `Pais_idPais`) VALUES (109840985,'Daniel','Prado','Fernandez',1);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `Pais_idPais`) VALUES (810950587,'Valeria','Diaz','Chen',5);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `Pais_idPais`) VALUES (307841585,'Arturo','Marrero','Castro',1);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `Pais_idPais`) VALUES (889653547,'Diego','Rivas','Alvarado',3);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `Pais_idPais`) VALUES (358962468,'Greivin','Castillo','Navas',1);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `Pais_idPais`) VALUES (457895424,'Alejandra','Cruz','Muñóz',1);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `Pais_idPais`) VALUES (210850978,'Enrique','Artiñano','Tapia',1);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `Pais_idPais`) VALUES (198671658,'Jaime','Solís','Solís',1);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `Pais_idPais`) VALUES (528964865,'Andrés','Cordero','Torres',1);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `Pais_idPais`) VALUES (158996456,'Alvaro','Brenes','Guevara',1);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `Pais_idPais`) VALUES (618657489,'Andrea','Mora','Villata',1);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `Pais_idPais`) VALUES (632589647,'Fernando','Castro','Madriz',1);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (117094679,'Alejandro','Garita','Cruz','1998-5-14',1,6);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (109840985,'Daniel','Prado','Fernandez','1998-5-14',1,46);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (810950587,'Valeria','Diaz','Chen','1998-5-14',5,3);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (307841585,'Arturo','Marrero','Castro','1998-5-14',1,10);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (889653547,'Diego','Rivas','Alvarado','1998-5-14',3,2);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (358962468,'Greivin','Castillo','Navas','1998-5-14',1,58);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (457895424,'Alejandra','Cruz','Muñóz','1998-5-14',1,89);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (210850978,'Enrique','Artiñano','Tapia','1998-5-14',1,15);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (198671658,'Jaime','Solís','Solís','1998-5-14',1,29);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (528964865,'Andrés','Cordero','Torres','1998-5-14',1,34);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (158996456,'Alvaro','Brenes','Guevara','1998-5-14',1,72);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (618657489,'Andrea','Mora','Villata','1998-5-14',1,52);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPesona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (632589647,'Fernando','Castro','Madriz','1998-5-14',1,9);
 
 -- -----------------------------------------------------
 -- Insert TelefonoXPersona
@@ -466,60 +466,48 @@ INSERT INTO `centroacopio`(`nombreCentroAcopio`, `contacto`, `Localizacion_codig
 INSERT INTO `centroacopio`(`nombreCentroAcopio`, `contacto`, `Localizacion_codigo`, `Distrito_idDistrito`, `Usuario_nombreUsuario`) VALUES ('Centro de Acopio de San José',88985225,6,89,'acruz');
 
 -- -----------------------------------------------------
+-- Insert TipoComercio
+-- -----------------------------------------------------
+INSERT INTO `tipocomercio`(`nombre`) VALUES ('Heladeria');
+INSERT INTO `tipocomercio`(`nombre`) VALUES ('Restaurante');
+INSERT INTO `tipocomercio`(`nombre`) VALUES ('Cafeteria');
+INSERT INTO `tipocomercio`(`nombre`) VALUES ('Tienda de ropa');
+INSERT INTO `tipocomercio`(`nombre`) VALUES ('Tienda por departamento');
+INSERT INTO `tipocomercio`(`nombre`) VALUES ('Tienda de conveniencia');
+INSERT INTO `tipocomercio`(`nombre`) VALUES ('Cine');
+-- -----------------------------------------------------
 -- Insert Comercio
 -- -----------------------------------------------------
-INSERT INTO `comercio`(`nombreComercio`, `contacto`, `descripcion`, `Usuario_nombreUsuario`) VALUES ('Los Paleteros',26789520,'Helados a la tica','eartiñano');
-INSERT INTO `comercio`(`nombreComercio`, `contacto`, `descripcion`, `Usuario_nombreUsuario`) VALUES ('Colchones Solis',89705630,'Colchones, cobijas, almohadas y mucho más','jsolis');
-INSERT INTO `comercio`(`nombreComercio`, `contacto`, `descripcion`, `Usuario_nombreUsuario`) VALUES ('Moyo',22305576,'Helados de Yogurt con toppings','acordero');
-INSERT INTO `comercio`(`nombreComercio`, `contacto`, `descripcion`, `Usuario_nombreUsuario`) VALUES ('Cinemark',88226565,'Los mejores estrenos y la mejor comida','abrenes');
-INSERT INTO `comercio`(`nombreComercio`, `contacto`, `descripcion`, `Usuario_nombreUsuario`) VALUES ('AM PM',22723215,'Tienda de conveniencia abierta 24/7','amora');
-INSERT INTO `comercio`(`nombreComercio`, `contacto`, `descripcion`, `Usuario_nombreUsuario`) VALUES ('Trigo Miel',68952468,'Cafetería y repostería','fcastro');
+INSERT INTO `comercio`(`nombreComercio`, `contacto`, `descripcion`, `Usuario_nombreUsuario`, `TipoComercio_idTipoComercio`) VALUES ('Los Paleteros',26789520,'Helados a la tica','eartiñano',1);
+INSERT INTO `comercio`(`nombreComercio`, `contacto`, `descripcion`, `Usuario_nombreUsuario`, `TipoComercio_idTipoComercio`) VALUES ('Colchones Solis',89705630,'Colchones, cobijas, almohadas y mucho más','jsolis',5);
+INSERT INTO `comercio`(`nombreComercio`, `contacto`, `descripcion`, `Usuario_nombreUsuario`, `TipoComercio_idTipoComercio`) VALUES ('Moyo',22305576,'Helados de Yogurt con toppings','acordero',1);
+INSERT INTO `comercio`(`nombreComercio`, `contacto`, `descripcion`, `Usuario_nombreUsuario`, `TipoComercio_idTipoComercio`) VALUES ('Cinemark',88226565,'Los mejores estrenos y la mejor comida','abrenes',7);
+INSERT INTO `comercio`(`nombreComercio`, `contacto`, `descripcion`, `Usuario_nombreUsuario`, `TipoComercio_idTipoComercio`) VALUES ('AM PM',22723215,'Tienda de conveniencia abierta 24/7','amora',6);
+INSERT INTO `comercio`(`nombreComercio`, `contacto`, `descripcion`, `Usuario_nombreUsuario`, `TipoComercio_idTipoComercio`) VALUES ('Trigo Miel',68952468,'Cafetería y repostería','fcastro',3);
 
 -- -----------------------------------------------------
 -- Insert Producto
 -- -----------------------------------------------------
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',1500,'Churchileta');
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',1250,'Paleta de menta con chocolate');
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',1000,'Paleta de coco');
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',1500,'Churchileta',1);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',1250,'Paleta de menta con chocolate',1);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',1000,'Paleta de coco',1);
 
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',12500,'Set de sabanas');
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',10000,'Almohada ortopedica');
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',7500,'Cobija térmica');
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',12500,'Set de sabanas',2);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',10000,'Almohada ortopedica',2);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',7500,'Cobija térmica',2);
 
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',2000,'Helado sabor Moyo con toppings');
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',2100,'Helado sabor del mes con toppings');
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',1600,'Helado sabor del mes sin toppings');
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',2000,'Helado sabor Moyo con toppings',3);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',2100,'Helado sabor del mes con toppings',3);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',1600,'Helado sabor del mes sin toppings',3);
 
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',1500,'Entrada individual');
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',2800,'Entrada Doble');
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',2500,'Combo Palomitas grandes y 2 refrescos');
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',1500,'Entrada individual',4);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',2800,'Entrada Doble',4);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',2500,'Combo Palomitas grandes y 2 refrescos',4);
 
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',500,'Yuquitas');
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',750,'Coca-Cola');
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',1200,'Ensalada Cesár');
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',500,'Yuquitas',5);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',750,'Coca-Cola',5);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',1200,'Ensalada Cesár',5);
 
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',500,'Café');
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',700,'Café Mocha');
-INSERT INTO `producto`(`foto`, `precio`, `nombre`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',500,'Pan Baguette');
-
--- -----------------------------------------------------
--- Insert ProductoXComercio
--- -----------------------------------------------------
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (1,1);
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (2,1);
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (3,1);
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (4,2);
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (5,2);
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (6,2);
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (7,3);
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (8,3);
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (9,3);
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (10,4);
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (11,4);
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (12,4);
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (13,5);
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (14,5);
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (15,5);
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (16,6);
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (17,6);
-INSERT INTO `productoxcomercio`(`Producto_idProducto`, `Comercio_idComercio`) VALUES (18,6);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',500,'Café',6);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',700,'Café Mocha',6);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:\Users\luisg\Desktop\Alejandro\TEC\2018\V Semestre\Bases de Datos I\Progra II\ProyectoII_BasesI_2018\Imagenes\a.png',500,'Pan Baguette',6);
