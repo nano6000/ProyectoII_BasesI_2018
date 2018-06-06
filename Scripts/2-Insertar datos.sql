@@ -431,19 +431,19 @@ INSERT INTO `tipousuario`(`descripcion`) VALUES ('SuperUsuario');
 -- -----------------------------------------------------
 -- Insert Usuario
 -- -----------------------------------------------------
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('super','super',0,0,0,4,117094679);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('dprado','dprado',0,0,0,2,109840985);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('vdiaz','vdiaz',0,0,0,2,810950587);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('amarrero','amarrero',0,0,0,2,307841585);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('drivas','drivas',0,0,0,2,889653547);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('gcastillo','gcastillo',0,0,0,2,358962468);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('acruz','acruz',0,0,0,2,457895424);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('eartiñano','eartiñano',0,0,0,3,210850978);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('jsolis','jsolis',0,0,0,3,198671658);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('acordero','acordero',0,0,0,3,528964865);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('abrenes','abrenes',0,0,0,3,158996456);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('amora','amora',0,0,0,3,618657489);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('fcastro','fcastro',0,0,0,3,632589647);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('super', CAST(AES_ENCRYPT('super', 'Progra2018')AS CHAR(512)),0,0,0,4,117094679);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('dprado',CAST(AES_ENCRYPT('dprado', 'Progra2018')AS CHAR(512)),0,0,0,2,109840985);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('vdiaz',CAST(AES_ENCRYPT('vdiaz', 'Progra2018')AS CHAR(512)),0,0,0,2,810950587);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('amarrero',CAST(AES_ENCRYPT('amarrero', 'Progra2018')AS CHAR(512)),0,0,0,2,307841585);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('drivas',CAST(AES_ENCRYPT('drivas', 'Progra2018')AS CHAR(512)),0,0,0,2,889653547);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('gcastillo',CAST(AES_ENCRYPT('gcastillo', 'Progra2018')AS CHAR(512)),0,0,0,2,358962468);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('acruz',CAST(AES_ENCRYPT('acruz', 'Progra2018')AS CHAR(512)),0,0,0,2,457895424);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('eartiñano',CAST(AES_ENCRYPT('eartiñano', 'Progra2018')AS CHAR(512)),0,0,0,3,210850978);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('jsolis',CAST(AES_ENCRYPT('jsolis', 'Progra2018')AS CHAR(512)),0,0,0,3,198671658);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('acordero',CAST(AES_ENCRYPT('acordero', 'Progra2018')AS CHAR(512)),0,0,0,3,528964865);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('abrenes',CAST(AES_ENCRYPT('abrenes', 'Progra2018')AS CHAR(512)),0,0,0,3,158996456);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('amora',CAST(AES_ENCRYPT('amora', 'Progra2018')AS CHAR(512)),0,0,0,3,618657489);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('fcastro',CAST(AES_ENCRYPT('fcastro', 'Progra2018')AS CHAR(512)),0,0,0,3,632589647);
 
 -- -----------------------------------------------------
 -- Insert Localización
