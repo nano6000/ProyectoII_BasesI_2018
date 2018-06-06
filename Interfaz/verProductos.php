@@ -33,24 +33,23 @@
 
 
         echo "<div class='panel panel-default'>";
-        echo "<div class='panel-heading'>";
-        echo "Lista de Huertas";
+        echo "<div style='margin: 4% 0 0 0' class='panel-heading'>";
         echo "</div>";
-        echo "<div class='panel-body'>";
+        echo "<div class='panel-body' style='margin: 0 2% 0 2%'>";
         echo "<div class='table-responsive'>";
 
         echo "<table width='100%' class='table table-fixed table-bordered table-hover table-condensed table-hover' id='data' style='font-size: 11px;'>";
         echo "<thead style='background-color: #f8f8f8;'>";
         echo '<tr>';
-        echo '<th>ID Huerta</th>';
+        echo '<th>ID Producto</th>';
         echo '<th>Nombre</th>';
-        echo '<th>Ubicacion</th>';
-        echo '<th>Coordenadas</th>';
+        echo '<th>Precio</th>';
+        echo '<th>Foto</th>';
         echo '</tr>';
         echo '</thead>';
         echo '<tbody>';
 
-        include_once 'scripts/getHuertas.php';
+        include_once 'scripts/getProductos.php';
 
         echo "</tbody>";
         echo "</table>";

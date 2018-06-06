@@ -17,7 +17,7 @@
 <body>
 	<header class="sticky-top">
 		<nav class="navbar navbar-expand-sm navbar-light bg-primary">
-			<a class="navbar-brand" href="homeUser.php">
+			<a class="navbar-brand" style="margin: 0 4% 0 0" href="homeUser.php">
                 <!-- <img src="logo.png" alt="logo" height="50" width="42"> -->
 				AppHuerta
 			</a>
@@ -33,25 +33,20 @@
                             $tipo = $_SESSION['tipo'];
                             switch ($tipo)
                             {
-                                case 3: //Administrador
-                                    echo '<div class="dropdown">
-                                            <button type="button" class="btn btn-outline-dark dropdown-toggle" id="dropdownCentro" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                    Centros
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
-                                                <a class="dropdown-item" href="crearCentroAcopio.php">Nuevo centro</a>
-                                                <a class="dropdown-item" href="editCentro.php">Editar centros</a>
-                                                <a class="dropdown-item" href="verCentros.php">Ver centros</a>
-                                            </div>
-                                        </div>
-                					    <li class="nav-item">
-              							    <a class="nav-link" href="#">Encargados</a>
-              					        </li>';
-                                case 2: //Encargados
+                                case 4: //Super usuario
                                     echo '<li class="nav-item">
-              							    <a class="nav-link" href="#">Colaboradores</a>
-              					        </li>
-                                <div class="dropdown">
+              							    <a class="nav-link" href="crearCentro.php">Nuevo centro</a>
+                                        </li>
+                                        <li class="nav-item">
+                  							<a class="nav-link" href="crearComercio.php">Nuevo comercio</a>
+                                        </li>
+                                        <li class="nav-item">
+                  							<a class="nav-link" href="verCentros.php">Ver centros</a>
+                                        </li>
+                                        <li class="nav-item">
+                  							<a class="nav-link" href="verComercios.php">Ver comercios</a>
+                                        </li>
+                                    <div class="dropdown">
                                         <button type="button" class="btn btn-outline-dark dropdown-toggle" id="dropdownEstadisticas" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                                 Estadisticas
                                         </button>
@@ -61,48 +56,73 @@
                                             <a class="dropdown-item" href="#">Productos</a>
                                             <a class="dropdown-item" href="#">Top 5</a>
                                         </div>
-                                    </div>
+                                    </div>';
+                                    break;
+                                case 3: //Encargado comercio
+                                    echo '<div class="dropdown">
+                                            <button type="button" class="btn btn-outline-dark dropdown-toggle"  style="margin: 0 8px 0 0" id="dropdownComercio" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    Mi comercio
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownComercio">
+                                                <a class="dropdown-item" href="verComercio.php">Ver comercio</a>
+                                                <a class="dropdown-item" href="editComercio.php">Editar comercio</a>
+                                            </div>
+                                        </div>
+                                        <a> </a>
+                                        <div class="dropdown">
+                                                <button type="button" class="btn btn-outline-dark dropdown-toggle" style="margin: 0 8px 0 0" id="dropdownProducto" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                        Mis productos
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownProducto">
+                                                    <a class="dropdown-item" href="verProductos.php">Ver productos</a>
+                                                    <a class="dropdown-item" href="#">Editar productos</a>
+                                                </div>
+                                            </div>
+                                        <div class="dropdown">
+                                            <button type="button" class="btn btn-outline-dark dropdown-toggle" style="margin: 0 8px 0 0" id="dropdownOtrasConsultas" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    Otras consultas
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownOtrasConsultas">
+                                                <a class="dropdown-item" href="#">Total de puntos canjeados por producto</a>
+                                                <a class="dropdown-item" href="#">Top 5 de productos</a>
+                                            </div>
+                                        </div>
                                         <li class="nav-item">
-                							<a class="nav-link" href="#">Compra/Venta</a>
-                						</li>';
-                                case 1: //Colaboradores
-                                    if ($tipo > 1)
-                                        echo '<li class="nav-item">
-                							<a class="nav-link" href="#">Abonos</a>
-                						</li>';
-                                    else
-                                        echo '<li class="nav-item">
-                							<a class="nav-link" href="#">Abonar</a>
-                						</li>';
+                                            <button type="button" class="btn btn-outline-dark" style="margin: 0 8px 0 0 " id="canjearPuntos" role="button" aria-expanded="false">
+                                                Canjear puntos
+                                            </button>
+                                        </li>';
+                                    break;
+                                case 2: //Administrador centro
+                                    echo '<div class="dropdown">
+                                            <button type="button" class="btn btn-outline-dark dropdown-toggle"  style="margin: 0 8px 0 0" id="dropdownCentro" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    Mi centro de acopio
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownCentro">
+                                                <a class="dropdown-item" href="#">Ver centro de acopio</a>
+                                                <a class="dropdown-item" href="#">Editar centro de acopio</a>
+                                            </div>
+                                        </div>
+                                        <a> </a>
+                                        <div class="dropdown">
+                                            <button type="button" class="btn btn-outline-dark dropdown-toggle" id="dropdownOtrasConsultas" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    Otras consultas
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
+                                                <a class="dropdown-item" href="#">Materiales reciclados</a>
+                                                <a class="dropdown-item" href="#">Top 5 de usuarios</a>
+                                                <a class="dropdown-item" href="#">Puntos obtenidos por usuarios</a>
+                                            </div>
+                                        </div>
+                                        <li class="nav-item">
+                                            <button type="button" class="btn btn-outline-dark" style="margin: 0 8px 0 0 " id="obtenerPuntos" role="button" aria-expanded="false">
+                                                Obtener puntos
+                                            </button>
+                                        </li>';
+                                    break;
+                                case 1:
+                                    break;
                                 default:
-                                    if ($tipo < 3)
-                                        echo '<li class="nav-item">
-                							<a class="nav-link" href="#">Huertas</a>
-                						</li>';
-                                    if ($tipo == 3)
-                                        echo '<div class="dropdown">
-                                                <button type="button" class="btn btn-outline-dark dropdown-toggle" id="dropdownPlanta" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                        Plantas
-                                                </button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
-                                                    <a class="dropdown-item" href="#">Nueva hortaliza</a>
-                                                    <a class="dropdown-item" href="#">Nuevo arbol</a>
-                                                    <a class="dropdown-item" href="#">Editar hortaliza</a>
-                                                    <a class="dropdown-item" href="#">Editar arbol</a>
-                                                    <a class="dropdown-item" href="Hortalizas.php">Ver hortalizas</a>
-                                                    <a class="dropdown-item" href="Arboles.php">Ver arboles</a>
-                                                </div>
-                                            </div>';
-                                    else
-                                        echo '<div class="dropdown">
-                                                <button type="button" class="btn btn-outline-dark dropdown-toggle" id="dropdownPlanta" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                        Plantas
-                                                </button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
-                                                    <a class="dropdown-item" href="Hortalizas.php">Ver hortalizas</a>
-                                                    <a class="dropdown-item" href="Arboles.php">Ver arboles</a>
-                                                </div>
-                                            </div>';
                                     break;
                             }
                         }

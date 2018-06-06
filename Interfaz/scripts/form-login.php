@@ -10,24 +10,23 @@
         {
             $username = $_POST["username-input"];
             $passwd = $_POST["passwd-input"];
-            $hashPsswd = password_hash($passwd, PASSWORD_DEFAULT);
+            // $passwd = password_hash($passwd, PASSWORD_DEFAULT);
 
             $result = 0;
-            // $sql = "BEGIN :result := people_management.login_user(:username, :password); END;";
-            // $s = oci_parse($conn, $sql);
-            // oci_bind_by_name($s, ':username', $username);
-            // oci_bind_by_name($s, ':password', $hashPsswd);
-            // oci_bind_by_name($s, ':result', $result);
-            // oci_execute($s);
-            // if ($result > 0)
-            // {
-            //     $_SESSION['username'] = $username;
-            //     header("Location: ../homeUser.php?login=success");
-            // }
-            // else
-            //     header("Location: ../login.php?login=error&username=$username");
-            $_SESSION['username'] = $username;
-            $_SESSION['tipo'] = 3; //Administrador
+
+            $stmt = $conn->query("select `checkPassword`('$username', '$passwd');");
+            $row = $stmt->fetch(PDO::FETCH_NUM);
+
+            $result = $row[0];
+
+            if (!$result)
+                header("Location: ../login.php?login=error&username=$username");
+
+            $stmt = $conn->query("select `tipoUsuario`('$username');");
+            $row = $stmt->fetch(PDO::FETCH_NUM);
+
+            $_SESSION['tipo'] = $row[0];
+
             header("Location: ../homeUser.php?login=success");
 
         }

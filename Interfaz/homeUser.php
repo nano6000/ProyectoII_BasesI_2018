@@ -24,32 +24,33 @@
 				    mapTypeId: google.maps.MapTypeId.ROADMAP
 				}
 				var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-                // <?php
-                // include_once 'scripts/conexion.inc';
-                // $matriz = oci_parse($conn, "select * from huerta.Localizacion"); //-->NeedToChange
-                // oci_execute($matriz);
-                // echo 'var coord =[';
-                // $fila = oci_fetch_array($matriz, OCI_NUM+OCI_RETURN_NULLS);
-                // echo str_replace(",", ".", "{lat:" . $fila[1] . "");
-                // echo ", ";
-                // echo str_replace(",", ".", "lng: " . $fila[2] . "}");
-                // while ($fila = oci_fetch_array($matriz, OCI_NUM+OCI_RETURN_NULLS))
-                // {
-                //     echo ", ";
-                //     echo str_replace(",", ".", "{lat:" . $fila[1] . "");
-                //     echo ", ";
-                //     echo str_replace(",", ".", "lng: " . $fila[2] . "}");
-                // }
-                // echo '];';
-                //  ?>
-				// coord.forEach(function(value)
-				// {
-				// 	var marker = new google.maps.Marker(
-				// 	{
-				// 		position: value,
-				// 		map: map
-				// 	});
-				// })
+                <?php
+                include_once 'scripts/conexion.inc';
+
+                $stmt = $conn->query("CALL `obtenerLocalizacion`();");
+                $row = $stmt->fetch(PDO::FETCH_NUM);
+
+                echo 'var coord =[';
+                echo str_replace(",", ".", "{lat:" . $row[0] . "");
+                echo ", ";
+                echo str_replace(",", ".", "lng: " . $row[1] . "}");
+                while($row = $stmt->fetch(PDO::FETCH_NUM))
+                {
+                    echo ", ";
+                    echo str_replace(",", ".", "{lat:" . $row[0] . "");
+                    echo ", ";
+                    echo str_replace(",", ".", "lng: " . $row[1] . "}");
+                }
+                echo '];';
+                 ?>
+				coord.forEach(function(value)
+				{
+					var marker = new google.maps.Marker(
+					{
+						position: value,
+						map: map
+					});
+				})
         }
 		</script>
 
