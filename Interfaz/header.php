@@ -1,6 +1,6 @@
 <!--
 
-	AppHuerta -> nombre de la app
+	Costa Rica Recicla -> nombre de la app
 
 -->
 <?php
@@ -19,7 +19,7 @@
 		<nav class="navbar navbar-expand-sm navbar-light bg-primary">
 			<a class="navbar-brand" style="margin: 0 4% 0 0" href="homeUser.php">
                 <!-- <img src="logo.png" alt="logo" height="50" width="42"> -->
-				AppHuerta
+				Costa Rica Recicla
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -75,7 +75,8 @@
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownProducto">
                                                     <a class="dropdown-item" href="verProductos.php">Ver productos</a>
-                                                    <a class="dropdown-item" href="#">Editar productos</a>
+                                                    <a class="dropdown-item" href="agregarProducto.php">Agregar productos</a>
+                                                    <a class="dropdown-item" href="editProductos.php">Editar productos</a>
                                                 </div>
                                             </div>
                                         <div class="dropdown">
@@ -123,6 +124,7 @@
                                 case 1:
                                     break;
                                 default:
+                                    header("HTTP/1.1 501 Not Implemented");
                                     break;
                             }
                         }

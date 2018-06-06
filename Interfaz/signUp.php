@@ -1,12 +1,14 @@
 <?php
-	//include_once('scripts/conexion.inc');
+	include_once('scripts/conexion.inc');
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Sign up</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   		<title>Sign up</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	</head>
 
 	<body>
@@ -14,7 +16,7 @@
 		<header class="sticky-top">
 			<nav class="navbar navbar-expand-sm navbar-light bg-primary">
 				<a class="navbar-brand" href="home.php">
-					AppHuerta
+					Costa Rica Recicla
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -29,39 +31,26 @@
 		</header>
 
 		<div class="row justify-content-center" style="margin: 2% 0 0 0">
-			<form id="myform" method="post" class="needs-validation col-lg-6 col-md-6 col-sm-6 col-6" novalidate="" action="scripts/form-input.php">
+			<form id="myform" method="post" class="needs-validation col-lg-6 col-md-6 col-sm-6 col-6" novalidate="" action="scripts/form-input.php" enctype='multipart/form-data'>
 				<div class="form-row">
 					<label> Nombre:</label>
 				</div>
 				<div class="form-row">
-					<div class="form-group col-md-6">
+					<div class="form-group col-md-12">
 						<?php
-							if (isset($_GET['pNombre']))
+							if (isset($_GET['Nombre']))
 							{
-								$pNombre = $_GET['pNombre'];
-								echo '<input name="frstName-input" type="text" class="form-control" placeholder="Primer Nombre" value="'.$pNombre.'" required>';
+								$pNombre = $_GET['Nombre'];
+								echo '<input name="name-input" type="text" class="form-control" placeholder="Nombre" value="'.$Nombre.'" required>';
 							}
 							else
 							{
-								echo '<input name="frstName-input" type="text" class="form-control" placeholder="Primer Nombre" required>';
+								echo '<input name="name-input" type="text" class="form-control" placeholder="Nombre" required>';
 							}
 						?>
 						<div class="invalid-feedback">
 							Por favor, ingrese información válida.
 						</div>
-					</div>
-					<div class="form-group col-md-6">
-						<?php
-							if (isset($_GET['sNombre']))
-							{
-								$sNombre = $_GET['sNombre'];
-								echo '<input name="secndName-input"	type="text" class="form-control" placeholder="Segundo Nombre" value="'.$sNombre.'">';
-							}
-							else
-							{
-								echo '<input name="secndName-input"	type="text" class="form-control" placeholder="Segundo Nombre">';
-							}
-						?>
 					</div>
 				</div>
 				<div class="form-row">
@@ -100,19 +89,20 @@
 						<label>Nacionalidad:</label>
 						<select name="citizenship" name="citizenship" class="custom-select" required>
 							<?php
-								// if (isset($_GET['pais']))
-								// 	$pais = $_GET['pais'];
-								// else
-								// 	$pais = "";
-								// $matriz = oci_parse($conn, "select * from huerta.pais");
-								// oci_execute($matriz);
-								// while ($fila = oci_fetch_array($matriz, OCI_NUM+OCI_RETURN_NULLS))
-								// {
-								// 	if ($fila[0] == $pais)
-								// 		echo "<option value='" . $fila[0] . "' selected>" . $fila[1] . " (" . $fila[0] . ")" . "</option>";
-								// 	else
-								// 		echo "<option value='" . $fila[0] . "'>" . $fila[1] . " (" . $fila[0] . ")" . "</option>";
-								// }
+								$stmt = $conn->query("call obtenerPaises();");
+					            $temp;
+
+							    while($row = $stmt->fetch(PDO::FETCH_NUM))
+							    {
+					                if (isset($_GET['pais']) && $_GET['pais'] == $row[0])
+					                {
+					                    echo "<option value='" . $row[0] . "' selected>" . $row[1] . "</option>";
+					                    $temp = $tipo[1];
+					                }
+					                else
+					                    echo "<option value='" . $row[0] . "'>" . $row[1] . "</option>";
+								}
+								$stmt->closeCursor();
 							?>
 						</select>
 						<div class="invalid-feedback">
@@ -138,51 +128,75 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label>E-mail 1:</label>
-						<?php
-							if (isset($_GET['pEmail']))
-							{
-								$pEmail = $_GET['pEmail'];
-								echo '<input name="email1-input" type="text" class="form-control" pattern=".+@.+\.(com|es)" placeholder="E-mail 1" value="'.$pEmail.'" required>';
-							}
-							else
-							{
-								echo '<input name="email1-input" type="text" class="form-control" pattern=".+@.+\.(com|es)" placeholder="E-mail 1" required>';
-							}
-						?>
+						<label>Pais de residencia:</label>
+						<select name="pais" name="pais" class="custom-select" required>
+							<option selected> Costa Rica </option>"
+						</select>
 						<div class="invalid-feedback">
-							Por favor, ingrese información válida.
+							Por favor, seleccione una opción.
 						</div>
 					</div>
 					<div class="form-group col-md-6">
-						<label>E-mail 2:</label>
-						<?php
-							if (isset($_GET['sEmail']))
-							{
-								$sEmail = $_GET['sEmail'];
-								echo '<input name="email2-input" type="email" class="form-control" pattern=".+@.+\.(com|es)" placeholder="E-mail 2" value="'.$sEmail.'">';
-							}
-							else
-							{
-								echo '<input name="email2-input" type="email" class="form-control" pattern=".+@.+\.(com|es)" placeholder="E-mail 2">';
-							}
-						?>
+						<label>Provincia de residencia:</label>
+						<select name="provincia" id="provincia" class="custom-select" required>
+							<?php
+								//include 'scripts/listarProvincias.php';
+								$stmt = $conn->query("call obtenerProvincia(1);");
+					            $temp;
+
+							    while($row = $stmt->fetch(PDO::FETCH_NUM))
+							    {
+					                if (isset($_GET['provincia']) && $_GET['provincia'] == $row[0])
+					                {
+					                    echo "<option value='" . $row[0] . "' selected>" . $row[1] . "</option>";
+					                    $temp = $tipo[1];
+					                }
+					                else
+					                    echo "<option value='" . $row[0] . "'>" . $row[1] . "</option>";
+								}
+								$stmt->closeCursor();
+							?>
+						</select>
+						<div class="invalid-feedback">
+							Por favor, seleccione una opción.
+						</div>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label>Telefono 1:</label>
+						<label>Canton de residencia:</label>
+						<select name="canton" id="canton" class="custom-select" required>
+
+						</select>  <br> <br>
+						<div class="invalid-feedback">
+							Por favor, seleccione una opción.
+						</div>
+					</div>
+					<div class="form-group col-md-6">
+						<label>Distrito de residencia:</label>
+						<select name="distrito" id="distrito" class="custom-select" required>
+
+						</select>
+						<div class="invalid-feedback">
+							Por favor, seleccione una opción.
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label>E-mail:</label>
 						<?php
-							if (isset($_GET['pTel']))
+							if (isset($_GET['Email']))
 							{
-								$pTel = $_GET['pTel'];
-								echo '<input name="tel1-input" type="text" class="form-control" pattern="(\(\+[0-9]{3}\))?[0-9]{8}[0-9]*" placeholder="Telefono 1" value="'.$pTel.'" required>';
+								$pEmail = $_GET['Email'];
+								echo '<input name="email-input" type="text" class="form-control" pattern=".+@.+\.(com|es)" placeholder="E-mail" value="'.$Email.'" required>';
 							}
 							else
 							{
-								echo '<input name="tel1-input" type="text" class="form-control" pattern="(\(\+[0-9]{3}\))?[0-9]{8}[0-9]*" placeholder="Telefono 1" required>';
+								echo '<input name="email-input" type="text" class="form-control" pattern=".+@.+\.(com|es)" placeholder="E-mail" required>';
 							}
 						?>
 						<div class="invalid-feedback">
@@ -190,18 +204,21 @@
 						</div>
 					</div>
 					<div class="form-group col-md-6">
-						<label>Telefono 2:</label>
+						<label>Telefono:</label>
 						<?php
-							if (isset($_GET['sTel']))
+							if (isset($_GET['Tel']))
 							{
-								$sTel = $_GET['sTel'];
-								echo '<input name="tel2-input" type="text" class="form-control" pattern="(\(\+[0-9]{3}\))?[0-9]{8}[0-9]*" placeholder="Telefono 2" value="'.$sTel.'">';
+								$pTel = $_GET['Tel'];
+								echo '<input name="tel-input" type="text" class="form-control" pattern="(\(\+[0-9]{3}\))?[0-9]{8}[0-9]*" placeholder="Telefono" value="'.$Tel.'" required>';
 							}
 							else
 							{
-								echo '<input name="tel2-input" type="text" class="form-control" pattern="(\(\+[0-9]{3}\))?[0-9]{8}[0-9]*" placeholder="Telefono 2">';
+								echo '<input name="tel-input" type="text" class="form-control" pattern="(\(\+[0-9]{3}\))?[0-9]{8}[0-9]*" placeholder="Telefono" required>';
 							}
 						?>
+						<div class="invalid-feedback">
+							Por favor, ingrese información válida.
+						</div>
 					</div>
 				</div>
 				<div class="form-row">
@@ -244,16 +261,6 @@
 						<div class="registrationFormAlert" id="divCheckPasswordMatch"></div>
 					</div>
 				</div>
-				<div class="form-row">
-					<label>Imagen: </label>
-					<div class="custom-file">
-						<input type="file" class="custom-file-input" name="customFile" accept="image/*" required="">
-						<div class="invalid-feedback">
-							Por favor, ingrese una imagen.
-						</div>
-						<label class="custom-file-label" for="customFile">Seleccione una imagen</label>
-					</div>
-				</div>
 
 				<?php
 					if (isset($_GET['signup']))
@@ -280,8 +287,41 @@
 		</div>
 
 
+		<script type="text/javascript">
+       $(document).on('change','#provincia',function(){
+             var val = $(this).val();
+             $.ajax({
+                   url: 'scripts/listarCantones.php',
+                   data: {provincia:val},
+                   type: 'GET',
+                   dataType: 'html',
+                   success: function(result){
+                        $('#canton').html();
+                        $('#canton').html(result);
+                   }
+              });
+       });
+  </script>
 
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+ $(document).on('change','#canton',function(){
+	   var val = $(this).val();
+	   $.ajax({
+			 url: 'scripts/listarDistritos.php',
+			 data: {canton:val},
+			 type: 'GET',
+			 dataType: 'html',
+			 success: function(result){
+				  $('#distrito').html();
+				  $('#distrito').html(result);
+			 }
+		});
+ });
+</script>
+
+
+
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="scripts/formValidation.js"></script>

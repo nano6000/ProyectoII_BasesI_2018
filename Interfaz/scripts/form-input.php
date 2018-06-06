@@ -1,5 +1,6 @@
 <?php
 
+    session_start();
 
     if (isset($_POST['submit']))
     {
@@ -7,138 +8,48 @@
         include_once('conexion.inc');
 
         // define variables and set to empty values
-        $pNombre = $sNombre = $pApellido = $sApellido = $pEmail = $sEmail =  "";
-        $pTel = $sTel = $pais = $cedula = $fechNac = $usuario = $passwd = $img = "";
+        $pNombre = $pApellido = $sApellido = $email = "";
+        $tel = $pais = $cedula = $fechNac = $usuario = $passwd = $img = "";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST")
         {
-            $pNombre = $_POST["frstName-input"];
-            $sNombre = $_POST["secndName-input"];
+            $pNombre = $_POST["name-input"];
             $pApellido = $_POST["frstLstName-input"];
             $sApellido = $_POST["secndLstName-input"];
-            $pEmail = $_POST["email1-input"];
-            $sEmail = $_POST["email2-input"];
-            $pTel = $_POST["tel1-input"];
-            $sTel = $_POST["tel2-input"];
-            $pais = $_POST["citizenship"];
+            $pEmail = $_POST["email-input"];
+            $pTel = $_POST["tel-input"];
+            $nacionalidad = $_POST["citizenship"];
+            $pais = $_POST["pais"];
+            $provincia = $_POST["provincia"];
+            $canton = $_POST["canton"];
+            $distrito = $_POST["distrito"];
             $cedula = $_POST["id-input"];
-            $fechNac = date("d-m-Y", strtotime($_POST["date-input"]));
+            $fechNac = date("Y-m-d G:i:s", strtotime($_POST["date-input"]));
             $usuario = $_POST["username-input"];
             $passwd = $_POST["passwd-input"];
-            $hashPsswd = password_hash($passwd, PASSWORD_DEFAULT);
-            $img = file_get_contents($_FILES['customFile']['tmp_name']);
 
+            $stmt = $conn->query("call insertarUsuario('$cedula', '$pNombre', '$pApellido', '$sApellido', '$fechNac',
+                                        $distrito, $nacionalidad, '$usuario', '$passwd', 1)");
 
-            // $result = 0;
-            // $sql = "BEGIN :result := people_management.check_person(:cedula); END;";
-            // $s = oci_parse($conn, $sql);
-            // oci_bind_by_name($s, ':cedula', $cedula);
-            // oci_bind_by_name($s, ':result', $result);
-            // oci_execute($s);
+            if (!$stmt)
+            {
+                echo "\nPDO::errorInfo():\n";
+                print_r($dbh->errorInfo());
+            }
+            else
+            {
+                $stmt = $conn->query("select `tipoUsuario`('$usuario');");
+                $row = $stmt->fetch(PDO::FETCH_NUM);
 
-            // if($result>0)
-            // {
-            //     echo "La persona ya existe";
-            //     oci_close($conn);
-            //     header("Location: ../signUp.php?signup=duplicate&pNombre=$pNombre&sNombre=$sNombre&
-            //                 pApellido=$pApellido&sApellido=$sApellido&pEmail=$pEmail&sEmail=$sEmail&pTel=$pTel&
-            //                 sTel=$sTel&pais=$pais&usuario=$usuario");
-            //     exit();
-            // }
-            // else
-            // {
-            //     //comprobar que no exista el Usuario
-            //     $result = 0;
-            //     $sql = "BEGIN :result := people_management.check_username(:usuario); END;";
-            //     $s = oci_parse($conn, $sql);
-            //     oci_bind_by_name($s, ':usuario', $usuario);
-            //     oci_bind_by_name($s, ':result', $result);
-            //     oci_execute($s);
-            //
-            //     if ($result>0)
-            //     {
-            //         echo "El usuario ya existe";
-            //         oci_close($conn);
-            //         header("Location: ../signUp.php?signup=usernameTaken&pNombre=$pNombre&sNombre=$sNombre&
-            //                     pApellido=$pApellido&sApellido=$sApellido&pEmail=$pEmail&sEmail=$sEmail&pTel=$pTel&
-            //                     sTel=$sTel&pais=$pais&cedula=$cedula");
-            //         exit();
-            //     }
-            //     else
-            //     {
-                    $lob = oci_new_descriptor($conn, OCI_D_LOB);
-                    $sql = "BEGIN pck_persona.insert_usuario(:usuario, :passwd, 'ONLINE', '0', :cedula, :pNombre, :sNombre, :pApellido, :sApellido,
-                                    :fechNac, :img, :pais); END;";
-                    $s = oci_parse($conn, $sql);
-
-                    oci_bind_by_name($s, ':img', $lob, -1, OCI_B_BLOB);
-                    oci_bind_by_name($s, ':pNombre',$pNombre);
-                    oci_bind_by_name($s, ':sNombre',$sNombre);
-                    oci_bind_by_name($s, ':pApellido',$pApellido);
-                    oci_bind_by_name($s, ':sApellido',$sApellido);
-                    oci_bind_by_name($s, ':pais',$pais);
-                    oci_bind_by_name($s, ':cedula',$cedula);
-                    oci_bind_by_name($s, ':fechNac',$fechNac);
-                    oci_bind_by_name($s, ':usuario',$usuario);
-                    oci_bind_by_name($s, ':passwd',$hashPsswd);
-                    $myv = file_get_contents($_FILES['customFile']['tmp_name']);
-                    $lob->writeTemporary($myv, OCI_TEMP_BLOB);
-                    oci_execute($s);
-                    $error =  oci_error($s);
-                    echo htmlentities($error['message']);
-
-                    $sql = "BEGIN pck_persona.insert_emailPersona(:email, :cedula); END;";
-                    $s = oci_parse($conn, $sql);
-                    oci_bind_by_name($s, ':email',$pEmail);
-                    oci_bind_by_name($s, ':cedula',$cedula);
-                    oci_execute($s);
-                    $error =  oci_error($s);
-                    echo htmlentities($error['message']);
-
-                    if ($sEmail!="")
-                    {
-                        $sql = "BEGIN pck_persona.insert_emailPersona(:email, :cedula); END;";
-                        $s = oci_parse($conn, $sql);
-                        oci_bind_by_name($s, ':email',$sEmail);
-                        oci_bind_by_name($s, ':cedula',$cedula);
-                        oci_execute($s);
-                        $error =  oci_error($s);
-                        echo htmlentities($error['message']);
-                    }
-
-                    $sql = "BEGIN pck_persona.insert_telefonoPersona(:tel, :cedula); END;";
-                    $s = oci_parse($conn, $sql);
-                    oci_bind_by_name($s, ':tel',$pTel);
-                    oci_bind_by_name($s, ':cedula',$cedula);
-                    oci_execute($s);
-                    $error =  oci_error($s);
-                    echo htmlentities($error['message']);
-
-                    if ($sTel!="")
-                    {
-                        $sql = "BEGIN pck_persona.insert_telefonoPersona(:tel, :cedula); END;";
-                        $s = oci_parse($conn, $sql);
-                        oci_bind_by_name($s, ':tel',$sTel);
-                        oci_bind_by_name($s, ':cedula',$cedula);
-                        oci_execute($s);
-                        $error =  oci_error($s);
-                        echo htmlentities($error['message']);
-                    }
-
-                    session_start();
-                    $_SESSION['username'] = $usuario;
-                    $_SESSION['tipo'] = 0;
-
-                    oci_close($conn);
-                    header("Location: ../homeUser.php");
-            //     }
-            // }
+                $_SESSION['tipo'] = $row[0];
+                $_SESSION['username'] = $usuario;
+                header("Location: ../homeUser.php?signupsuccess");
+            }
 
         }
     }
-    else {
-        header("Location: ../signUp.php");
-    }
+    else
+        header("HTTP/1.1 403 Forbidden" );
 
     function test_input($data)
     {
