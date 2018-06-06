@@ -6,7 +6,7 @@
     {
         $tipo = $_SESSION['tipo'];
         if ($tipo != 3)
-            header("Location: homeUser.php");
+            header("HTTP/1.1 403 Forbidden");
     }
     else
         header("Location: homeUser.php");
@@ -39,13 +39,13 @@
         echo "<thead style='background-color: #f8f8f8;'>";
         echo '<tr>';
         echo '<th>Nombre</th>';
-        echo '<th>Precio</th>';
         echo '<th>Foto</th>';
+        echo '<th></th>';
         echo '</tr>';
         echo '</thead>';
         echo '<tbody>';
 
-        include_once 'scripts/getProductos.php';
+        include_once 'scripts/getTop5productos.php';
 
         echo "</tbody>";
         echo "</table>";

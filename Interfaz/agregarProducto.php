@@ -13,7 +13,7 @@
 					<?php
 						if (isset($_GET['Nombre']))
 						{
-							$pNombre = $_GET['Nombre'];
+							$Nombre = $_GET['Nombre'];
 							echo '<input name="name-input" type="text" class="form-control" placeholder="Nombre" value="'.$Nombre.'" required>';
 						}
 						else

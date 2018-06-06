@@ -14,6 +14,7 @@
     echo "<div class='row justify-content-center'>
         <div class='card col-lg-8 col-10' style='margin: 5% 0'>
             <ul class='list-group list-group-flush'>
+                <li class='list-group-item'><h3 class='text-center'><b>Datos de mi comercio</b></h></li>
                 <li class='list-group-item'>
                     <div class=''>
                         <h5>Nombre: </h5>
@@ -37,6 +38,22 @@
 
                     <div class=''>
                         <p style='margin: 2% 0 0 7%'>$row[2]</p>
+                    </div>
+                </li>
+                <li class='list-group-item'>
+                    <div class=''>
+                        <h5 style='margin: 10px 0 0 0'>Total de puntos canjeados: </h5>
+                    </div>
+
+                    <div class=''>
+                        <p style='margin: 2% 0 0 7%'>";
+
+    // $stmt->closeCursor();
+    // $stmt = $conn->query("CALL `obtenerInfoComercio`($username);");
+    // $row = $stmt->fetch(PDO::FETCH_NUM);
+
+    echo $row[0];
+    echo "              </p>
                     </div>
                 </li>
             </ul>

@@ -59,40 +59,36 @@
                                     </div>';
                                     break;
                                 case 3: //Encargado comercio
-                                    echo '<div class="dropdown">
-                                            <button type="button" class="btn btn-outline-dark dropdown-toggle"  style="margin: 0 8px 0 0" id="dropdownComercio" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    echo "<div class='dropdown'>
+                                            <button type='button' class='btn btn-outline-dark dropdown-toggle'  style='margin: 0 8px 0 0' id='dropdownComercio' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>
                                                     Mi comercio
                                             </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownComercio">
-                                                <a class="dropdown-item" href="verComercio.php">Ver comercio</a>
-                                                <a class="dropdown-item" href="editComercio.php">Editar comercio</a>
+                                            <div class='dropdown-menu' aria-labelledby='dropdownComercio'>
+                                                <a class='dropdown-item' href='verComercio.php'>Ver comercio</a>
+                                                <a class='dropdown-item' href='editComercio.php'>Editar comercio</a>
                                             </div>
                                         </div>
                                         <a> </a>
-                                        <div class="dropdown">
-                                                <button type="button" class="btn btn-outline-dark dropdown-toggle" style="margin: 0 8px 0 0" id="dropdownProducto" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <div class='dropdown'>
+                                                <button type='button' class='btn btn-outline-dark dropdown-toggle' style='margin: 0 8px 0 0' id='dropdownProducto' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>
                                                         Mis productos
                                                 </button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownProducto">
-                                                    <a class="dropdown-item" href="verProductos.php">Ver productos</a>
-                                                    <a class="dropdown-item" href="agregarProducto.php">Agregar productos</a>
-                                                    <a class="dropdown-item" href="editProductos.php">Editar productos</a>
+                                                <div class='dropdown-menu' aria-labelledby='dropdownProducto'>
+                                                    <a class='dropdown-item' href='verProductos.php'>Ver productos</a>
+                                                    <a class='dropdown-item' href='agregarProducto.php'>Agregar productos</a>
+                                                    <a class='dropdown-item' href='editProductos.php'>Editar productos</a>
                                                 </div>
                                             </div>
-                                        <div class="dropdown">
-                                            <button type="button" class="btn btn-outline-dark dropdown-toggle" style="margin: 0 8px 0 0" id="dropdownOtrasConsultas" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                    Otras consultas
+                                        <li class='nav-item'>
+                                            <button type='button' class='btn btn-outline-dark' style='margin: 0 8px 0 0 ' id='top5Canjeos' role='button'  onclick='location.href=\"top5productos.php\"'>
+                                                Top 5 de productos
                                             </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownOtrasConsultas">
-                                                <a class="dropdown-item" href="#">Total de puntos canjeados por producto</a>
-                                                <a class="dropdown-item" href="#">Top 5 de productos</a>
-                                            </div>
-                                        </div>
-                                        <li class="nav-item">
-                                            <button type="button" class="btn btn-outline-dark" style="margin: 0 8px 0 0 " id="canjearPuntos" role="button" aria-expanded="false">
+                                        </li>
+                                        <li class='nav-item'>
+                                            <button type='button' class='btn btn-outline-dark' style='margin: 0 8px 0 0 ' id='canjearPuntos' role='button' onclick='location.href=\"canjearPuntos.php\"'>
                                                 Canjear puntos
                                             </button>
-                                        </li>';
+                                        </li>";
                                     break;
                                 case 2: //Administrador centro
                                     echo '<div class="dropdown">
@@ -106,7 +102,7 @@
                                         </div>
                                         <a> </a>
                                         <div class="dropdown">
-                                            <button type="button" class="btn btn-outline-dark dropdown-toggle" id="dropdownOtrasConsultas" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <button type="button" class="btn btn-outline-dark dropdown-toggle" style=\'margin: 0 8px 0 0\' id="dropdownOtrasConsultas" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                                     Otras consultas
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownHuerta">

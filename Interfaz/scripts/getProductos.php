@@ -1,17 +1,16 @@
 <?php
 
     include_once 'scripts/conexion.inc';
-    //$sql = "BEGIN :result := pck_consulta.getHuertas(); END;";
+    $usuario = $_SESSION['username'];
 
-    $stmt = $conn->query("select `idProducto`, `nombre`, `precio`, `foto` from `producto`");
+    $stmt = $conn->query("call obtenerProducto('$usuario')");
 
     while ($row = $stmt->fetch(PDO::FETCH_NUM))
     {
         echo "<tr>";
-        echo "<td>" . $row[0] . "</td>";
-        echo "<td>" . $row[1] . "</td>";
         echo "<td>" . $row[2] . "</td>";
-        echo "<td class='text-center'> <img src='uploads/" . $row[3] . "' height='75px' width='125px'></td>";
+        echo "<td>" . $row[3] . "</td>";
+        echo "<td class='text-center'> <img src='uploads/" . $row[1] . "' height='75px' width='125px'></td>";
 
         echo "</tr>";
     }

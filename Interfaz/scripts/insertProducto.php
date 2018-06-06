@@ -1,68 +1,62 @@
 <?php
     if (isset($_POST['submit']))
     {
-
         include_once('conexion.inc');
 
-        // define variables and set to empty values
+        $nombre = $_POST["name-input"];
+        $precio = $_POST["precio-input"];
+        $comercio = $_SESSION["comercio"];
 
-        if (isset($_POST['submit']))
+        $file = $_FILES['foto'];
+
+        if ($file['name'])
         {
-            $nombre = $_POST["name-input"];
-            $precio = $_POST["precio-input"];
-            $comercio = $_SESSION["comercio"];
+            $fileName = $file['name'];
+            $fileTmp = $file['tmp_name'];
+            $fileSize = $file['size'];
+            $fileError = $file['error'];
 
-            $file = $_FILES['foto'];
+            $fileExt = explode('.', $fileName);
+            $fileActualExt = strtolower(end($fileExt));
 
-            if ($file['name'])
+            $allowed = array('jpg', 'jpeg', 'png');
+
+            if (in_array($fileActualExt, $allowed))
             {
-                $fileName = $file['name'];
-                $fileTmp = $file['tmp_name'];
-                $fileSize = $file['size'];
-                $fileError = $file['error'];
-
-                $fileExt = explode('.', $fileName);
-                $fileActualExt = strtolower(end($fileExt));
-
-                $allowed = array('jpg', 'jpeg', 'png');
-
-                if (in_array($fileActualExt, $allowed))
+                if ($fileError === 0)
                 {
-                    if ($fileError === 0)
+                    if ($fileSize < 5000000)
                     {
-                        if ($fileSize < 5000000)
+                        $fileNameNew = 'profilephoto' . $usuario . "." . $fileActualExt;
+                        $fileDestination = '../uploads/' . $fileNameNew;
+
+                        $stmt = $conn->query("call insertarProducto('$fileNameNew', '$precio', '$nombre', '$comercio');");
+
+                        if (!$stmt)
                         {
-                            $fileNameNew = 'profilephoto' . $usuario . "." . $fileActualExt;
-                            $fileDestination = '../uploads/' . $fileNameNew;
-
-                            $stmt = $conn->query("call insertarProducto('$fileNameNew', '$precio', '$nombre', '$comercio');");
-
-                            if (!$stmt)
-                            {
-                                echo "\nPDO::errorInfo():\n";
-                                print_r($dbh->errorInfo());
-                            }
-                            else
-                            {
-                                move_uploaded_file($fileTmp, $fileDestination);
-                                header("Location: ../agregarProducto.php?insertsuccess");
-                            }
-
-
+                            echo "\nPDO::errorInfo():\n";
+                            print_r($dbh->errorInfo());
                         }
                         else
-                            echo "Your file is too big!";
+                        {
+                            move_uploaded_file($fileTmp, $fileDestination);
+                            header("Location: ../agregarProducto.php?insertsuccess");
+                        }
+
 
                     }
                     else
-                        echo "There was an error uploading your file!";
+                        echo "Your file is too big!";
 
                 }
                 else
-                    echo "You cannot upload files of this type!";
-            }
+                    echo "There was an error uploading your file!";
 
+            }
+            else
+                echo "You cannot upload files of this type!";
         }
+
     }
     else
         header("HTTP/1.1 403 Forbidden" );
