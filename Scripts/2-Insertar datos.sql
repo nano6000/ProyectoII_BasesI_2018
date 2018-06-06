@@ -15,8 +15,8 @@ INSERT INTO `provincia`(`nombreProvincia`, `Pais_idPais`) VALUES ('Cartago',1);
 INSERT INTO `provincia`(`nombreProvincia`, `Pais_idPais`) VALUES ('Alajuela',1);
 INSERT INTO `provincia`(`nombreProvincia`, `Pais_idPais`) VALUES ('Heredia',1);
 INSERT INTO `provincia`(`nombreProvincia`, `Pais_idPais`) VALUES ('Limón',1);
-INSERT INTO `provincia`(`nombreProvincia`, `Pais_idPais`) VALUES ('Puntarenas',1);
 INSERT INTO `provincia`(`nombreProvincia`, `Pais_idPais`) VALUES ('Guanacaste',1);
+INSERT INTO `provincia`(`nombreProvincia`, `Pais_idPais`) VALUES ('Puntarenas',1);
 
 -- -----------------------------------------------------
 -- Insert Cantón
