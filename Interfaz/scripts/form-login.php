@@ -28,6 +28,17 @@
                 $_SESSION['tipo'] = $row[0];
                 $_SESSION['username'] = $username;
 
+                $stmt->closeCursor();
+
+                if ($_SESSION['tipo'] == 3)
+                {
+                    $stmt = $conn->query("select `buscarIdComercio`('$username');");
+                    $row = $stmt->fetch(PDO::FETCH_NUM);
+
+                    $_SESSION['comercio'] = $row[0];
+
+                }
+
                 header("Location: ../homeUser.php?login=success");
             }
 

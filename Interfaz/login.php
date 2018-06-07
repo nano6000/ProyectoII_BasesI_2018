@@ -14,7 +14,8 @@
 		<header class="sticky-top">
 			<nav class="navbar navbar-expand-sm navbar-light bg-primary">
 				<a class="navbar-brand" href="home.php">
-					Costa Rica Recicla
+	                <img src="logo.jpg" alt="logo" height="55" width="60">
+					Reciclatico
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>

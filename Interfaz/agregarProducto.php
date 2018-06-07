@@ -59,16 +59,13 @@
 			</div>
 
 			<?php
-				if (isset($_GET['signup']))
+				if (isset($_GET['insertsuccess']))
 				{
-					echo '<div class="form row justify-content-center" style="margin: 10% 0 0 0">';
-					echo '<div class="alert alert-danger" role="alert">';
-					$signUpError = $_GET['signup'];
+					echo '<div class="form row justify-content-center" style="margin: 5% 0 -5% 0">';
+					echo '<div class="alert alert-success" role="alert">';
 
-					if ($signUpError == 'duplicate')
-						echo 'La cedula ingresada ya existe.';
-					elseif ($signUpError == 'usernameTaken')
-						echo 'El nombre de usuario ingresado ya existe.';
+					echo 'Producto agregado correctamente.';
+
 					echo '</div>';
 					echo '</div>';
 				}

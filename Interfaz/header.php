@@ -1,6 +1,6 @@
 <!--
 
-	Costa Rica Recicla -> nombre de la app
+	Reciclatico -> nombre de la app
 
 -->
 <?php
@@ -18,8 +18,8 @@
 	<header class="sticky-top">
 		<nav class="navbar navbar-expand-sm navbar-light bg-primary">
 			<a class="navbar-brand" style="margin: 0 4% 0 0" href="homeUser.php">
-                <!-- <img src="logo.png" alt="logo" height="50" width="42"> -->
-				Costa Rica Recicla
+                <img src="logo.jpg" alt="logo" height="55" width="60">
+				Reciclatico
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -40,14 +40,8 @@
                                         <li class="nav-item">
                   							<a class="nav-link" href="crearComercio.php">Nuevo comercio</a>
                                         </li>
-                                        <li class="nav-item">
-                  							<a class="nav-link" href="verCentros.php">Ver centros</a>
-                                        </li>
-                                        <li class="nav-item">
-                  							<a class="nav-link" href="verComercios.php">Ver comercios</a>
-                                        </li>
                                     <div class="dropdown">
-                                        <button type="button" class="btn btn-outline-dark dropdown-toggle" id="dropdownEstadisticas" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <button type="button" class="btn btn-outline-dark dropdown-toggle"  style="margin: 0 8px 0 0" id="dropdownEstadisticas" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                                 Estadisticas
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
@@ -56,7 +50,19 @@
                                             <a class="dropdown-item" href="#">Productos</a>
                                             <a class="dropdown-item" href="#">Top 5</a>
                                         </div>
-                                    </div>';
+                                    </div>
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-outline-dark dropdown-toggle"  style="margin: 0 8px 0 0"  id="dropdownEstadisticas" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            Consultas
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
+                                        <a class="dropdown-item" href="verUsuarioTotal.php">Ver usuarios</a>
+                                        <a class="dropdown-item" href="verComercioTotal.php">Ver comercios</a>
+                                        <a class="dropdown-item" href="verCentros.php">Ver centros de acopio</a>
+                                        <a class="dropdown-item" href="#">Cambios de clave</a>
+                                        <a class="dropdown-item" href="#">Top 5 usuarios con mas reciclaje</a>
+                                    </div>
+                                </div>';
                                     break;
                                 case 3: //Encargado comercio
                                     echo "<div class='dropdown'>
@@ -96,7 +102,7 @@
                                                     Mi centro de acopio
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownCentro">
-                                                <a class="dropdown-item" href="#">Ver centro de acopio</a>
+                                                <a class="dropdown-item" href="verCentro.php">Ver centro de acopio</a>
                                                 <a class="dropdown-item" href="#">Editar centro de acopio</a>
                                             </div>
                                         </div>
