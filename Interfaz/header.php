@@ -46,7 +46,7 @@
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
                                             <a class="dropdown-item" href="estadisticasUsuario.php">Usuarios</a>
-                                            <a class="dropdown-item" href="#">Comercios</a>
+                                            <a class="dropdown-item" href="estadisticasTipoComercio.php">Comercios</a>
                                             <a class="dropdown-item" href="#">Productos</a>
                                             <a class="dropdown-item" href="#">Top 5</a>
                                         </div>
@@ -103,7 +103,7 @@
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownCentro">
                                                 <a class="dropdown-item" href="verCentro.php">Ver centro de acopio</a>
-                                                <a class="dropdown-item" href="#">Editar centro de acopio</a>
+                                                <a class="dropdown-item" href="editCentro.php">Editar centro de acopio</a>
                                             </div>
                                         </div>
                                         <a> </a>

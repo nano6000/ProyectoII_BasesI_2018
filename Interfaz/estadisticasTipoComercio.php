@@ -5,34 +5,17 @@
     include_once 'scripts/conexion.inc';
 
     $array = array();
+    $total = 0;
 
-    $stmt = $conn->query("call `usuariosXedad`();");
+    $stmt = $conn->query("select * from comerciosXTipo;");
 
-    $row = $stmt->fetch(PDO::FETCH_NUM);
+    $row = $stmt->fetchAll();
 
-    $total = $row[0] + $row[1] + $row[2] + $row[3] + $row[4] + $row[5] + $row[6] + $row[7];
-    $a = ($row[0]/$total)*100;
-    $b = ($row[1]/$total)*100;
-    $c = ($row[2]/$total)*100;
-    $d = ($row[3]/$total)*100;
-    $e = ($row[4]/$total)*100;
-    $f = ($row[5]/$total)*100;
-    $g = ($row[6]/$total)*100;
-    $h = ($row[7]/$total)*100;
+    foreach ($row as $cant)
+        $total += $cant[1];
 
-
-
-    $array = array(
-                array("label"=> "Menos a 18", "y"=> $a),
-                array("label"=> "19 - 30", "y"=> $b),
-                array("label"=> "31 - 45", "y"=> $c),
-                array("label"=> "46 - 55", "y"=> $d),
-                array("label"=> "56 - 65", "y"=> $e),
-                array("label"=> "66 - 75", "y"=> $f),
-                array("label"=> "76 - 85", "y"=>$g),
-                array("label"=> "Mayores a 85", "y"=> $h)
-
-            );
+    foreach ($row as $value)
+        array_push($array, array("label"=> $value[0], "y"=> ($value[1]/$total)*100));
 
 ;?>
 

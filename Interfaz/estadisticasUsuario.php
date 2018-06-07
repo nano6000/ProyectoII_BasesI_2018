@@ -20,8 +20,6 @@
     $g = ($row[6]/$total)*100;
     $h = ($row[7]/$total)*100;
 
-
-
     $array = array(
                 array("label"=> "Menos a 18", "y"=> $a),
                 array("label"=> "19 - 30", "y"=> $b),
@@ -31,9 +29,15 @@
                 array("label"=> "66 - 75", "y"=> $f),
                 array("label"=> "76 - 85", "y"=>$g),
                 array("label"=> "Mayores a 85", "y"=> $h)
-
             );
 
+    $result = array();
+
+    foreach ($array as $temp)
+    {
+        if ($temp['y'] > 0)
+            array_push($result, $temp);
+    }
 ;?>
 
 <script>
@@ -56,7 +60,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		indexLabelFontWeight: "bolder",
 		showInLegend: true,
 		legendText: "{label}",
-		dataPoints: <?php echo json_encode($array, JSON_NUMERIC_CHECK); ?>
+		dataPoints: <?php echo json_encode($result, JSON_NUMERIC_CHECK); ?>
 	}]
 });
 chart.render();

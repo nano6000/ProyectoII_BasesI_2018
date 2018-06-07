@@ -4,7 +4,7 @@
 
 
 		<div class="row justify-content-center">
-			<div class="card col-lg-8 col-10 text-center" style="margin: 2% 0 0 0">
+			<div class="card col-lg-8 col-md-10 text-center" style="margin: 2% 0 0 0">
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><b>Ubicación de Centros de acopio</b></li>
 					<li class="list-group-item">

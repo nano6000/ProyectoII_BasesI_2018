@@ -7,6 +7,8 @@ TODO
 ==============================
     + Editar informacion de comercio
 ==============================
+    + Editar informacion de centro de acopio
+==============================
     + JOBS
 ==============================
     + AUDITORIA
@@ -34,6 +36,5 @@ TODO
     + SI NO HAY FILTROS, ENSE�A TODOS LOS DATOS
 ==============================
     + ESTAD�STICAS
-       - Total de comercios por tipo
        - Total de productos canjeados por mes y por a�o
        - Top 5 de los usuarios con mayores puntajes a nivel general
