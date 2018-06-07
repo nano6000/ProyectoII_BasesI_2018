@@ -143,7 +143,6 @@
 						<label>Provincia de residencia:</label>
 						<select name="provincia" id="provincia" class="custom-select" required>
 							<?php
-								//include 'scripts/listarProvincias.php';
 								$stmt = $conn->query("call obtenerProvincia(1);");
 					            $temp;
 
