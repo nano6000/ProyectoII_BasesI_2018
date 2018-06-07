@@ -364,12 +364,12 @@ INSERT INTO `distrito`(`nombreDistrito`, `Canton_idCanton`) VALUES ('Tárcoles',
 -- -----------------------------------------------------
 -- Insert Equivalencia Material
 -- -----------------------------------------------------
-INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `nombre`) VALUES (1,1000,'Papel');
-INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `nombre`) VALUES (1,800,'Carton');
-INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `nombre`) VALUES (1,750,'Vidrio');
-INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `nombre`) VALUES (1,850,'Aluminio');
-INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `nombre`) VALUES (1,750,'Plástico');
-INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `nombre`) VALUES (1,1250,'Electrónico');
+INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,1000,'Papel');
+INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,800,'Carton');
+INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,750,'Vidrio');
+INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,850,'Aluminio');
+INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,750,'Plástico');
+INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,1250,'Electrónico');
 
 -- -----------------------------------------------------
 -- Insert Persona
