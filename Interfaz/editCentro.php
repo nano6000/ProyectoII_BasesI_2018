@@ -2,7 +2,7 @@
     include_once 'header.php';
 
 
-    if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] != 3)
+    if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] != 2)
         header("Location: homeUser.php");
 
     include_once 'scripts/conexion.inc';
@@ -28,14 +28,17 @@
         echo '<tr>';
         echo '<th>Nombre</th>';
         echo '<th>Contacto</th>';
-        echo '<th>Descripcion</th>';
-        echo '<th>Tipo de comercio</th>';
+        echo '<th>Coordenadas X</th>';
+        echo '<th>Coordenadas Y</th>';
+        echo '<th>Provincia</th>';
+        echo '<th>Canton</th>';
+        echo '<th>Distrito</th>';
         echo '<th>Editar</th>';
         echo '</tr>';
         echo '</thead>';
         echo '<tbody>';
 
-        include_once 'scripts/getEditComercio.php';
+        include_once 'scripts/getEditCentro.php';
 
         echo "</tbody>";
         echo "</table>";

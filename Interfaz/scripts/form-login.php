@@ -39,6 +39,13 @@
 
                         $_SESSION['comercio'] = $row[0];
                     }
+                    elseif ($_SESSION['tipo'] == 2)
+                    {
+                        $stmt = $conn->query("select `buscarIdCentro`('$username');");
+                        $row = $stmt->fetch(PDO::FETCH_NUM);
+
+                        $_SESSION['centro'] = $row[0];
+                    }
 
                     header("Location: ../homeUser.php?login=success");
                 }
