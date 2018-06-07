@@ -5,6 +5,8 @@
     {
         include_once('conexion.inc');
 
+        $usuario = $_SESSION['username'];
+
         $nombre = $_POST["name-input"];
         $precio = $_POST["precio-input"];
         $comercio = $_SESSION["comercio"];
@@ -29,7 +31,7 @@
                 {
                     if ($fileSize < 5000000)
                     {
-                        $fileNameNew = 'profilephoto' . $usuario . "." . $fileActualExt;
+                        $fileNameNew = 'productphoto' . $usuario . "." . $fileActualExt;
                         $fileDestination = '../uploads/' . $fileNameNew;
 
                         $stmt = $conn->query("call insertarProducto('$fileNameNew', '$precio', '$nombre', '$comercio');");

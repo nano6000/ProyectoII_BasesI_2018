@@ -1,6 +1,6 @@
 <?php
 
-    $passwd = password_hash('fcastro', PASSWORD_DEFAULT);
+    $passwd = password_hash('super', PASSWORD_DEFAULT);
     echo $passwd;
 
  ?>
