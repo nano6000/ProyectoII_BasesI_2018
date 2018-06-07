@@ -25,8 +25,7 @@
     {
         $passwd = password_hash($row[1], PASSWORD_DEFAULT);
         $usuario = $row[0];
-        $update = $conn->query("update usuario set contrasena = '$passwd' where nombreUsuario = '$usuario'
-                        and nombreUsuario <> 'super' and nombreUsuario <> 'fcastro' and nombreUsuario <> 'nano4697'");
+        $update = $conn->query("update usuario set contrasena = '$passwd' where nombreUsuario = '$usuario'");
     }
 
  ?>
