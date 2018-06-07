@@ -1,12 +1,6 @@
 TODO
 ==============================
 ==============================
-    + Registrar Usuarios
-==============================
-    + Registrar Centros de Acopio
-==============================
-    + Registrar Comercios
-==============================
     + Registrar y cambiar los parametros de puntos
 ==============================
     + Canjeo Productos
@@ -14,34 +8,30 @@ TODO
     + JOBS
 ==============================
     + AUDITORIA
-       - Guardar en una bitácora el usuario que más reciclo durante el dia, junto con el centro en el que lo hizo.
+       - Guardar en una bitï¿½cora el usuario que mï¿½s reciclo durante el dia, junto con el centro en el que lo hizo.
        - Se hace todas las noches a las 10pm
 ==============================
     + CONSULTAS SUPERUSUARIOS
        - Listado de comercios afiliados (FILTRO: nombre, encargado, tipo)
-          •  AL FINAL TIENE QUE VENIR LA CANTIDAD DE COMERCIOS
-       - Listado de usuarios del sistema (FILTRO: nombre, cédula, provincia, cantón, distrito)
-       - Listado de los usuarios cuyas claves no han sido modificadas en los últimos días o meses. (FILTRO: nombre, apellidos, cédula, usuario, rango de fechas)
-       - Listado de productos más canjeados
+          ï¿½  AL FINAL TIENE QUE VENIR LA CANTIDAD DE COMERCIOS
+       - Listado de usuarios del sistema (FILTRO: nombre, cï¿½dula, provincia, cantï¿½n, distrito)
+       - Listado de los usuarios cuyas claves no han sido modificadas en los ï¿½ltimos dï¿½as o meses. (FILTRO: nombre, apellidos, cï¿½dula, usuario, rango de fechas)
+       - Listado de productos mï¿½s canjeados
        - Listado de usuarios con cantidad de puntos acumulados, puntos canjeados y diferencia. (FILTRO: rango de fechas)
-          • AL FINAL TIENE QUE VENIR UN TOTAL DE CADA PUNTOS DE TODOS LOS USUARIOS
+          ï¿½ AL FINAL TIENE QUE VENIR UN TOTAL DE CADA PUNTOS DE TODOS LOS USUARIOS
 ==============================
     + CONSULTAS COMERCIOS
-       - Listado de productos que ofrecen
-       - Top 5 de productos más canjeados
+       - Top 5 de productos mï¿½s canjeados
        - Total de puntos canjeados en sus productos
 ==============================
     + CONSULTAS CENTROS DE ACOPIO
-       - Listado de materiales reciclados, subdividido por tipo de material y cantidad recibida agrupada por  mes y año. (FILTRO: mes y año)
-       - Top 5 de usuarios que más reciclaje les generan
-       - Listado de puntos obtenidos por usuarios que llevan su reciclaje al centro de acopio (FILTRO: cédula, nombre usuario)
+       - Listado de materiales reciclados, subdividido por tipo de material y cantidad recibida agrupada por  mes y aï¿½o. (FILTRO: mes y aï¿½o)
+       - Top 5 de usuarios que mï¿½s reciclaje les generan
+       - Listado de puntos obtenidos por usuarios que llevan su reciclaje al centro de acopio (FILTRO: cï¿½dula, nombre usuario)
 ==============================
-    + SI NO HAY FILTROS, ENSEÑA TODOS LOS DATOS
+    + SI NO HAY FILTROS, ENSEï¿½A TODOS LOS DATOS
 ==============================
-    + ESTADÍSTICAS
-       - Usuarios por rango de edad
+    + ESTADï¿½STICAS
        - Total de comercios por tipo
-       - Total de productos canjeados por mes y por año
+       - Total de productos canjeados por mes y por aï¿½o
        - Top 5 de los usuarios con mayores puntajes a nivel general
-==============================
-    + MAPA DE CENTROS DE ACOPIO
