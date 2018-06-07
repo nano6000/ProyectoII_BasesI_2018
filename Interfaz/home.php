@@ -33,7 +33,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item active">
-							<a class="nav-link" href="#">Acerca de</a>
+							<a class="nav-link" href="about.php">Acerca de</a>
 						</li>
 					</ul>
 				</div>
