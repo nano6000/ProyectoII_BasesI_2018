@@ -13,33 +13,37 @@
 
             $result = 0;
 
-            $stmt = $conn->query("select `checkPassword`('$username', '$passwd');");
+            $stmt = $conn->query("select `verContrasena`('$username');");
             $row = $stmt->fetch(PDO::FETCH_NUM);
 
-            $result = $row[0];
+            $result = $stmt->rowCount();
 
-            if (!$result)
+            if ($result<1)
                 header("Location: ../login.php?login=error&username=$username");
             else
             {
-                $stmt = $conn->query("select `tipoUsuario`('$username');");
-                $row = $stmt->fetch(PDO::FETCH_NUM);
-
-                $_SESSION['tipo'] = $row[0];
-                $_SESSION['username'] = $username;
-
-                $stmt->closeCursor();
-
-                if ($_SESSION['tipo'] == 3)
+                if (password_verify($passwd, $row[0]))
                 {
-                    $stmt = $conn->query("select `buscarIdComercio`('$username');");
+                    $stmt = $conn->query("select `tipoUsuario`('$username');");
                     $row = $stmt->fetch(PDO::FETCH_NUM);
 
-                    $_SESSION['comercio'] = $row[0];
+                    $_SESSION['tipo'] = $row[0];
+                    $_SESSION['username'] = $username;
 
+                    $stmt->closeCursor();
+
+                    if ($_SESSION['tipo'] == 3)
+                    {
+                        $stmt = $conn->query("select `buscarIdComercio`('$username');");
+                        $row = $stmt->fetch(PDO::FETCH_NUM);
+
+                        $_SESSION['comercio'] = $row[0];
+                    }
+
+                    header("Location: ../homeUser.php?login=success");
                 }
-
-                header("Location: ../homeUser.php?login=success");
+                else
+                    header("Location: ../login.php?login=error&username=$username");
             }
 
         }

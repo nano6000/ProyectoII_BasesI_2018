@@ -18,7 +18,15 @@
         }
         else
         {
-            header("Location: ../canjearPuntos.php?success");
+            $stmt = $conn->query("call insertarCanje($producto, '$username');");
+            if (!$stmt)
+            {
+                echo "\nPDO::errorInfo():\n";
+                print_r($dbh->errorInfo());
+            }
+            else
+                // echo $producto;
+                header("Location: ../canjearPuntos.php?success");
         }
     }
 

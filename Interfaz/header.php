@@ -45,7 +45,7 @@
                                                 Estadisticas
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
-                                            <a class="dropdown-item" href="#">Usuarios</a>
+                                            <a class="dropdown-item" href="estadisticasUsuario.php">Usuarios</a>
                                             <a class="dropdown-item" href="#">Comercios</a>
                                             <a class="dropdown-item" href="#">Productos</a>
                                             <a class="dropdown-item" href="#">Top 5</a>

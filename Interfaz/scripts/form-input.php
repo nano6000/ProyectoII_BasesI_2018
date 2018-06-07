@@ -27,6 +27,7 @@
             $fechNac = date("Y-m-d G:i:s", strtotime($_POST["date-input"]));
             $usuario = $_POST["username-input"];
             $passwd = $_POST["passwd-input"];
+            $passwd = password_hash($passwd, PASSWORD_DEFAULT);
 
             $stmt = $conn->query("call insertarUsuario('$cedula', '$pNombre', '$pApellido', '$sApellido', '$fechNac',
                                         $distrito, $nacionalidad, '$usuario', '$passwd', 1)");

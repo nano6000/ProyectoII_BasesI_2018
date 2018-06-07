@@ -36,9 +36,7 @@
                             $fileDestination = '../uploads/' . $fileNameNew;
                             move_uploaded_file($fileTmp, $fileDestination);
 
-                            $stmt = $conn->query("update producto
-                                        set `nombre` = '$nombre', `precio` = '$precio', `foto` = '$fileNameNew'
-                                        where `producto`.idProducto	= '$id';");
+                            $stmt = $conn->query("call editarProducto('$id', '$fileNameNew', '$precio', '$nombre')");
                             header("Location: home.php?signupsuccess");
                         }
                         else
