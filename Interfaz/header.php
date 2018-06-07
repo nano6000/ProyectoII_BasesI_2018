@@ -58,7 +58,7 @@
                                     <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
                                         <a class="dropdown-item" href="verUsuarioTotal.php">Ver usuarios</a>
                                         <a class="dropdown-item" href="verComercioTotal.php">Ver comercios</a>
-                                        <a class="dropdown-item" href="verCentros.php">Ver centros de acopio</a>
+                                        <a class="dropdown-item" href="verCentroTotal.php">Ver centros de acopio</a>
                                         <a class="dropdown-item" href="#">Cambios de clave</a>
                                         <a class="dropdown-item" href="#">Top 5 usuarios con mas reciclaje</a>
                                     </div>
