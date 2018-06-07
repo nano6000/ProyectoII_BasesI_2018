@@ -7,17 +7,15 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     <div class="row justify-content-center" style="margin: 3% 0 0 0">
-        <form id="myform" method="post" class="needs-validation col-lg-6 col-md-6 col-sm-6 col-6" novalidate="" action="scripts/insertCentro.php">
+        <form id="myform" method="post" class="needs-validation col-lg-6 col-md-6 col-sm-6 col-6" novalidate="" action="scripts/insertComercio.php">
             <div class="form-row">
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-6">
                     <label>Nombre:</label>
-                    <input name="name-input" type="text" class="form-control" placeholder="Nombre del centro de acopio" required>
+                    <input name="name-input" type="text" class="form-control" placeholder="Nombre del comercio" required>
                     <div class="invalid-feedback">
                         Por favor, ingrese información válida.
                     </div>
                 </div>
-            </div>
-            <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>Usuario administrador:</label>
                     <select name="usuario" name="usuario" class="custom-select" required>
@@ -42,6 +40,8 @@
                         Por favor, seleccione una opción.
                     </div>
                 </div>
+            </div>
+            <div class="form-row">
 				<div class="form-group col-md-6">
                     <label>Contacto:</label>
                     <input name="contacto" type="text" class="form-control" pattern="(\(\+[0-9]{3}\))?[0-9]{8}[0-9]*" placeholder="Contacto" required>
@@ -49,34 +49,16 @@
 						Por favor, ingrese información válida.
 					</div>
 				</div>
-            </div>
-            <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label>Pais de residencia:</label>
-                    <select name="pais" name="pais" class="custom-select" required>
-                        <option selected> Costa Rica </option>"
-                    </select>
-                    <div class="invalid-feedback">
-                        Por favor, seleccione una opción.
-                    </div>
-                </div>
-                <div class="form-group col-md-6">
-                    <label>Provincia:</label>
-                    <select name="provincia" id="provincia" class="custom-select" required>
+                    <label>Tipo de comercio:</label>
+                    <select name="tipoComercio" name="tipoComercio" class="custom-select" required>
                         <?php
-                            $stmt = $conn->query("call obtenerProvincia(1);");
+                            $stmt = $conn->query("call tiposComercio();");
                             $temp;
 
                             while($row = $stmt->fetch(PDO::FETCH_NUM))
-                            {
-                                if (isset($_GET['provincia']) && $_GET['provincia'] == $row[0])
-                                {
-                                    echo "<option value='" . $row[0] . "' selected>" . $row[1] . "</option>";
-                                    $temp = $tipo[1];
-                                }
-                                else
-                                    echo "<option value='" . $row[0] . "'>" . $row[1] . "</option>";
-                            }
+                                echo "<option value='" . $row[0] . "'>" . $row[1] . "</option>";
+
                             $stmt->closeCursor();
                         ?>
                     </select>
@@ -86,41 +68,11 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label>Canton:</label>
-                    <select name="canton" id="canton" class="custom-select" required>
-
-                    </select>  <br> <br>
-                    <div class="invalid-feedback">
-                        Por favor, seleccione una opción.
-                    </div>
+                <label>Descripcion:</label>
+                <input name="descrip-input" type="text" class="form-control" placeholder="Descripcion del comercio" required>
+                <div class="invalid-feedback">
+                    Por favor, ingrese información válida.
                 </div>
-                <div class="form-group col-md-6">
-                    <label>Distrito:</label>
-                    <select name="distrito" id="distrito" class="custom-select" required>
-
-                    </select>
-                    <div class="invalid-feedback">
-                        Por favor, seleccione una opción.
-                    </div>
-                </div>
-            </div>
-            <div class="form-row" style="margin: -5% 0 0 0">
-				<label>Coordenadas:</label>
-			</div>
-			<div class="form-row">
-                <div class="form-group col-md-6">
-                    <input name="Xpos-input"	type="text" class="form-control" placeholder="X\Longitud" required>
-                    <div class="invalid-feedback">
-                        Por favor, ingrese información válida.
-                    </div>
-                </div>
-				<div class="form-group col-md-6">
-					<input name="Ypos-input" type="text" class="form-control" placeholder="Y\Latitud" required>
-					<div class="invalid-feedback">
-						Por favor, ingrese información válida.
-					</div>
-				</div>
             </div>
 
             <?php
@@ -128,7 +80,7 @@
                 {
                     echo '<div class="form row justify-content-center" style="margin: 2% 0 -2% 0">';
                     echo '<div class="alert alert-success" role="alert">';
-                    echo 'Centro de acopio insertado existosamente.';
+                    echo 'Comercio insertado existosamente.';
                     echo '</div>';
                     echo '</div>';
                 }
