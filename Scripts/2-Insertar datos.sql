@@ -375,22 +375,39 @@ INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,12
 -- Insert Persona
 -- -----------------------------------------------------
 INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (117094679,'Alejandro','Garita','Cruz','1998-5-14',1,6);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (109840985,'Daniel','Prado','Fernandez','1998-5-14',1,46);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (810950587,'Valeria','Diaz','Chen','1998-5-14',5,3);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (307841585,'Arturo','Marrero','Castro','1998-5-14',1,10);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (889653547,'Diego','Rivas','Alvarado','1998-5-14',3,2);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (358962468,'Greivin','Castillo','Navas','1998-5-14',1,58);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (457895424,'Alejandra','Cruz','Muñóz','1998-5-14',1,89);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (210850978,'Enrique','Artiñano','Tapia','1998-5-14',1,15);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (198671658,'Jaime','Solís','Solís','1998-5-14',1,29);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (528964865,'Andrés','Cordero','Torres','1998-5-14',1,34);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (158996456,'Alvaro','Brenes','Guevara','1998-5-14',1,72);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (618657489,'Andrea','Mora','Villata','1998-5-14',1,52);
-INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (632589647,'Fernando','Castro','Madriz','1998-5-14',1,9);
+
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (109840985,'Daniel','Prado','Fernandez','1998-7-25',1,46);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (810950587,'Valeria','Diaz','Chen','1985-2-10',5,3);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (307841585,'Arturo','Marrero','Castro','1990-6-18',1,10);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (889653547,'Diego','Rivas','Alvarado','1992-4-4',3,2);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (358962468,'Greivin','Castillo','Navas','1988-3-18',1,58);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (457895424,'Alejandra','Cruz','Muñóz','1978-5-30',1,89);
+
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (210850978,'Enrique','Artiñano','Tapia','1952-11-14',1,15);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (198671658,'Jaime','Solís','Solís','1969-10-6',1,29);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (528964865,'Andrés','Cordero','Torres','1974-5-24',1,34);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (158996456,'Alvaro','Brenes','Guevara','1998-9-10',1,72);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (618657489,'Andrea','Mora','Villata','1998-12-2',1,52);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (632589647,'Fernando','Castro','Madriz','1985-12-14',1,9);
+
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (130646435,'Rolando','Garita','Abarca','1958-2-14',1,16);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (120391825,'Alfredo','Castillo','Fernandez','1975-5-14',1,25);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (120306067,'Ericka','Solano','Chen','1940-10-7',1,20);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (112489852,'Adriana','Marrero','Aguilar','1980-12-8',1,35);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (382965635,'Diego','Alvarado','Brenes','1959-4-11',1,88);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (121750145,'Ayamrú','Tapia','Navas','1996-5-30',1,55);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (261016210,'Alex','Madriz','Muñóz','1992-8-25',1,64);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (160118913,'Eduardo','Tapia','Solís','1989-8-8',1,30);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (450728685,'Esteban','Solís','Solís','1978-9-10',1,133);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (530727364,'Franco','Cordero','Brenes','1972-4-4',1,162);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (110128689,'Jose','Brenes','Mora','1976-1-25',1,9);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (611891399,'Luis','Madriz','Villata','1983-2-12',1,180);
+INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (645754227,'Marissa','Guevara','Madriz','1981-1-13',1,182);
 
 -- -----------------------------------------------------
 -- Insert TelefonoXPersona
 -- -----------------------------------------------------
+INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (86435625,117094679);
 INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (88500875,109840985);
 INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (74716375,810950587);
 INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (86926505,307841585);
@@ -404,9 +421,24 @@ INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (72005904,15
 INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (63464737,618657489);
 INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (89575581,632589647);
 
+INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (78253456,130646435);
+INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (43256786,120391825);
+INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (65781356,120306067);
+INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (84567855,112489852);
+INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (76782458,382965635);
+INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (65468565,121750145);
+INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (69086512,261016210);
+INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (84123570,160118913);
+INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (81235458,450728685);
+INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (67101567,530727364);
+INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (13005504,110128689);
+INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (63445327,611891399);
+INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (15348951,645754227);
+
 -- -----------------------------------------------------
 -- Insert CorreoXPersona
 -- -----------------------------------------------------
+INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('agarita@gmail.com',117094679);
 INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('dprado@gmail.com',109840985);
 INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('vdiaz@gmail.com',810950587);
 INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('amarrero@outlook.com',307841585);
@@ -420,6 +452,19 @@ INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('abrenes@gmail.
 INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('amora@outlook.com',618657489);
 INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('fcastro@gmail.com',632589647);
 
+INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('rgarita@gmail.com',130646435);
+INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('acastillo@gmail.com',120391825);
+INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('esolano@gmail.com',120306067);
+INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('admarrero@outlook.com',112489852);
+INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('dcastillo@outlook.com',382965635);
+INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('atapia@gmail.com',121750145);
+INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('amadriz@gmail.com',261016210);
+INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('etapia@gmail.com',160118913);
+INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('esolis@gmail.com',450728685);
+INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('fcordero@outlook.com',530727364);
+INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('jbrenes@gmail.com',110128689);
+INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('lmadriz@gmail.com',611891399);
+INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES ('mguevara@outlook.com',645754227);
 -- -----------------------------------------------------
 -- Insert Tipo Usuario
 -- -----------------------------------------------------
@@ -432,18 +477,34 @@ INSERT INTO `tipousuario`(`descripcion`) VALUES ('SuperUsuario');
 -- Insert Usuario
 -- -----------------------------------------------------
 INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('super','super',0,0,0,4,117094679);
+
 INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('dprado','dprado',0,0,0,2,109840985);
 INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('vdiaz','vdiaz',0,0,0,2,810950587);
 INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('amarrero','amarrero',0,0,0,2,307841585);
 INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('drivas','drivas',0,0,0,2,889653547);
 INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('gcastillo','gcastillo',0,0,0,2,358962468);
 INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('acruz','acruz',0,0,0,2,457895424);
+
 INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('eartiñano','eartiñano',0,0,0,3,210850978);
 INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('jsolis','jsolis',0,0,0,3,198671658);
 INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('acordero','acordero',0,0,0,3,528964865);
 INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('abrenes','abrenes',0,0,0,3,158996456);
 INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('amora','amora',0,0,0,3,618657489);
 INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('fcastro','fcastro',0,0,0,3,632589647);
+
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('rgarita','rgarita',0,0,0,1,130646435);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('acastillo','acastillo',0,0,0,1,120391825);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('esolano','esolano',0,0,0,1,120306067);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('admarrero','admarrero',0,0,0,1,112489852);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('dcastillo','dcastillo',0,0,0,1,382965635);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('atapia','atapia',0,0,0,1,121750145);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('amadriz','amadriz',0,0,0,1,261016210);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('etapia','etapia',0,0,0,1,160118913);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('esolis','esolis',0,0,0,1,450728685);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('fcordero','fcordero',0,0,0,1,530727364);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('jbrenes','jbrenes',0,0,0,1,110128689);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('lmadriz','lmadriz',0,0,0,1,611891399);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('mguevara','mguevara',0,0,0,1,645754227);
 
 -- -----------------------------------------------------
 -- Insert Localización
