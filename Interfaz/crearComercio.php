@@ -53,7 +53,7 @@
                     <label>Tipo de comercio:</label>
                     <select name="tipoComercio" name="tipoComercio" class="custom-select" required>
                         <?php
-                            $stmt = $conn->query("call tiposComercio();");
+                            $stmt = $conn->query("call obtenerTipoComercio();");
                             $temp;
 
                             while($row = $stmt->fetch(PDO::FETCH_NUM))
