@@ -362,16 +362,6 @@ INSERT INTO `distrito`(`nombreDistrito`, `Canton_idCanton`) VALUES ('Jacó',81);
 INSERT INTO `distrito`(`nombreDistrito`, `Canton_idCanton`) VALUES ('Tárcoles',81);
 
 -- -----------------------------------------------------
--- Insert Equivalencia Material
--- -----------------------------------------------------
-INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,1000,'Papel');
-INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,800,'Carton');
-INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,750,'Vidrio');
-INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,850,'Aluminio');
-INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,750,'Plástico');
-INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,1250,'Electrónico');
-
--- -----------------------------------------------------
 -- Insert Persona
 -- -----------------------------------------------------
 INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Pais_idPais`, `Distrito_idDistrito`) VALUES (117094679,'Alejandro','Garita','Cruz','1998-5-14',1,6);
@@ -492,19 +482,19 @@ INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGa
 INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('amora','amora',0,0,0,3,618657489);
 INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('fcastro','fcastro',0,0,0,3,632589647);
 
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('rgarita','rgarita',0,0,0,1,130646435);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('acastillo','acastillo',0,0,0,1,120391825);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('esolano','esolano',0,0,0,1,120306067);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('admarrero','admarrero',0,0,0,1,112489852);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('dcastillo','dcastillo',0,0,0,1,382965635);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('atapia','atapia',0,0,0,1,121750145);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('amadriz','amadriz',0,0,0,1,261016210);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('etapia','etapia',0,0,0,1,160118913);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('esolis','esolis',0,0,0,1,450728685);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('fcordero','fcordero',0,0,0,1,530727364);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('jbrenes','jbrenes',0,0,0,1,110128689);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('lmadriz','lmadriz',0,0,0,1,611891399);
-INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('mguevara','mguevara',0,0,0,1,645754227);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('rgarita','rgarita',6100,50,6150,1,130646435);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('acastillo','acastillo',3800,450,4250,1,120391825);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('esolano','esolano',4200,0,4200,1,120306067);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('admarrero','admarrero',0,4800,4800,1,112489852);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('dcastillo','dcastillo',3000,0,3000,1,382965635);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('atapia','atapia',0,2000,2000,1,121750145);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('amadriz','amadriz',3000,400,3400,1,261016210);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('etapia','etapia',1250,2350,3600,1,160118913);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('esolis','esolis',3400,350,3750,1,450728685);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('fcordero','fcordero',2750,250,3000,1,530727364);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('jbrenes','jbrenes',2500,600,3100,1,110128689);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('lmadriz','lmadriz',2250,0,2250,1,611891399);
+INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES ('mguevara','mguevara',1250,500,1750,1,645754227);
 
 -- -----------------------------------------------------
 -- Insert Localización
@@ -572,3 +562,85 @@ INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES
 INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',500,'Café',6);
 INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',700,'Café Mocha',6);
 INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',500,'Pan Baguette',6);
+
+-- -----------------------------------------------------
+-- Insert Canjes
+-- -----------------------------------------------------
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (18,'rgarita');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (15,'acastillo');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (12,'jbrenes');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (18,'esolis');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (2,'etapia');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (3,'lmadriz');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (18,'esolano');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (13,'mguevara');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (10,'amadriz');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (12,'dcastillo');
+
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (12,'esolano');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (9,'acastillo');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (9,'rgarita');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (18,'acastillo');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1,'amadriz');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1,'rgarita');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (2,'lmadriz');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (16,'esolis');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (7,'fcordero');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (14,'mguevara');
+
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (17,'esolis');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (18,'rgarita');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (7,'rgarita');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (17,'esolis');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (16,'esolis');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (16,'dcastillo');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (13,'acastillo');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (14,'fcordero');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (15,'esolano');
+INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (18,'esolis');
+
+-- -----------------------------------------------------
+-- Insert Equivalencia Material
+-- -----------------------------------------------------
+INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,1000,'Papel');
+INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,800,'Carton');
+INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,750,'Vidrio');
+INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,850,'Aluminio');
+INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,750,'Plástico');
+INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (1,1250,'Electrónico');
+
+-- -----------------------------------------------------
+-- Insert Puntos
+-- -----------------------------------------------------
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (1,1,1000,'acastillo',1);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (5,3,2250,'lmadriz',5);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (2,2,1600,'admarrero',5);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (3,1,750,'mguevara',3);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (4,4,3400,'amadriz',5);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (5,2,1500,'esolano',4);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (6,1,1250,'rgarita',1);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (3,1,750,'dcastillo',1);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (3,1,750,'dcastillo',1);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (2,1,800,'rgarita',1);
+
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (1,1,1000,'etapia',2);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (5,1,750,'etapia',2);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (1,2,2000,'atapia',3);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (3,2,1500,'fcordero',5);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (1,1,1000,'etapia',6);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (2,1,800,'rgarita',6);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (6,1,1250,'acastillo',1);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (5,2,1500,'fcordero',2);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (4,3,2550,'rgarita',2);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (1,1,1000,'mguevara',3);
+
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (2,2,1600,'jbrenes',4);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (3,2,1500,'jbrenes',4);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (2,1,800,'esolano',5);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (5,1,750,'rgarita',2);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (4,1,850,'etapia',6);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (5,2,1500,'dcastillo',1);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (6,3,3750,'esolis',1);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (1,2,2000,'acastillo',1);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (1,2,2000,'esolano',4);
+INSERT INTO `puntos`(`idTipoPuntos`, `peso`, `puntos`, `Usuario_nombreUsuario`, `centroAcopio_idcentroAcopio`) VALUES (2,4,3200,'admarrero',3);
