@@ -5,21 +5,23 @@
     $comercio = $_SESSION['comercio'];
 
     $stmt = $conn->query("CALL `obtenerComercio`('$username');");
-    while($row = $stmt->fetch(PDO::FETCH_NUM))
+    $row = $stmt->fetchAll();
+    $stmt->closeCursor();
+    foreach ($row as $data)
     {
 
         echo "<tr>";
         echo "<form id='form" . $comercio . "' class='needs-validation' method='post' action='scripts/updateComercio.php?edit=" . $comercio . "'>";
-        echo "<td> <input name='nombre' size='30' type='text' value='". $row[1] . "' required> </td>";
-        echo "<td> <input name='contacto' size='30' type='text' value='". $row[2] . "' required> </td>";
-        echo "<td> <input name='descripcion' size='30' type='text' value='". $row[3] . "' required> </td>";
+        echo "<td> <input name='nombre' size='30' type='text' value='". $data[0] . "' required> </td>";
+        echo "<td> <input name='contacto' size='30' type='text' value='". $data[1] . "' required> </td>";
+        echo "<td> <input name='descripcion' size='30' type='text' value='". $data[2] . "' required> </td>";
 
         echo "<td> <select name='tipo' class='custom-select' required>'";
             $temp;
             $sql = $conn->query("call obtenerTipoComercio();");
             while ($tipo = $sql->fetch(PDO::FETCH_NUM))
             {
-                if ($tipo[0] == $row[4])
+                if ($tipo[0] == $data[3])
                 {
                     echo "<option value='" . $tipo[0] . "' selected>" . $tipo[1] . " (" . $tipo[0] . ")" . "</option>";
                     $temp = $tipo[1];
