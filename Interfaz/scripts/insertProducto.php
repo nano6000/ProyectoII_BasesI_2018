@@ -60,6 +60,8 @@
             else
                 echo "You cannot upload files of this type!";
         }
+        else
+            header("Location: ../agregarProducto.php?error=noimage");
 
     }
     else

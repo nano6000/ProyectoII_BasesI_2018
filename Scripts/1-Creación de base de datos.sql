@@ -1513,7 +1513,7 @@ DROP procedure IF EXISTS `BanderaAzul`.`updateTelefono`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-PROCEDURE updateTelefono(IN pCedula INT(11), IN pTelefono INT(11)) 
+CREATE PROCEDURE updateTelefono(IN pCedula INT(11), IN pTelefono INT(11)) 
 	NOT DETERMINISTIC 
     MODIFIES SQL DATA 
     SQL SECURITY DEFINER 
@@ -1534,7 +1534,7 @@ DROP procedure IF EXISTS `BanderaAzul`.`updateCorreo`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-PROCEDURE updateCorreo(IN pCedula INT(11), IN pCorreo VARCHAR(45)) 
+CREATE PROCEDURE updateCorreo(IN pCedula INT(11), IN pCorreo VARCHAR(45)) 
 	NOT DETERMINISTIC 
     MODIFIES SQL DATA 
     SQL SECURITY DEFINER 
@@ -1555,7 +1555,7 @@ DROP procedure IF EXISTS `BanderaAzul`.`updatePersona`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-PROCEDURE updatePersona(IN pCedula INT(11), IN pNombre VARCHAR(45), IN pApellido1 VARCHAR(45), IN pApellido2 VARCHAR(45), IN pDistrito INT(11), IN pPais INT(11)) 
+CREATE PROCEDURE updatePersona(IN pCedula INT(11), IN pNombre VARCHAR(45), IN pApellido1 VARCHAR(45), IN pApellido2 VARCHAR(45), IN pDistrito INT(11), IN pPais INT(11)) 
 	NOT DETERMINISTIC 
     MODIFIES SQL DATA 
     SQL SECURITY DEFINER 

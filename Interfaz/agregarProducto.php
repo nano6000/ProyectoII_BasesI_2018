@@ -59,16 +59,23 @@
 			</div>
 
 			<?php
+				echo '<div class="form row justify-content-center" style="margin: 5% 0 -7% 0">';
+
 				if (isset($_GET['insertsuccess']))
 				{
-					echo '<div class="form row justify-content-center" style="margin: 5% 0 -5% 0">';
 					echo '<div class="alert alert-success" role="alert">';
-
 					echo 'Producto agregado correctamente.';
-
-					echo '</div>';
-					echo '</div>';
 				}
+				elseif (isset($_GET['error']))
+				{
+					$error = isset($_GET['error']);
+					echo '<div class="alert alert-danger" role="alert">';
+					if ($error = 'noimage')
+						echo 'Debe insertar una imagen';
+				}
+
+				echo '</div>';
+				echo '</div>';
 			?>
 			<div class="form row justify-content-center" style="margin: 10%">
 				<button id="btnAgregar" class="btn my-2 my-sm-0 btn-dark" style="margin: 0 1%" form="myform" type="submit" name="submit">
