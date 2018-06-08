@@ -5,18 +5,15 @@
     include_once 'scripts/conexion.inc';
 
     $array = array();
-    $total = 0;
 
-    $stmt = $conn->query("select * from comerciosXTipo;");
+    $stmt = $conn->query("call `totalProductos`();");
 
     $row = $stmt->fetchAll();
 
-    foreach ($row as $cant)
-        $total += $cant[1];
+    $total = 0;
 
     foreach ($row as $value)
-        array_push($array, array("label"=> $value[0], "y"=> ($value[1]/$total)*100));
-
+        array_push($array, array("label"=> $value[0] . "/" . $value[1], "y"=> $value[2]));
 ;?>
 
 <script>
@@ -28,12 +25,12 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	exportEnabled: true,
 	title: {
-		text: "Tipos de comercio"
+		text: "Cantidad de productos canjeados por mes y año"
 	},
 	data: [{
 		type: "pie",
 		indexLabel: "{y}",
-		yValueFormatString: "#,##0.00\"%\"",
+		yValueFormatString: "#,##0.",
 		indexLabelPlacement: "inside",
 		indexLabelFontColor: "#36454F",
 		indexLabelFontSize: 18,

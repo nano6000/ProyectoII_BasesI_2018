@@ -47,22 +47,32 @@
                                         <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
                                             <a class="dropdown-item" href="estadisticasUsuario.php">Usuarios</a>
                                             <a class="dropdown-item" href="estadisticasTipoComercio.php">Comercios</a>
-                                            <a class="dropdown-item" href="#">Productos</a>
-                                            <a class="dropdown-item" href="#">Top 5</a>
+                                            <a class="dropdown-item" href="estadisticasProducto.php">Productos</a>
+                                            <a class="dropdown-item" href="estadisticasTop5.php">Top 5</a>
                                         </div>
                                     </div>
-                                <div class="dropdown">
-                                    <button type="button" class="btn btn-outline-dark dropdown-toggle"  style="margin: 0 8px 0 0"  id="dropdownEstadisticas" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                            Consultas
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
-                                        <a class="dropdown-item" href="verUsuarioTotal.php">Ver usuarios</a>
-                                        <a class="dropdown-item" href="verComercioTotal.php">Ver comercios</a>
-                                        <a class="dropdown-item" href="verCentroTotal.php">Ver centros de acopio</a>
-                                        <a class="dropdown-item" href="#">Cambios de clave</a>
-                                        <a class="dropdown-item" href="#">Top 5 usuarios con mas reciclaje</a>
+                                    <div class="dropdown">
+                                        <button type="button" class="btn btn-outline-dark dropdown-toggle"  style="margin: 0 8px 0 0"  id="dropdownEstadisticas" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                Consultas
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
+                                            <a class="dropdown-item" href="verUsuarioTotal.php">Ver usuarios</a>
+                                            <a class="dropdown-item" href="verComercioTotal.php">Ver comercios</a>
+                                            <a class="dropdown-item" href="#">Cambios de clave</a>
+                                            <a class="dropdown-item" href="verProductosMasCanjeados.php">Productos con mayor solicitud</a>
+                                            <a class="dropdown-item" href="verPuntosUsuarios.php">Puntaje de usuarios</a>
+                                        </div>
                                     </div>
-                                </div>';
+                                    <div class="dropdown">
+                                        <button type="button" class="btn btn-outline-dark dropdown-toggle"  style="margin: 0 8px 0 0"  id="dropdownParametrizacion" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                Parametrizacion
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
+                                            <a class="dropdown-item" href="verParametrizacion.php">Ver parametrizacion</a>
+                                            <a class="dropdown-item" href="agregarParametrizacion.php">Agregar parametrizacion</a>
+                                            <a class="dropdown-item" href="editParametrizacion.php">Editar parametrizacion</a>
+                                        </div>
+                                    </div>';
                                     break;
                                 case 3: //Encargado comercio
                                     echo "<div class='dropdown'>
@@ -143,7 +153,8 @@
 					?>
 				</button>
 				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownUserMenu">
-                    <a class="dropdown-item" href="#">Editar</a>
+                    <a class="dropdown-item" href="editarPerfil.php">Editar</a>
+                    <a class="dropdown-item" href="verPerfil.php">Ver perfil</a>
                     <form action="scripts/logout.php" method="post">
                         <button class="dropdown-item" type="submit" name="submit">Salir</button>
                     </form>

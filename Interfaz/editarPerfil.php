@@ -1,38 +1,34 @@
 <?php
 	include_once('scripts/conexion.inc');
+	include_once 'header.php';
 ?>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-   		<title>Sign up</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	</head>
+		<?php
+			$username = $_SESSION['username'];
+		 	$stmt = $conn->query("CALL `verPersona`('$username');");
+			$row = $stmt->fetch(PDO::FETCH_NUM);
 
-	<body>
+			$cedula = $row[0];
+			$nombre = $row[1];
+			$pApellido = $row[2];
+			$sApellido = $row[3];
+			$telefono = $row[4];
+			$email = $row[5];
+			$distrito = $row[7];
+			$canton = $row[9];
+			$provincia = $row[8];
+			$pais = $row[10];
 
-		<header class="sticky-top">
-			<nav class="navbar navbar-expand-sm navbar-light bg-primary">
-				<a class="navbar-brand" href="home.php">
-	                <img src="logo.jpg" alt="logo" height="55" width="60">
-					Reciclatico
-				</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+			$stmt->closeCursor();
 
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				</div>
-				<form class="form-inline">
-					<button class="btn my-2 my-sm-0 btn-secondary"  onclick="location.href='login.php'" type="button">Login</button>
-				</form>
-			</nav>
-		</header>
+
+	     ?>
 
 		<div class="row justify-content-center" style="margin: 2% 0 0 0">
-			<form id="myform" method="post" class="needs-validation col-lg-6 col-md-6 col-sm-6 col-6" novalidate="" action="scripts/form-input.php" enctype='multipart/form-data'>
+			<?php
+				echo '<form id="myform" method="post" class="needs-validation col-lg-6 col-md-6 col-sm-6 col-6" novalidate="" action="scripts/form-update.php?id='.$cedula.'" enctype=\'multipart/form-data\'>';
+			?>
 				<div class="form-row">
 					<label> Nombre:</label>
 				</div>
@@ -46,7 +42,7 @@
 							}
 							else
 							{
-								echo '<input name="name-input" type="text" class="form-control" placeholder="Nombre" required>';
+								echo '<input name="name-input" type="text" class="form-control" placeholder="Nombre" value="'.$nombre.'" required>';
 							}
 						?>
 						<div class="invalid-feedback">
@@ -58,14 +54,10 @@
 					<div class="form-group col-md-6">
 						<?php
 							if (isset($_GET['pApellido']))
-							{
 								$pApellido = $_GET['pApellido'];
-								echo '<input name="frstLstName-input" type="text" class="form-control" placeholder="Primer Apellido" value="'.$pApellido.'" required>';
-							}
-							else
-							{
-								echo '<input name="frstLstName-input" type="text" class="form-control" placeholder="Primer Apellido" required>';
-							}
+
+							echo '<input name="frstLstName-input" type="text" class="form-control" placeholder="Primer Apellido" value="'.$pApellido.'" required>';
+
 						?>
 						<div class="invalid-feedback">
 							Por favor, ingrese información válida.
@@ -74,14 +66,9 @@
 					<div class="form-group col-md-6">
 						<?php
 							if (isset($_GET['sApellido']))
-							{
 								$sApellido = $_GET['sApellido'];
-								echo '<input name="secndLstName-input" type="text" class="form-control" placeholder="Segundo Apellido" value="'.$sApellido.'">';
-							}
-							else
-							{
-								echo '<input name="secndLstName-input" type="text" class="form-control" placeholder="Segundo Apellido">';
-							}
+
+							echo '<input name="secndLstName-input" type="text" class="form-control" placeholder="Segundo Apellido" value="'.$sApellido.'">';
 						?>
 					</div>
 				</div>
@@ -100,8 +87,8 @@
 					                    echo "<option value='" . $row[0] . "' selected>" . $row[1] . "</option>";
 					                    $temp = $tipo[1];
 					                }
-					                else
-					                    echo "<option value='" . $row[0] . "'>" . $row[1] . "</option>";
+									else
+										echo "<option value='" . $row[0] . "'>" . $row[1] . "</option>";
 								}
 								$stmt->closeCursor();
 							?>
@@ -114,14 +101,10 @@
 						<label>Cedula:</label>
 						<?php
 							if (isset($_GET['cedula']))
-							{
 								$cedula = $_GET['cedula'];
-								echo '<input name="id-input" type="text" class="form-control" pattern="[0-9]{9}" placeholder="Cedula" value="'.$cedula.'" required>';
-							}
-							else
-							{
-								echo '<input name="id-input" type="text" class="form-control" pattern="[0-9]{9}" placeholder="Cedula" required>';
-							}
+
+							echo '<input name="id-input" type="text" class="form-control" pattern="[0-9]{9}" placeholder="Cedula" value="'.$cedula.'" disabled required>';
+
 						?>
 						<div class="invalid-feedback">
 							Por favor, ingrese información válida.
@@ -154,6 +137,11 @@
 					                    echo "<option value='" . $row[0] . "' selected>" . $row[1] . "</option>";
 					                    $temp = $row[0];
 					                }
+					                elseif ($provincia == $row[1])
+					                {
+					                    echo "<option value='" . $row[0] . "' selected>" . $row[1] . "</option>";
+					                    $temp = $row[0];
+					                }
 					                else
 					                    echo "<option value='" . $row[0] . "'>" . $row[1] . "</option>";
 								}
@@ -180,6 +168,11 @@
 				                    echo "<option value='" . $row[0] . "' selected>" . $row[1] . "</option>";
 				                    $temp = $row[0];
 				                }
+								elseif ($canton == $row[1])
+								{
+									echo "<option value='" . $row[0] . "' selected>" . $row[1] . "</option>";
+									$temp = $row[0];
+								}
 				                else
 				                    echo "<option value='" . $row[0] . "'>" . $row[1] . "</option>";
 							}
@@ -205,6 +198,11 @@
 				                    echo "<option value='" . $row[0] . "' selected>" . $row[1] . "</option>";
 				                    $temp = $row[0];
 				                }
+								elseif ($distrito == $row[1])
+								{
+									echo "<option value='" . $row[0] . "' selected>" . $row[1] . "</option>";
+									$temp = $row[0];
+								}
 				                else
 				                    echo "<option value='" . $row[0] . "'>" . $row[1] . "</option>";
 							}
@@ -222,14 +220,10 @@
 						<label>E-mail:</label>
 						<?php
 							if (isset($_GET['Email']))
-							{
-								$pEmail = $_GET['Email'];
-								echo '<input name="email-input" type="text" class="form-control" pattern=".+@.+\.(com|es)" placeholder="E-mail" value="'.$Email.'" required>';
-							}
-							else
-							{
-								echo '<input name="email-input" type="text" class="form-control" pattern=".+@.+\.(com|es)" placeholder="E-mail" required>';
-							}
+								$email = $_GET['Email'];
+
+							echo '<input name="email-input" type="text" class="form-control" pattern=".+@.+\.(com|es)" placeholder="E-mail" value="'.$email.'" required>';
+
 						?>
 						<div class="invalid-feedback">
 							Por favor, ingrese información válida.
@@ -239,14 +233,10 @@
 						<label>Telefono:</label>
 						<?php
 							if (isset($_GET['Tel']))
-							{
-								$pTel = $_GET['Tel'];
-								echo '<input name="tel-input" type="text" class="form-control" pattern="(\(\+[0-9]{3}\))?[0-9]{8}[0-9]*" placeholder="Telefono" value="'.$Tel.'" required>';
-							}
-							else
-							{
-								echo '<input name="tel-input" type="text" class="form-control" pattern="(\(\+[0-9]{3}\))?[0-9]{8}[0-9]*" placeholder="Telefono" required>';
-							}
+								$telefono = $_GET['Tel'];
+
+							echo '<input name="tel-input" type="text" class="form-control" pattern="(\(\+[0-9]{3}\))?[0-9]{8}[0-9]*" placeholder="Telefono" value="'.$telefono.'" required>';
+
 						?>
 						<div class="invalid-feedback">
 							Por favor, ingrese información válida.
@@ -255,41 +245,15 @@
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label>Fecha de nacimiento:</label>
-						<input name="date-input" class="form-control" type="date" required>
-						<div class="invalid-feedback">
-							Por favor, ingrese información válida.
-						</div>
-					</div>
-					<div class="form-group col-md-6">
-						<label>Nombre de usuario:</label>
-						<?php
-							if (isset($_GET['usuario']))
-							{
-								$usuario = $_GET['usuario'];
-								echo '<input name="username-input" type="text" class="form-control" placeholder="Nombre de usuario" value="'.$usuario.'" required>';
-							}
-							else
-							{
-								echo '<input name="username-input" type="text" class="form-control" placeholder="Nombre de usuario" required>';
-							}
-						?>
-						<div class="invalid-feedback">
-							Por favor, ingrese información válida.
-						</div>
-					</div>
-				</div>
-				<div class="form-row">
-					<div class="form-group col-md-6">
-						<label>Contraseña:</label>
-						<input name="passwd-input" type="password" class="form-control" placeholder="Contraseña" required>
+						<label>Nueva contraseña:</label>
+						<input name="passwd-input" type="password" class="form-control" placeholder="Contraseña">
 						<div class="invalid-feedback">
 							Por favor, ingrese información válida.
 						</div>
 					</div>
 					<div class="form-group col-md-6">
 						<label>Confirmar contraseña:</label>
-						<input name="ckPasswd-input" type="password" class="form-control" placeholder="Confirme la contraseña" required>
+						<input name="ckPasswd-input" type="password" class="form-control" placeholder="Confirme la contraseña">
 						<div class="registrationFormAlert" id="divCheckPasswordMatch"></div>
 					</div>
 				</div>
@@ -310,8 +274,8 @@
 					}
 				?>
 				<div class="form row justify-content-center" style="margin: 10%">
-					<button id="btnSignIn" class="btn my-2 my-sm-0 btn-dark" style="margin: 0 1%" form="myform" type="submit" name="submit">
-						Sign Up
+					<button id="btnUpdate" class="btn my-2 my-sm-0 btn-dark" style="margin: 0 1%" form="myform" type="submit" name="submit">
+						Actualizar
 					</button>
 					<button class="btn my-2 my-sm-0 btn-dark" style="margin: 0 1%" type="button" onclick="location.href='home.php'">Cancelar</button>
 				</div>

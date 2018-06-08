@@ -5,18 +5,15 @@
     include_once 'scripts/conexion.inc';
 
     $array = array();
-    $total = 0;
 
-    $stmt = $conn->query("select * from comerciosXTipo;");
+    $stmt = $conn->query("call `top5UsuarioTotal`();");
 
     $row = $stmt->fetchAll();
 
-    foreach ($row as $cant)
-        $total += $cant[1];
+    $total = 0;
 
     foreach ($row as $value)
-        array_push($array, array("label"=> $value[0], "y"=> ($value[1]/$total)*100));
-
+        array_push($array, array("label"=> $value[0], "y"=> $value[1]));
 ;?>
 
 <script>
@@ -24,22 +21,14 @@ window.onload = function() {
 
 
 var chart = new CanvasJS.Chart("chartContainer", {
-	theme: "theme2",
 	animationEnabled: true,
 	exportEnabled: true,
-	title: {
-		text: "Tipos de comercio"
+	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Top 5 de usuarios con mayor canje"
 	},
 	data: [{
-		type: "pie",
-		indexLabel: "{y}",
-		yValueFormatString: "#,##0.00\"%\"",
-		indexLabelPlacement: "inside",
-		indexLabelFontColor: "#36454F",
-		indexLabelFontSize: 18,
-		indexLabelFontWeight: "bolder",
-		showInLegend: true,
-		legendText: "{label}",
+		type: "column", //change type to bar, line, area, pie, etc
 		dataPoints: <?php echo json_encode($array, JSON_NUMERIC_CHECK); ?>
 	}]
 });
@@ -49,7 +38,7 @@ chart.render();
 </script>
 </head>
 <body>
-<div id="chartContainer" style="margin: 7% 0 0 20%; height: 370px; width: 60%;"></div>
+<div id="chartContainer" style="margin: 7% 0 0 25%; height: 370px; width: 50%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -47,6 +47,7 @@ window.onload = function() {
 var chart = new CanvasJS.Chart("chartContainer", {
 	theme: "theme2",
 	animationEnabled: true,
+	exportEnabled: true,
 	title: {
 		text: "Usuarios agrupados por edad"
 	},
@@ -69,7 +70,7 @@ chart.render();
 </script>
 </head>
 <body>
-<div id="chartContainer" style="margin: 7% 0 0 0; height: 370px; width: 100%;"></div>
+<div id="chartContainer" style="margin: 7% 0 0 20%; height: 370px; width: 60%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
