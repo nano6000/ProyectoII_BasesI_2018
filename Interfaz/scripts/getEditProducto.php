@@ -9,8 +9,8 @@
 
         echo "<tr>";
         echo "<form id='form" . $row[0] . "' class='needs-validation' method='post' action='scripts/updateProducto.php?edit=" . $row[0] . "' enctype='multipart/form-data'>";
-        echo "<td> <input name='nombre' size='30' type='text' value='". $row[2] . "' required> </td>";
-        echo "<td> <input name='precio' size='30' type='text' value='". $row[3] . "' required> </td>";
+        echo "<td> <input name='nombre' size='30' type='text' value='". $row[2] . "' class=\"form-control\"  required> </td>";
+        echo "<td> <input name='precio' size='30' type='text' value='". $row[3] . "' class=\"form-control\"  required> </td>";
         echo "<td class='text-center'> <img src='uploads/" . $row[1] . "' height='75px' width='125px'></td>";
         echo "<td> <input type='file' name='foto'> </td>";
 

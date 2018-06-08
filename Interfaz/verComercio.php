@@ -55,9 +55,12 @@
                     <div class=''>
                         <p style='margin: 2% 0 0 7%'>";
 
-    // $stmt->closeCursor();
-    // $stmt = $conn->query("CALL `obtenerInfoComercio`($username);");
-    // $row = $stmt->fetch(PDO::FETCH_NUM);
+    $stmt->closeCursor();
+
+    $comercio = $_SESSION['comercio'];
+
+    $stmt = $conn->query("CALL `totalPuntosComercio`($comercio);");
+    $row = $stmt->fetch(PDO::FETCH_NUM);
 
     echo $row[0];
     echo "              </p>

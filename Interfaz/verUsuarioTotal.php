@@ -6,20 +6,11 @@
 
     include_once 'scripts/conexion.inc';
 ?>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js" charset="utf-8"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/select/1.2.5/js/dataTables.select.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js" charset="utf-8"></script>
-
-
-
-    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.1/js/responsive.bootstrap4.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap4.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js" charset="utf-8"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" charset="utf-8"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js" charset="utf-8"></script>
 
     <?php
         echo "<div class='panel panel-default' style='margin: 0 0 4% 0'>";
@@ -27,6 +18,22 @@
         echo "</div>";
         echo "<div class='panel-body' style='margin: 0 2% 0 2%'>";
         echo "<div class='table-responsive'>";
+
+        echo "<table border=\"0\" cellspacing=\"5\" cellpadding=\"5\" style=\"margin: 0 0 3% 0\">
+        <tbody><tr>
+            <td>Nombre:</td>
+            <td><input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\" ></td>
+            <td>Cedula:</td>
+            <td><input type=\"text\" id=\"ced\" name=\"ced\" class=\"form-control\" ></td>
+            <td>Provincia:</td>
+            <td><input type=\"text\" id=\"prov\" name=\"prov\" class=\"form-control\" ></td>
+            <td>Canton:</td>
+            <td><input type=\"text\" id=\"canton\" name=\"canton\" class=\"form-control\" ></td>
+            <td>Distrito:</td>
+            <td><input type=\"text\" id=\"distrito\" name=\"distrito\" class=\"form-control\" ></td>
+
+        </tr>
+    </tbody></table>";
 
         echo "<table width='100%' class='table table-fixed table-bordered table-hover table-condensed table-hover' id='data' style='font-size: 11px;'>";
         echo "<thead style='background-color: #f8f8f8;'>";
@@ -51,10 +58,39 @@
       ?>
 
 
+
     <script>
+        $.fn.dataTable.ext.search.push(
+    function( settings, data, dataIndex ) {
+        var name = String( $('#name').val() ).toUpperCase();
+        var ced = String( $('#ced').val() ).toUpperCase();
+        var prov = String( $('#prov').val() ).toUpperCase();
+        var canton = String( $('#canton').val() ).toUpperCase();
+        var distrito = String( $('#distrito').val() ).toUpperCase();
+        var nameValue = String( data[0] ).toUpperCase();
+        var cedValue = String( data[2] ).toUpperCase();
+        var provValue = String( data[3] ).toUpperCase();
+        var cantonValue = String( data[4] ) .toUpperCase();
+        var distritoValue = String( data[5] ).toUpperCase();
+
+        if ( nameValue.search(name)>=0 && cedValue.search(ced)>=0 &&
+             provValue.search(prov)>=0 && cantonValue.search(canton)>=0 &&
+             distritoValue.search(distrito)>=0 )
+        {
+            return true;
+        }
+        return false;
+    }
+);
+
         $(document).ready(function(){
-          $('#data').DataTable( );
-        });
+          var table = $('#data').DataTable( );
+
+        $('#name, #ced, #prov, #canton, #distrito').keyup( function() {
+        table.draw();
+    } );
+
+} );
     </script>
 
 

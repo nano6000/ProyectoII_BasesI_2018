@@ -12,9 +12,9 @@
 
         echo "<tr>";
         echo "<form id='form" . $comercio . "' class='needs-validation' method='post' action='scripts/updateComercio.php?edit=" . $comercio . "'>";
-        echo "<td> <input name='nombre' size='30' type='text' value='". $data[0] . "' required> </td>";
-        echo "<td> <input name='contacto' size='30' type='text' value='". $data[1] . "' required> </td>";
-        echo "<td> <input name='descripcion' size='30' type='text' value='". $data[2] . "' required> </td>";
+        echo "<td> <input name='nombre' size='30' type='text' value='". $data[0] . "'  class=\"form-control\"  required> </td>";
+        echo "<td> <input name='contacto' size='30' type='text' value='". $data[1] . "'  class=\"form-control\"  required> </td>";
+        echo "<td> <input name='descripcion' size='30' type='text' value='". $data[2] . "'  class=\"form-control\"  required> </td>";
 
         echo "<td> <select name='tipo' class='custom-select' required>'";
             $temp;

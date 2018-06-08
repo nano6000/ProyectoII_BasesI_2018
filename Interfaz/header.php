@@ -97,31 +97,31 @@
                                         </li>";
                                     break;
                                 case 2: //Administrador centro
-                                    echo '<div class="dropdown">
-                                            <button type="button" class="btn btn-outline-dark dropdown-toggle"  style="margin: 0 8px 0 0" id="dropdownCentro" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    echo "<div class='dropdown'>
+                                            <button type='button' class='btn btn-outline-dark dropdown-toggle'  style='margin: 0 8px 0 0' id='dropdownCentro' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>
                                                     Mi centro de acopio
                                             </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownCentro">
-                                                <a class="dropdown-item" href="verCentro.php">Ver centro de acopio</a>
-                                                <a class="dropdown-item" href="editCentro.php">Editar centro de acopio</a>
+                                            <div class='dropdown-menu' aria-labelledby='dropdownCentro'>
+                                                <a class='dropdown-item' href='verCentro.php'>Ver centro de acopio</a>
+                                                <a class='dropdown-item' href='editCentro.php'>Editar centro de acopio</a>
                                             </div>
                                         </div>
                                         <a> </a>
-                                        <div class="dropdown">
-                                            <button type="button" class="btn btn-outline-dark dropdown-toggle" style=\'margin: 0 8px 0 0\' id="dropdownOtrasConsultas" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <div class='dropdown'>
+                                            <button type='button' class='btn btn-outline-dark dropdown-toggle' style=\"margin: 0 8px 0 0\" id='dropdownOtrasConsultas' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>
                                                     Otras consultas
                                             </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
-                                                <a class="dropdown-item" href="#">Materiales reciclados</a>
-                                                <a class="dropdown-item" href="#">Top 5 de usuarios</a>
-                                                <a class="dropdown-item" href="#">Puntos obtenidos por usuarios</a>
+                                            <div class='dropdown-menu' aria-labelledby='dropdownHuerta'>
+                                                <a class='dropdown-item' href='verMaterialesReciclados.php'>Materiales reciclados</a>
+                                                <a class='dropdown-item' href='top5usuarios.php'>Top 5 de usuarios con mayor reciclaje</a>
+                                                <a class='dropdown-item' href='verUsuariosCentro.php'>Puntos obtenidos por usuarios</a>
                                             </div>
                                         </div>
-                                        <li class="nav-item">
-                                            <button type="button" class="btn btn-outline-dark" style="margin: 0 8px 0 0 " id="obtenerPuntos" role="button" aria-expanded="false">
+                                        <li class='nav-item'>
+                                            <button type='button' class='btn btn-outline-dark' style='margin: 0 8px 0 0 ' id='obtenerPuntos' role='button' onclick='location.href=\"obtenerPuntos.php\"' aria-expanded='false'>
                                                 Obtener puntos
                                             </button>
-                                        </li>';
+                                        </li>";
                                     break;
                                 case 1:
                                     break;

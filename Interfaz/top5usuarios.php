@@ -1,11 +1,16 @@
 <?php
     include_once 'header.php';
+    include_once 'scripts/conexion.inc';
 
-
-    if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] != 2)
+    if (isset($_SESSION['tipo']))
+    {
+        $tipo = $_SESSION['tipo'];
+        if ($tipo != 3)
+            header("HTTP/1.1 403 Forbidden");
+    }
+    else
         header("Location: homeUser.php");
 
-    include_once 'scripts/conexion.inc';
 ?>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
@@ -17,8 +22,6 @@
     <?php
         echo "<div class='panel panel-default'>";
         echo "<div style='margin: 4% 0 0 0' class='panel-heading'>";
-
-        // echo "Lista de Usuarios";
         echo "</div>";
         echo "<div class='panel-body' style='margin: 0 2% 0 2%'>";
         echo "<div class='table-responsive'>";
@@ -26,19 +29,13 @@
         echo "<table width='100%' class='table table-fixed table-bordered table-hover table-condensed table-hover' id='data' style='font-size: 11px;'>";
         echo "<thead style='background-color: #f8f8f8;'>";
         echo '<tr>';
-        echo '<th>Nombre</th>';
-        echo '<th>Contacto</th>';
-        echo '<th>Coordenadas X</th>';
-        echo '<th>Coordenadas Y</th>';
-        echo '<th>Provincia</th>';
-        echo '<th>Canton</th>';
-        echo '<th>Distrito</th>';
-        echo '<th>Editar</th>';
+        echo '<th>Usuario</th>';
+        echo '<th>Cantidad de reciclajes hechos</th>';
         echo '</tr>';
         echo '</thead>';
         echo '<tbody>';
 
-        include_once 'scripts/getEditCentro.php';
+        include_once 'scripts/getTop5usuarios.php';
 
         echo "</tbody>";
         echo "</table>";
@@ -47,12 +44,10 @@
         echo "</div>";
       ?>
 
-    <script>
- $(document).ready(function(){
-      $('#data').DataTable( );
- });
-</script>
 
-<?php
-    include_once 'footer.php';
-?>
+    <script>
+        $(document).ready(function(){
+          $('#data').DataTable( {"ordering": false} );
+        });
+    </script>
+<?php include_once 'footer.php'; ?>

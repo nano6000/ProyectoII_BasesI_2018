@@ -12,10 +12,10 @@
 
         echo "<tr>";
         echo "<form id='form" . $centro . "' class='needs-validation' method='post' action='scripts/updateComercio.php?edit=" . $centro . "'>";
-        echo "<td> <input name='nombre' size='30' type='text' value='". $info[0] . "' required> </td>";
-        echo "<td> <input name='contacto' size='20' type='text' value='". $info[1] . "' required> </td>";
-        echo "<td> <input name='Xcoord' size='20' type='text' value='". $info[2] . "' required> </td>";
-        echo "<td> <input name='Ycoord' size='20' type='text' value='". $info[3] . "' required> </td>";
+        echo "<td> <input name='nombre' size='30' type='text' value='". $info[0] . "'  class=\"form-control\" required> </td>";
+        echo "<td> <input name='contacto' size='20' type='text' value='". $info[1] . "'  class=\"form-control\" required> </td>";
+        echo "<td> <input name='Xcoord' size='20' type='text' value='". $info[2] . "'  class=\"form-control\" required> </td>";
+        echo "<td> <input name='Ycoord' size='20' type='text' value='". $info[3] . "'  class=\"form-control\" required> </td>";
 
         echo "<td> <select name='provincia' id='provincia' class='custom-select' required>'";
             $temp;
