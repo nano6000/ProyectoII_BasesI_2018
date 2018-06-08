@@ -5,7 +5,7 @@
     if (isset($_SESSION['tipo']))
     {
         $tipo = $_SESSION['tipo'];
-        if ($tipo != 3)
+        if ($tipo != 2)
             header("HTTP/1.1 403 Forbidden");
     }
     else

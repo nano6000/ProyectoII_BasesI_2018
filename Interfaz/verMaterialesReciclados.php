@@ -21,6 +21,16 @@
         echo "<div class='panel-body' style='margin: 0 2% 0 2%'>";
         echo "<div class='table-responsive'>";
 
+        echo "<table border=\"0\" cellspacing=\"5\" cellpadding=\"5\" style=\"margin: 0 0 3% 0\">
+        <tbody><tr>
+            <td>Mes:</td>
+            <td><input type=\"text\" id=\"mes\" name=\"mes\" class=\"form-control\" ></td>
+            <td>Año:</td>
+            <td><input type=\"text\" id=\"año\" name=\"año\" class=\"form-control\" ></td>
+
+        </tr>
+    </tbody></table>";
+
         echo "<table width='100%' class='table table-fixed table-bordered table-hover table-condensed table-hover' id='data' style='font-size: 11px;'>";
         echo "<thead style='background-color: #f8f8f8;'>";
         echo '<tr>';
@@ -43,9 +53,31 @@
 
 
     <script>
+        $.fn.dataTable.ext.search.push(
+    function( settings, data, dataIndex ) {
+        var mes = parseInt( $('#mes').val(), 10 );
+        var year = parseInt( $('#año').val(), 10 );
+        var mesVal = parseFloat( data[2] ) || 0; // use data for the age column
+        var yearVal = parseFloat( data[3] ) || 0; // use data for the age column
+
+        if ( ( isNaN( mes ) && isNaN( year ) ) ||
+             ( isNaN( mes ) && yearVal == year ) ||
+             ( mes == mesVal   && isNaN( year ) ) ||
+             ( mes == mesVal   && yearVal == year ) )
+        {
+            return true;
+        }
+        return false;
+    }
+);
         $(document).ready(function(){
-          $('#data').DataTable( );
-        });
+          var table = $('#data').DataTable( );
+
+        $('#mes, #año').keyup( function() {
+        table.draw();
+    } );
+
+} );
     </script>
 
 
