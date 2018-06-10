@@ -566,38 +566,38 @@ INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES
 -- -----------------------------------------------------
 -- Insert Canjes
 -- -----------------------------------------------------
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (18,'rgarita');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (15,'acastillo');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (12,'jbrenes');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (18,'esolis');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (2,'etapia');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (3,'lmadriz');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (18,'esolano');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (13,'mguevara');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (10,'amadriz');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (12,'dcastillo');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 18,'rgarita');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 15,'acastillo');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 12,'jbrenes');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 18,'esolis');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 2,'etapia');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 3,'lmadriz');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 18,'esolano');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 13,'mguevara');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 10,'amadriz');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 12,'dcastillo');
 
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (12,'esolano');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (9,'acastillo');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (9,'rgarita');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (18,'acastillo');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1,'amadriz');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1,'rgarita');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (2,'lmadriz');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (16,'esolis');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (7,'fcordero');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (14,'mguevara');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 12,'esolano');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 9,'acastillo');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 9,'rgarita');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 18,'acastillo');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 1,'amadriz');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 1,'rgarita');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 2,'lmadriz');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 16,'esolis');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 7,'fcordero');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 14,'mguevara');
 
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (17,'esolis');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (18,'rgarita');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (7,'rgarita');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (17,'esolis');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (16,'esolis');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (16,'dcastillo');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (13,'acastillo');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (14,'fcordero');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (15,'esolano');
-INSERT INTO `productoxusuario`(`Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (18,'esolis');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 17,'esolis');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 18,'rgarita');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 7,'rgarita');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 17,'esolis');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 16,'esolis');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 16,'dcastillo');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 13,'acastillo');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 14,'fcordero');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 15,'esolano');
+INSERT INTO `canjes`(`cantidad`, `Producto_idProducto`, `Usuario_nombreUsuario`) VALUES (1, 18,'esolis');
 
 -- -----------------------------------------------------
 -- Insert Equivalencia Material
