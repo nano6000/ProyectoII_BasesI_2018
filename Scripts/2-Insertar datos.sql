@@ -539,29 +539,29 @@ INSERT INTO `comercio`(`nombreComercio`, `contacto`, `descripcion`, `Usuario_nom
 -- -----------------------------------------------------
 -- Insert Producto
 -- -----------------------------------------------------
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',1500,'Churchileta',1);
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',1250,'Paleta de menta con chocolate',1);
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',1000,'Paleta de coco',1);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('churchilleta.jpg',1500,'Churchilleta',1);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('chocomenta.jpg',1250,'Paleta de chocomenta',1);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('Paleta de Coco.png',1000,'Paleta de coco',1);
 
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',12500,'Set de sabanas',2);
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',10000,'Almohada ortopedica',2);
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',7500,'Cobija térmica',2);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('sabanas.jpg',12500,'Set de sabanas',2);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('almohada_ortopedica.jpg',10000,'Almohada ortopedica',2);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('cobija_termica.jpg',7500,'Cobija térmica',2);
 
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',2000,'Helado sabor Moyo con toppings',3);
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',2100,'Helado sabor del mes con toppings',3);
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',1600,'Helado sabor del mes sin toppings',3);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('taro.jpg',2000,'Helado sabor taro',3);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('mango.jpg',2100,'Helado sabor mango',3);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('manzana.jpg',1600,'Helado sabor manzana',3);
 
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',1500,'Entrada individual',4);
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',2800,'Entrada Doble',4);
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',2500,'Combo Palomitas grandes y 2 refrescos',4);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('entrada.png',1500,'Entrada individual',4);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('entradaDoble.jpg',2800,'Entrada Doble',4);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('combo.jpg',2000,'Combo Palomitas grandes y refresco',4);
 
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',500,'Yuquitas',5);
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',750,'Coca-Cola',5);
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',1200,'Ensalada Cesár',5);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('yuquitas.jpg',500,'Yuquitas',5);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('cocacola.jpg',750,'Coca-Cola',5);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('ensalada.jpg',1200,'Ensalada',5);
 
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',500,'Café',6);
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',700,'Café Mocha',6);
-INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('C:/Users/luisg/Desktop/Alejandro/TEC/2018/V Semestre/Bases de Datos I/Progra II/ProyectoII_BasesI_2018/Imagenes/a.png',500,'Pan Baguette',6);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('cafe.jpg',500,'Café negro',6);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('cafe-moka.jpg',700,'Café Mocha',6);
+INSERT INTO `producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) VALUES ('baguette-png.png',500,'Pan Baguette',6);
 
 -- -----------------------------------------------------
 -- Insert Canjes

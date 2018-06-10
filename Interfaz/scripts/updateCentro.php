@@ -13,11 +13,10 @@
             $Xcoord = $_POST["Xcoord"];
             $Ycoord = $_POST["Ycoord"];
             $distrito = $_POST["distrito"];
-            $tipo = $_POST["tipo"];
 
-            $stmt = $conn->query("call editarComercio($id, '$nombre', $contacto, '$descripcion', $tipo);");
+            $stmt = $conn->query("call editarCentro($id, '$nombre', $contacto, '$Xcoord', $Ycoord, $distrito);");
 
-            header("Location: ../editComercio.php");
+            header("Location: ../editCentro.php");
         }
     }
 
