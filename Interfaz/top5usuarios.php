@@ -29,8 +29,8 @@
         echo "<table width='100%' class='table table-fixed table-bordered table-hover table-condensed table-hover' id='data' style='font-size: 11px;'>";
         echo "<thead style='background-color: #f8f8f8;'>";
         echo '<tr>';
-        echo '<th>Usuario</th>';
-        echo '<th>Cantidad de reciclajes hechos</th>';
+        echo '<th> <h6>Usuario</th>';
+        echo '<th> <h6>Cantidad de reciclajes hechos</th>';
         echo '</tr>';
         echo '</thead>';
         echo '<tbody>';

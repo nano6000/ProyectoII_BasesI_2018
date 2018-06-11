@@ -3,8 +3,11 @@
 	include_once('scripts/conexion.inc');
 	include_once('header.php');
 
-	if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] != 3)
+	if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] != 1)
 	header("Location: homeUser.php");
+
+	if (session_status() == PHP_SESSION_NONE)
+        session_start();
 
 ?>
 
@@ -16,15 +19,8 @@
 				<label> Nombre de usuario:</label>
 				<div class="form-group col-md-12">
 					<?php
-						if (isset($_GET['Nombre']))
-						{
-							$Nombre = $_GET['Nombre'];
-							echo '<input name="name-input" type="text" class="form-control" placeholder="Nombre de usuario" value="'.$Nombre.'" required />';
-						}
-						else
-						{
-							echo '<input name="name-input" type="text" class="form-control" placeholder="Nombre de usuario" required />';
-						}
+						$Nombre = $_SESSION['username'];
+						echo '<input name="name-input" type="text" class="form-control" placeholder="Nombre de usuario" value="'.$Nombre.'" disabled />';
 					?>
 					<div class="invalid-feedback">
 						Por favor, ingrese información válida.

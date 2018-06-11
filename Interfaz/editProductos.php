@@ -26,11 +26,11 @@
         echo "<table width='100%' class='table table-fixed table-bordered table-hover table-condensed table-hover' id='data' style='font-size: 11px;'>";
         echo "<thead style='background-color: #f8f8f8;'>";
         echo '<tr>';
-        echo '<th>Nombre</th>';
-        echo '<th>Precio</th>';
-        echo '<th>Foto</th>';
-        echo '<th>Cargar foto</th>';
-        echo '<th>Editar</th>';
+        echo '<th> <h6>Nombre</th>';
+        echo '<th> <h6>Precio</th>';
+        echo '<th> <h6>Foto</th>';
+        echo '<th> <h6>Cargar foto</th>';
+        echo '<th> <h6>Editar</th>';
         echo '</tr>';
         echo '</thead>';
         echo '<tbody>';

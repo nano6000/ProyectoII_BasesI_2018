@@ -29,10 +29,10 @@
         echo "<table width='100%' class='table table-fixed table-bordered table-hover table-condensed table-hover' id='data' style='font-size: 11px;'>";
         echo "<thead style='background-color: #f8f8f8;'>";
         echo '<tr>';
-        echo '<th>Nombre de usuario</th>';
-        echo '<th>Puntos actuales</th>';
-        echo '<th>Puntos gastados</th>';
-        echo '<th>Puntos Totales</th>';
+        echo '<th> <h6>Nombre de usuario</th>';
+        echo '<th> <h6>Puntos actuales</th>';
+        echo '<th> <h6>Puntos gastados</th>';
+        echo '<th> <h6>Puntos Totales</th>';
         echo '</tr>';
         echo '</thead>';
         echo '<tbody>';

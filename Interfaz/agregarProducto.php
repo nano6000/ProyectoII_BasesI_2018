@@ -4,7 +4,7 @@
 ?>
 
 	<div class="row justify-content-center" style="margin: 2% 0 0 0">
-		<form id="myform" method="post" class="needs-validation col-lg-6 col-md-6 col-sm-6 col-6" novalidate="" action="scripts/insertProducto.php" enctype='multipart/form-data'>
+		<form id="myform" method="post" class="needs-validation col-lg-6 col-md-6 col-sm-6 col-6" novalidate action="scripts/insertProducto.php" enctype='multipart/form-data'>
 			<div class="form-row">
 				<label> Nombre del producto:</label>
 			</div>
@@ -22,7 +22,7 @@
 						}
 					?>
 					<div class="invalid-feedback">
-						Por favor, ingrese información válida.
+						Campo requerido.
 					</div>
 				</div>
 			</div>
@@ -43,23 +43,20 @@
 						}
 					?>
 					<div class="invalid-feedback">
-						Por favor, ingrese información válida.
+						Campo requerido.
 					</div>
 				</div>
 			</div>
 			<div class="form-row">
 				<label>Imagen: </label>
 				<div class="custom-file">
-					<input type='file' name='foto' required>
-					<div class="invalid-feedback">
-						Por favor, ingrese una imagen.
-					</div>
+					<input type='file' name='foto'>
 					<!-- <label class="custom-file-label" for="foto">Seleccione una imagen</label> -->
 				</div>
 			</div>
 
 			<?php
-				echo '<div class="form row justify-content-center" style="margin: 5% 0 -7% 0">';
+				echo '<div class="form row justify-content-center" style="margin: 3% 0 2% 0">';
 
 				if (isset($_GET['insertsuccess']))
 				{
@@ -72,12 +69,14 @@
 					echo '<div class="alert alert-danger" role="alert">';
 					if ($error = 'noimage')
 						echo 'Debe insertar una imagen';
+					else
+						echo 'Error al insertar el producto.';
 				}
 
 				echo '</div>';
 				echo '</div>';
 			?>
-			<div class="form row justify-content-center" style="margin: 10%">
+			<div class="form row justify-content-center" style="margin: 2%">
 				<button id="btnAgregar" class="btn my-2 my-sm-0 btn-dark" style="margin: 0 1%" form="myform" type="submit" name="submit">
 					Agregar
 				</button>
@@ -85,6 +84,27 @@
 			</div>
 		</form>
 	</div>
+
+	<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 

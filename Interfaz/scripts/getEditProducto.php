@@ -1,9 +1,9 @@
 '<?php
 
     include_once 'scripts/conexion.inc';
-    $username = $_SESSION['username'];
+    $comercio = $_SESSION['comercio'];
 
-    $stmt = $conn->query("call obtenerProducto('$username')");
+    $stmt = $conn->query("call obtenerProducto('$comercio')");
     while($row = $stmt->fetch(PDO::FETCH_NUM))
     {
 

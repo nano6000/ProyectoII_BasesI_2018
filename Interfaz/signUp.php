@@ -50,7 +50,7 @@
 							}
 						?>
 						<div class="invalid-feedback">
-							Por favor, ingrese información válida.
+							Campo requerido.
 						</div>
 					</div>
 				</div>
@@ -68,7 +68,7 @@
 							}
 						?>
 						<div class="invalid-feedback">
-							Por favor, ingrese información válida.
+							Campo requerido.
 						</div>
 					</div>
 					<div class="form-group col-md-6">
@@ -107,7 +107,7 @@
 							?>
 						</select>
 						<div class="invalid-feedback">
-							Por favor, seleccione una opción.
+							Campo requerido.
 						</div>
 					</div>
 					<div class="form-group col-md-6">
@@ -124,7 +124,7 @@
 							}
 						?>
 						<div class="invalid-feedback">
-							Por favor, ingrese información válida.
+							Campo requerido.
 							Ej. 123456789
 						</div>
 					</div>
@@ -137,7 +137,7 @@
 							<option selected> Costa Rica </option>"
 						</select>
 						<div class="invalid-feedback">
-							Por favor, seleccione una opción.
+							Campo requerido.
 						</div>
 					</div>
 					<div class="form-group col-md-6">
@@ -161,7 +161,7 @@
 							?>
 						</select>
 						<div class="invalid-feedback">
-							Por favor, seleccione una opción.
+							Campo requerido.
 						</div>
 					</div>
 				</div>
@@ -188,7 +188,7 @@
 
 						</select>
 						<div class="invalid-feedback">
-							Por favor, seleccione una opción.
+							Campo requerido.
 						</div>
 					</div>
 					<div class="form-group col-md-6">
@@ -213,7 +213,7 @@
 
 						</select>
 						<div class="invalid-feedback">
-							Por favor, seleccione una opción.
+							Campo requerido.
 						</div>
 					</div>
 				</div>
@@ -232,7 +232,7 @@
 							}
 						?>
 						<div class="invalid-feedback">
-							Por favor, ingrese información válida.
+							Campo requerido.
 						</div>
 					</div>
 					<div class="form-group col-md-6">
@@ -249,7 +249,7 @@
 							}
 						?>
 						<div class="invalid-feedback">
-							Por favor, ingrese información válida.
+							Campo requerido.
 						</div>
 					</div>
 				</div>
@@ -258,7 +258,7 @@
 						<label>Fecha de nacimiento:</label>
 						<input name="date-input" class="form-control" type="date" required>
 						<div class="invalid-feedback">
-							Por favor, ingrese información válida.
+							Campo requerido.
 						</div>
 					</div>
 					<div class="form-group col-md-6">
@@ -275,7 +275,7 @@
 							}
 						?>
 						<div class="invalid-feedback">
-							Por favor, ingrese información válida.
+							Campo requerido.
 						</div>
 					</div>
 				</div>
@@ -284,7 +284,7 @@
 						<label>Contraseña:</label>
 						<input name="passwd-input" type="password" class="form-control" placeholder="Contraseña" required>
 						<div class="invalid-feedback">
-							Por favor, ingrese información válida.
+							Campo requerido.
 						</div>
 					</div>
 					<div class="form-group col-md-6">

@@ -9,7 +9,7 @@
 
     try
     {
-        $conn = new PDO("mysql:host=$server;dbname=$basedatos", $usuario, $contra);
+        $conn = new PDO("mysql:host=$server;dbname=$basedatos", $usuario, $contra, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES  \'UTF8\''));
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //echo "Connected successfully";

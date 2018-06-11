@@ -65,7 +65,7 @@
                     <select name="provincia" id="provincia" class="custom-select" required>
                         <?php
                             $stmt = $conn->query("call obtenerProvincia(1);");
-                            $temp;
+                            $temp = 1;
 
                             while($row = $stmt->fetch(PDO::FETCH_NUM))
                             {
@@ -90,6 +90,22 @@
                     <label>Canton:</label>
                     <select name="canton" id="canton" class="custom-select" required>
 
+                    <?php
+                        $stmt = $conn->query("call obtenerCanton($temp);");
+
+                        while($row = $stmt->fetch(PDO::FETCH_NUM))
+                        {
+                            if (isset($_GET['canton']) && $_GET['canton'] == $row[0])
+                            {
+                                echo "<option value='" . $row[0] . "' selected>" . $row[1] . "</option>";
+                                $temp = $row[0];
+                            }
+                            else
+                            echo "<option value='" . $row[0] . "'>" . $row[1] . "</option>";
+                        }
+                        $stmt->closeCursor();
+                    ?>
+
                     </select>  <br> <br>
                     <div class="invalid-feedback">
                         Por favor, seleccione una opción.
@@ -98,6 +114,22 @@
                 <div class="form-group col-md-6">
                     <label>Distrito:</label>
                     <select name="distrito" id="distrito" class="custom-select" required>
+
+                    <?php
+						$stmt = $conn->query("call obtenerDistrito($temp);");
+
+					    while($row = $stmt->fetch(PDO::FETCH_NUM))
+					    {
+			                if (isset($_GET['distrito']) && $_GET['distrito'] == $row[0])
+			                {
+			                    echo "<option value='" . $row[0] . "' selected>" . $row[1] . "</option>";
+			                    $temp = $row[0];
+			                }
+			                else
+			                    echo "<option value='" . $row[0] . "'>" . $row[1] . "</option>";
+						}
+						$stmt->closeCursor();
+					?>
 
                     </select>
                     <div class="invalid-feedback">

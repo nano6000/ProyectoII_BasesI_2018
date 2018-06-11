@@ -8,9 +8,9 @@
     while ($row = $stmt->fetch(PDO::FETCH_NUM))
     {
         echo "<tr>";
-        echo "<td>" . $row[0] . "</td>";
-        echo "<td>" . $row[1] . "</td>";
-        echo "<td>" . $row[2] . "</td>";
+        echo "<td> <h6>" . $row[0] . "</h> </td>";
+        echo "<td> <h6>" . $row[1] . "</h> </td>";
+        echo "<td> <h6>" . $row[2] . "</h> </td>";
 
         echo "</tr>";
     }

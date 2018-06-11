@@ -29,9 +29,9 @@
         echo "<table width='100%' class='table table-fixed table-bordered table-hover table-condensed table-hover' id='data' style='font-size: 11px;'>";
         echo "<thead style='background-color: #f8f8f8;'>";
         echo '<tr>';
-        echo '<th>Nombre</th>';
-        echo '<th>Cantidad</th>';
-        echo '<th>Comercio</th>';
+        echo '<th> <h6>Nombre</th>';
+        echo '<th> <h6>Cantidad</th>';
+        echo '<th> <h6>Comercio</th>';
         echo '</tr>';
         echo '</thead>';
         echo '<tbody>';
@@ -48,7 +48,7 @@
 
     <script>
         $(document).ready(function(){
-          $('#data').DataTable( );
+          $('#data').DataTable( {"ordering": false} );
         });
     </script>
 

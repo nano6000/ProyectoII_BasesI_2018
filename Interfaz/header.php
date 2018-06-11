@@ -134,6 +134,11 @@
                                         </li>";
                                     break;
                                 case 1:
+                                    echo   "<li class='nav-item'>
+                                                <button type='button' class='btn btn-outline-dark' style='margin: 0 8px 0 0 ' id='canjearPuntos' role='button' onclick='location.href=\"canjearPuntosUsuario.php\"'>
+                                                    Canjear puntos
+                                                </button>
+                                            </li>";
                                     break;
                                 default:
                                     header("HTTP/1.1 501 Not Implemented");
@@ -143,8 +148,8 @@
                     ?>
 				</ul>
 			</div>
-			<div class="dropdown">
-				<button class="btn btn-secundary dropdown-toogle" type="button" id="dropdownUserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<div class="btn-group dropleft">
+				<button class="btn btn-light dropdown-toggle" type="button" id="dropdownUserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<?php
 					 	if (!isset($_SESSION['username']))
 							header("Location: home.php");

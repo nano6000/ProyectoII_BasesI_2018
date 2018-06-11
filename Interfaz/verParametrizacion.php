@@ -29,9 +29,9 @@
         echo "<table width='100%' class='table table-fixed table-bordered table-hover table-condensed table-hover' id='data' style='font-size: 11px;'>";
         echo "<thead style='background-color: #f8f8f8;'>";
         echo '<tr>';
-        echo '<th>Material</th>';
-        echo '<th>Peso</th>';
-        echo '<th>Puntaje</th>';
+        echo '<th> <h6>Material</th>';
+        echo '<th> <h6>Peso</th>';
+        echo '<th> <h6>Puntaje</th>';
         echo '</tr>';
         echo '</thead>';
         echo '<tbody>';
