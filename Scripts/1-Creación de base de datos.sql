@@ -529,15 +529,15 @@ DROP function IF EXISTS `BanderaAzul`.`checkPassword`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE FUNCTION `checkPassword` (`pUser` VARCHAR(45), `pPass` VARCHAR(45)) 
+CREATE FUNCTION `checkPassword` (`pUser` VARCHAR(45), `pPass` VARCHAR(45))
 	RETURNS BOOLEAN
     NOT DETERMINISTIC
     READS SQL DATA
     SQL SECURITY DEFINER
 BEGIN
-	RETURN EXISTS(SELECT tipoUsuario_idtipoUsuario 
-				  FROM `Usuario` 
-				  WHERE nombreUsuario = pUser 
+	RETURN EXISTS(SELECT tipoUsuario_idtipoUsuario
+				  FROM `Usuario`
+				  WHERE nombreUsuario = pUser
                   AND contrasena = pPass);
 END$$
 
@@ -578,8 +578,8 @@ CREATE FUNCTION `tipoUsuario` (`pUser` VARCHAR(45))
     READS SQL DATA
     SQL SECURITY DEFINER
 BEGIN
-	RETURN (SELECT tipoUsuario_idtipoUsuario 
-           FROM `Usuario` 
+	RETURN (SELECT tipoUsuario_idtipoUsuario
+           FROM `Usuario`
            WHERE nombreUsuario = pUser);
 END$$
 
@@ -599,7 +599,7 @@ CREATE PROCEDURE `obtenerPaises` ()
     READS SQL DATA
     SQL SECURITY DEFINER
 BEGIN
-	 SELECT idPais, nombrePais 
+	 SELECT idPais, nombrePais
      FROM `Pais`;
 END$$
 
@@ -615,11 +615,11 @@ DROP procedure IF EXISTS `BanderaAzul`.`obtenerProvincia`;
 DELIMITER $$
 USE `BanderaAzul`$$
 CREATE PROCEDURE `obtenerProvincia` (IN `pCodigo` INT)
-	NOT DETERMINISTIC 
-    READS SQL DATA 
+	NOT DETERMINISTIC
+    READS SQL DATA
     SQL SECURITY DEFINER
 BEGIN
-	 SELECT idProvincia, nombreProvincia 
+	 SELECT idProvincia, nombreProvincia
      FROM `Provincia`
      WHERE Pais_idPais = pCodigo;
 END$$
@@ -636,13 +636,13 @@ DROP procedure IF EXISTS `BanderaAzul`.`obtenerCanton`;
 DELIMITER $$
 USE `BanderaAzul`$$
 CREATE PROCEDURE `obtenerCanton` (IN `pCodigo` INT)
-	NOT DETERMINISTIC 
-    READS SQL DATA 
+	NOT DETERMINISTIC
+    READS SQL DATA
     SQL SECURITY DEFINER
 BEGIN
-	SELECT idCanton, nombreCanton 
-    FROM `Canton` 
-    WHERE Provincia_idProvincia = pCodigo; 
+	SELECT idCanton, nombreCanton
+    FROM `Canton`
+    WHERE Provincia_idProvincia = pCodigo;
 END$$
 
 DELIMITER ;
@@ -657,11 +657,11 @@ DROP procedure IF EXISTS `BanderaAzul`.`obtenerDistrito`;
 DELIMITER $$
 USE `BanderaAzul`$$
 CREATE PROCEDURE `obtenerDistrito` (IN `pCodigo` INT)
-	NOT DETERMINISTIC 
-    READS SQL DATA 
+	NOT DETERMINISTIC
+    READS SQL DATA
     SQL SECURITY DEFINER
 BEGIN
-	 SELECT idDistrito, nombreDistrito 
+	 SELECT idDistrito, nombreDistrito
      FROM `Distrito`
      WHERE Canton_idCanton = pCodigo;
 END$$
@@ -678,11 +678,11 @@ DROP procedure IF EXISTS `BanderaAzul`.`insertarUsuario`;
 DELIMITER $$
 USE `BanderaAzul`$$
 CREATE PROCEDURE `insertarUsuario`(IN `pCedula` INT, IN `pNombre` VARCHAR(45), IN `pApellido1` VARCHAR(45), IN `pApellido2` VARCHAR(45), IN `pNacimiento` DATETIME, IN `pDistrito` INT, IN `pPais` INT, IN `pUser` VARCHAR(45), IN `pPass` VARCHAR(512), IN `pTipo` INT)
-	NOT DETERMINISTIC 
-    CONTAINS SQL 
+	NOT DETERMINISTIC
+    CONTAINS SQL
     SQL SECURITY DEFINER
 BEGIN
-	INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Distrito_idDistrito`, `Pais_idPais`) VALUES (pCedula, pNombre, pApellido1, pApellido2, pNacimiento, pDistrito, pPais); 
+	INSERT INTO `persona`(`cedula`, `nombrePersona`, `primerApellidoPersona`, `segundoApellidoPersona`, `fechaNacimiento`, `Distrito_idDistrito`, `Pais_idPais`) VALUES (pCedula, pNombre, pApellido1, pApellido2, pNacimiento, pDistrito, pPais);
 	INSERT INTO `usuario`(`nombreUsuario`, `contrasena`, `puntosActuales`, `puntosGastados`, `puntosTotales`, `tipoUsuario_idtipoUsuario`, `Persona_cedula`) VALUES (pUser,pPass,0,0,0,pTipo,pCedula);
 END$$
 
@@ -698,10 +698,10 @@ DROP procedure IF EXISTS `BanderaAzul`.`insertarCorreo`;
 DELIMITER $$
 USE `BanderaAzul`$$
 CREATE PROCEDURE `insertarCorreo` (IN `pCorreo` VARCHAR(45), IN `pCedula` INT)
-	NOT DETERMINISTIC 
-    CONTAINS SQL 
-    SQL SECURITY DEFINER 
-BEGIN 
+	NOT DETERMINISTIC
+    CONTAINS SQL
+    SQL SECURITY DEFINER
+BEGIN
 	INSERT INTO `correoxpersona`(`correo`, `Persona_cedula`) VALUES (pCorreo,pCedula);
 END$$
 
@@ -716,11 +716,11 @@ DROP procedure IF EXISTS `BanderaAzul`.`insertarTelefono`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `insertarTelefono`(IN `pTelefono` INT, IN `pCedula` INT) 
-	NOT DETERMINISTIC 
-    CONTAINS SQL 
-    SQL SECURITY DEFINER 
-BEGIN 
+CREATE PROCEDURE `insertarTelefono`(IN `pTelefono` INT, IN `pCedula` INT)
+	NOT DETERMINISTIC
+    CONTAINS SQL
+    SQL SECURITY DEFINER
+BEGIN
 	INSERT INTO `telefonoxpersona`(`telefono`, `Persona_cedula`) VALUES (pTelefono,pCedula);
 END$$
 
@@ -736,16 +736,16 @@ DROP procedure IF EXISTS `BanderaAzul`.`obtenerCentroAcopio`;
 DELIMITER $$
 USE `BanderaAzul`$$
 CREATE PROCEDURE `obtenerCentroAcopio` (IN pId INT)
-	NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
-BEGIN 
-	SELECT `centroacopio`.`nombreCentroAcopio`, `centroacopio`.`contacto`, `localizacion`.`coordenadaX`, `localizacion`.`coordenadaY`, `distrito`.`nombreDistrito`, `canton`.`nombreCanton`, `provincia`.`nombreProvincia` 
-    FROM `centroacopio`, `localizacion`, `distrito`, `canton`, `provincia` 
+	NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
+BEGIN
+	SELECT `centroacopio`.`nombreCentroAcopio`, `centroacopio`.`contacto`, `localizacion`.`coordenadaX`, `localizacion`.`coordenadaY`, `distrito`.`nombreDistrito`, `canton`.`nombreCanton`, `provincia`.`nombreProvincia`
+    FROM `centroacopio`, `localizacion`, `distrito`, `canton`, `provincia`
     WHERE `centroacopio`.idCentroAcopio = pId AND
-		  `localizacion`.`codigo` = `centroacopio`.`Localizacion_codigo` AND 
-		  `distrito`.`idDistrito` = `centroacopio`.`Distrito_idDistrito` AND 
-          `canton`.`idCanton` = `distrito`.`Canton_idCanton` AND 
+		  `localizacion`.`codigo` = `centroacopio`.`Localizacion_codigo` AND
+		  `distrito`.`idDistrito` = `centroacopio`.`Distrito_idDistrito` AND
+          `canton`.`idCanton` = `distrito`.`Canton_idCanton` AND
           `provincia`.`idProvincia` = `canton`.`Provincia_idProvincia`;
 END$$
 
@@ -760,16 +760,14 @@ DROP procedure IF EXISTS `BanderaAzul`.`obtenerProducto`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `obtenerProducto` (IN `pUser` VARCHAR(45)) 
-	NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
-BEGIN 
-	SELECT idProducto, foto, nombre, precio 
-    FROM `Producto` 
-    WHERE Comercio_idComercio = (SELECT idComercio 
-								 FROM `Comercio` 
-                                 WHERE Usuario_nombreUsuario = pUser); 
+CREATE PROCEDURE `obtenerProducto` (IN `pCom` VARCHAR(45))
+	NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
+BEGIN
+	SELECT idProducto, foto, nombre, precio
+    FROM `Producto`
+    WHERE Comercio_idComercio = IFNULL(pCom,Comercio_idComercio);
 END$$
 
 DELIMITER ;
@@ -784,11 +782,11 @@ DROP procedure IF EXISTS `BanderaAzul`.`insertarProducto`;
 DELIMITER $$
 USE `BanderaAzul`$$
 CREATE PROCEDURE `insertarProducto` (IN `pFoto` VARCHAR(100), IN `pPrecio` INT, IN `pNombre` VARCHAR(45), IN `pCodigo` INT)
-	NOT DETERMINISTIC 
-    CONTAINS SQL 
-    SQL SECURITY DEFINER 
-BEGIN 
-	INSERT INTO `Producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`) 
+	NOT DETERMINISTIC
+    CONTAINS SQL
+    SQL SECURITY DEFINER
+BEGIN
+	INSERT INTO `Producto`(`foto`, `precio`, `nombre`, `Comercio_idComercio`)
     VALUES (pFoto, pPrecio, pNombre, pCodigo);
 END$$
 
@@ -803,13 +801,13 @@ DROP procedure IF EXISTS `BanderaAzul`.`insertarCentroAcopio`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `insertarCentroAcopio` (IN `pNombre` VARCHAR(45), IN `pContacto` INT, IN `pCoordX` FLOAT, IN `pCoordY` FLOAT, IN `pDistrito` INT, IN `pUser` VARCHAR(45)) 
-	NOT DETERMINISTIC 
-    CONTAINS SQL 
-    SQL SECURITY DEFINER 
-BEGIN 
-	INSERT INTO `localizacion`(`coordenadaX`, `coordenadaY`) VALUES (pCoordX,pCoordY); 
-	INSERT INTO `centroacopio`(`nombreCentroAcopio`, `contacto`, `Localizacion_codigo`, `Distrito_idDistrito`, `Usuario_nombreUsuario`) 
+CREATE PROCEDURE `insertarCentroAcopio` (IN `pNombre` VARCHAR(45), IN `pContacto` INT, IN `pCoordX` FLOAT, IN `pCoordY` FLOAT, IN `pDistrito` INT, IN `pUser` VARCHAR(45))
+	NOT DETERMINISTIC
+    CONTAINS SQL
+    SQL SECURITY DEFINER
+BEGIN
+	INSERT INTO `localizacion`(`coordenadaX`, `coordenadaY`) VALUES (pCoordX,pCoordY);
+	INSERT INTO `centroacopio`(`nombreCentroAcopio`, `contacto`, `Localizacion_codigo`, `Distrito_idDistrito`, `Usuario_nombreUsuario`)
 		VALUES (pNombre, pContacto, (SELECT LAST_INSERT_ID()), pDistrito, pUser);
 	UPDATE Usuario SET tipoUsuario_idtipoUsuario = 2
 	WHERE nombreUsuario = pUser;
@@ -826,13 +824,13 @@ DROP procedure IF EXISTS `BanderaAzul`.`insertarComercio`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `insertarComercio`(IN `pNombre` VARCHAR(45), IN `pContacto` INT, IN `pDescripcion` VARCHAR(45), IN `pUser` VARCHAR(45), IN `pTipo` INT) 
-	NOT DETERMINISTIC 
-    CONTAINS SQL 
-    SQL SECURITY DEFINER 
+CREATE PROCEDURE `insertarComercio`(IN `pNombre` VARCHAR(45), IN `pContacto` INT, IN `pDescripcion` VARCHAR(45), IN `pUser` VARCHAR(45), IN `pTipo` INT)
+	NOT DETERMINISTIC
+    CONTAINS SQL
+    SQL SECURITY DEFINER
 BEGIN
 	INSERT INTO `Comercio` (`nombreComercio`, `contacto`, `descripcion`, `Usuario_nombreUsuario`, `TipoComercio_idTipoComercio`)
-		VALUES (pNombre, pContacto, pDescripcion, pUser, pTipo); 
+		VALUES (pNombre, pContacto, pDescripcion, pUser, pTipo);
 	UPDATE Usuario
 		SET tipoUsuario_idtipoUsuario = 3
 		WHERE nombreUsuario = pUser;
@@ -849,12 +847,12 @@ DROP procedure IF EXISTS `BanderaAzul`.`insertarEquivalenciaMaterial`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `insertarEquivalenciaMaterial` (IN `pPeso` INT, IN `pPuntos` INT, IN `pNombre` VARCHAR(45)) 
-	NOT DETERMINISTIC 
-    CONTAINS SQL 
-    SQL SECURITY DEFINER 
-BEGIN 
-	INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (pPeso,pPuntos,pNombre); 
+CREATE PROCEDURE `insertarEquivalenciaMaterial` (IN `pPeso` INT, IN `pPuntos` INT, IN `pNombre` VARCHAR(45))
+	NOT DETERMINISTIC
+    CONTAINS SQL
+    SQL SECURITY DEFINER
+BEGIN
+	INSERT INTO `equivalenciamaterial`(`peso`, `puntos`, `descripcion`) VALUES (pPeso,pPuntos,pNombre);
 END$$
 
 DELIMITER ;
@@ -868,15 +866,15 @@ DROP procedure IF EXISTS `BanderaAzul`.`editarEquivalenciaMaterial`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `editarEquivalenciaMaterial`(IN `pPeso` INT, IN `pNombre` VARCHAR(45), IN `pPuntos` INT) 
-	NOT DETERMINISTIC 
-    MODIFIES SQL DATA 
-    SQL SECURITY DEFINER 
-BEGIN 
-	UPDATE `equivalenciamaterial` 
-		SET `puntos`= pPuntos 
-        WHERE `equivalenciamaterial`.`peso`= pPeso 
-        AND `equivalenciamaterial`.`nombre`= pNombre; 
+CREATE PROCEDURE `editarEquivalenciaMaterial`(IN `pPeso` INT, IN `pNombre` VARCHAR(45), IN `pPuntos` INT)
+	NOT DETERMINISTIC
+    MODIFIES SQL DATA
+    SQL SECURITY DEFINER
+BEGIN
+	UPDATE `equivalenciamaterial`
+		SET `puntos`= pPuntos
+        WHERE `equivalenciamaterial`.`peso`= pPeso
+        AND `equivalenciamaterial`.`nombre`= pNombre;
 END$$
 
 DELIMITER ;
@@ -890,17 +888,17 @@ DROP procedure IF EXISTS `BanderaAzul`.`insertarCanje`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE  PROCEDURE insertarCanje(IN pProducto INT, IN pCantidad INT,IN pUser VARCHAR(45)) 
-	NOT DETERMINISTIC 
-    CONTAINS SQL 
-    SQL SECURITY DEFINER 
-BEGIN 
-	INSERT INTO canjes(cantidad, Producto_idProducto,Usuario_nombreUsuario) 
+CREATE  PROCEDURE insertarCanje(IN pProducto INT, IN pCantidad INT,IN pUser VARCHAR(45))
+	NOT DETERMINISTIC
+    CONTAINS SQL
+    SQL SECURITY DEFINER
+BEGIN
+	INSERT INTO canjes(cantidad, Producto_idProducto,Usuario_nombreUsuario)
 		VALUES (pCantidad, pProducto, pUser);
-	UPDATE Usuario SET 
+	UPDATE Usuario SET
 		Usuario.puntosActuales = Usuario.puntosActuales - pCantidad*(OBTENERPRECIOPRODUCTO(pProducto)),
 		Usuario.puntosGastados = Usuario.puntosGastados + pCantidad*(OBTENERPRECIOPRODUCTO(pProducto))
-	WHERE Usuario.nombreUsuario = pUser; 
+	WHERE Usuario.nombreUsuario = pUser;
 END$$
 
 DELIMITER ;
@@ -914,18 +912,18 @@ DROP function IF EXISTS `BanderaAzul`.`puedeCanjear`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE FUNCTION `puedeCanjear`(`totalPrecio` INT, `pUser` VARCHAR(45), `resp` BOOLEAN) 
+CREATE FUNCTION `puedeCanjear`(`totalPrecio` INT, `pUser` VARCHAR(45), `resp` BOOLEAN)
 	RETURNS BOOLEAN
-	NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
-BEGIN 
-	SELECT IF(totalPrecio <= (SELECT puntosActuales 
-							FROM `Usuario` 
-                            WHERE nombreUsuario = pUser), 
-			  TRUE, 
-              FALSE) INTO resp; 
-	RETURN resp; 
+	NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
+BEGIN
+	SELECT IF(totalPrecio <= (SELECT puntosActuales
+							FROM `Usuario`
+                            WHERE nombreUsuario = pUser),
+			  TRUE,
+              FALSE) INTO resp;
+	RETURN resp;
 END$$
 
 DELIMITER ;
@@ -939,14 +937,14 @@ DROP procedure IF EXISTS `BanderaAzul`.`obtenerComercio`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `obtenerComercio` (IN `pUser` VARCHAR(45)) 
-	NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
-BEGIN 
-	SELECT nombreComercio, contacto, descripcion, Usuario_nombreUsuario, TipoComercio.nombre 
-    FROM `Comercio`, `TipoComercio` 
-    WHERE Usuario_nombreUsuario = pUser AND TipoComercio_idTipoComercio = idTipoComercio; 
+CREATE PROCEDURE `obtenerComercio` (IN `pUser` VARCHAR(45))
+	NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
+BEGIN
+	SELECT nombreComercio, contacto, descripcion, Usuario_nombreUsuario, TipoComercio.nombre
+    FROM `Comercio`, `TipoComercio`
+    WHERE Usuario_nombreUsuario = pUser AND TipoComercio_idTipoComercio = idTipoComercio;
 END$$
 
 DELIMITER ;
@@ -960,14 +958,14 @@ DROP function IF EXISTS `BanderaAzul`.`buscarIdComercio`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE FUNCTION `buscarIdComercio`(`pUser` VARCHAR(45)) RETURNS INT(11) 
-	NOT DETERMINISTIC 
-    CONTAINS SQL 
-    SQL SECURITY DEFINER 
-BEGIN 
-	RETURN (SELECT idComercio 
-			FROM `Comercio` 
-			WHERE pUser = Usuario_nombreUsuario); 
+CREATE FUNCTION `buscarIdComercio`(`pUser` VARCHAR(45)) RETURNS INT(11)
+	NOT DETERMINISTIC
+    CONTAINS SQL
+    SQL SECURITY DEFINER
+BEGIN
+	RETURN (SELECT idComercio
+			FROM `Comercio`
+			WHERE pUser = Usuario_nombreUsuario);
 END$$
 
 DELIMITER ;
@@ -1004,15 +1002,15 @@ DROP function IF EXISTS `BanderaAzul`.`verContraseña`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE FUNCTION `verContraseña`(`pUser` VARCHAR(45)) 
-	RETURNS VARCHAR(512) 
-	NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
-BEGIN 
-	RETURN (SELECT contrasena 
-			FROM `usuario` 
-			WHERE nombreUsuario = pUser); 
+CREATE FUNCTION `verContraseña`(`pUser` VARCHAR(45))
+	RETURNS VARCHAR(512)
+	NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
+BEGIN
+	RETURN (SELECT contrasena
+			FROM `usuario`
+			WHERE nombreUsuario = pUser);
 END$$
 
 DELIMITER ;
@@ -1045,9 +1043,9 @@ DROP procedure IF EXISTS `BanderaAzul`.`obtenerTipoComercio`;
 DELIMITER $$
 USE `BanderaAzul`$$
 CREATE PROCEDURE `obtenerTipoComercio` ()
-	NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
+	NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
 BEGIN
 	SELECT idTipoComercio, nombre
     FROM `TipoComercio`;
@@ -1064,7 +1062,7 @@ DROP procedure IF EXISTS `BanderaAzul`.`usuariosXedad`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `usuariosXedad`() NOT DETERMINISTIC READS SQL DATA SQL SECURITY DEFINER 
+CREATE PROCEDURE `usuariosXedad`() NOT DETERMINISTIC READS SQL DATA SQL SECURITY DEFINER
 BEGIN
     SELECT
 		SUM(IF(age < 19,1,0)) as 'Menores 18',
@@ -1089,13 +1087,13 @@ DROP procedure IF EXISTS `BanderaAzul`.`obtenerEquivalenciaMaterial`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `obtenerEquivalenciaMaterial`() 
-	NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
-BEGIN 
-	SELECT idPuntos, descripcion, peso, puntos 
-    FROM `EquivalenciaMaterial`; 
+CREATE PROCEDURE `obtenerEquivalenciaMaterial`()
+	NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
+BEGIN
+	SELECT idPuntos, descripcion, peso, puntos
+    FROM `EquivalenciaMaterial`;
 END$$
 
 DELIMITER ;
@@ -1109,10 +1107,10 @@ DROP procedure IF EXISTS `BanderaAzul`.`insertarPuntos`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `insertarPuntos`(IN `pIdTipo` INT, IN `pPeso` INT, IN `pUser` VARCHAR(45),  IN `pIdCentro` INT) 
-	NOT DETERMINISTIC 
-    CONTAINS SQL 
-    SQL SECURITY DEFINER 
+CREATE PROCEDURE `insertarPuntos`(IN `pIdTipo` INT, IN `pPeso` INT, IN `pUser` VARCHAR(45),  IN `pIdCentro` INT)
+	NOT DETERMINISTIC
+    CONTAINS SQL
+    SQL SECURITY DEFINER
 BEGIN
 	SET @puntos = pPeso*(SELECT em.puntos
                         FROM `EquivalenciaMaterial` em
@@ -1136,15 +1134,15 @@ DROP function IF EXISTS `BanderaAzul`.`obtenerPrecioProducto`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE FUNCTION obtenerPrecioProducto(pId INT) 
-	RETURNS INT(12) 
-    NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
-BEGIN 
-	RETURN (SELECT precio 
-			FROM producto 
-            WHERE producto.idProducto = pId); 
+CREATE FUNCTION obtenerPrecioProducto(pId INT)
+	RETURNS INT(12)
+    NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
+BEGIN
+	RETURN (SELECT precio
+			FROM producto
+            WHERE producto.idProducto = pId);
 END$$
 
 DELIMITER ;
@@ -1158,15 +1156,15 @@ DROP function IF EXISTS `BanderaAzul`.`buscarIdCentro`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE FUNCTION `buscarIdCentro`(`pUser` VARCHAR(45)) 
-	RETURNS INT(11) 
-    NOT DETERMINISTIC 
-    CONTAINS SQL 
-    SQL SECURITY DEFINER 
-BEGIN 
+CREATE FUNCTION `buscarIdCentro`(`pUser` VARCHAR(45))
+	RETURNS INT(11)
+    NOT DETERMINISTIC
+    CONTAINS SQL
+    SQL SECURITY DEFINER
+BEGIN
 	RETURN (SELECT c.idcentroAcopio
-			FROM `CentroAcopio` c 
-			WHERE pUser = c.Usuario_nombreUsuario); 
+			FROM `CentroAcopio` c
+			WHERE pUser = c.Usuario_nombreUsuario);
 END$$
 
 DELIMITER ;
@@ -1180,15 +1178,15 @@ DROP procedure IF EXISTS `BanderaAzul`.`top5Productos`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `top5Productos`(IN `pComercio` INT) 
+CREATE PROCEDURE `top5Productos`(IN `pComercio` INT)
 	NOT DETERMINISTIC
-    CONTAINS SQL 
+    CONTAINS SQL
     SQL SECURITY DEFINER
 BEGIN
-	SELECT p.nombre, SUM(c.cantidad) 
-    FROM producto p, canjes c 
-    WHERE p.Comercio_idComercio = pComercio 
-		AND p.idProducto = c. Producto_idProducto 
+	SELECT p.nombre, SUM(c.cantidad)
+    FROM producto p, canjes c
+    WHERE p.Comercio_idComercio = pComercio
+		AND p.idProducto = c. Producto_idProducto
     GROUP BY p.nombre, p.idProducto
     ORDER BY SUM(c.cantidad) DESC
     LIMIT 5;
@@ -1205,16 +1203,16 @@ DROP procedure IF EXISTS `BanderaAzul`.`totalPuntosComercio`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `totalPuntosComercio`(IN `pComercio` INT) 
-	NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
-BEGIN 
-	SELECT SUM(c.cantidad)*p.precio AS puntos 
-    FROM producto p, canjes c 
-    WHERE p.idProducto = c.Producto_idProducto 
-		AND p.Comercio_idComercio = pComercio 
-	GROUP BY p.Comercio_idComercio; 
+CREATE PROCEDURE `totalPuntosComercio`(IN `pComercio` INT)
+	NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
+BEGIN
+	SELECT SUM(c.cantidad)*p.precio AS puntos
+    FROM producto p, canjes c
+    WHERE p.idProducto = c.Producto_idProducto
+		AND p.Comercio_idComercio = pComercio
+	GROUP BY p.Comercio_idComercio;
 END$$
 
 DELIMITER ;
@@ -1228,19 +1226,19 @@ DROP procedure IF EXISTS `BanderaAzul`.`obtenerListadoMateriales`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `obtenerListadoMateriales`(IN `pIdCentro` INT) 
-	NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
-BEGIN 
-	SELECT em.descripcion, SUM(p.peso) peso, MONTH(p.fecCreacion) mes, YEAR(p.fecCreacion) año 
-    FROM puntos p, 
-		 equivalenciamaterial em 
-    WHERE em.idPuntos = p.idTipoPuntos 
-		AND p.centroAcopio_idcentroAcopio = pIdCentro 
-	GROUP BY YEAR(p.fecCreacion), 
-		     MONTH(p.fecCreacion), 
-             em.descripcion; 
+CREATE PROCEDURE `obtenerListadoMateriales`(IN `pIdCentro` INT)
+	NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
+BEGIN
+	SELECT em.descripcion, SUM(p.peso) peso, MONTH(p.fecCreacion) mes, YEAR(p.fecCreacion) año
+    FROM puntos p,
+		 equivalenciamaterial em
+    WHERE em.idPuntos = p.idTipoPuntos
+		AND p.centroAcopio_idcentroAcopio = pIdCentro
+	GROUP BY YEAR(p.fecCreacion),
+		     MONTH(p.fecCreacion),
+             em.descripcion;
 END$$
 
 DELIMITER ;
@@ -1254,18 +1252,18 @@ DROP procedure IF EXISTS `BanderaAzul`.`top5Usuarios`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `top5Usuarios`(IN `pIdCentro` INT) 
-	NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
+CREATE PROCEDURE `top5Usuarios`(IN `pIdCentro` INT)
+	NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
 BEGIN
-	SELECT u.nombreUsuario, SUM(p.peso) 
-    FROM usuario u, puntos p 
-    WHERE p.Usuario_nombreUsuario = u.nombreUsuario 
-		AND p.centroAcopio_idcentroAcopio = pIdCentro 
-	GROUP BY u.nombreUsuario 
-    ORDER BY SUM(p.peso) DESC 
-    LIMIT 5; 
+	SELECT u.nombreUsuario, SUM(p.peso)
+    FROM usuario u, puntos p
+    WHERE p.Usuario_nombreUsuario = u.nombreUsuario
+		AND p.centroAcopio_idcentroAcopio = pIdCentro
+	GROUP BY u.nombreUsuario
+    ORDER BY SUM(p.peso) DESC
+    LIMIT 5;
 END$$
 
 DELIMITER ;
@@ -1279,15 +1277,15 @@ DROP procedure IF EXISTS `BanderaAzul`.`usuariosCentro`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `usuariosCentro`(IN `pIdCentro` INT) 
-	NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
+CREATE PROCEDURE `usuariosCentro`(IN `pIdCentro` INT)
+	NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
 BEGIN
     SELECT pe.cedula, CONCAT(pe.nombrePersona, ' ', pe.primerApellidoPersona, ' ', pe.segundoApellidoPersona) nombre, u.nombreUsuario, SUM(p.puntos) puntosObtenidos
         FROM usuario u, persona pe, puntos p
         WHERE u.Persona_cedula = pe.cedula
-            AND p.Usuario_nombreUsuario = u.nombreUsuario 
+            AND p.Usuario_nombreUsuario = u.nombreUsuario
             AND p.centroAcopio_idcentroAcopio = pIdCentro
         GROUP BY u.nombreUsuario;
 END$$
@@ -1303,10 +1301,10 @@ DROP procedure IF EXISTS `BanderaAzul`.`productosMasCanjeados`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `productosMasCanjeados`() 
-	NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
+CREATE PROCEDURE `productosMasCanjeados`()
+	NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
 BEGIN
     SELECT p.nombre, SUM(ca.cantidad), c.nombreComercio
         FROM producto p, canjes ca, comercio c
@@ -1327,12 +1325,12 @@ DROP procedure IF EXISTS `BanderaAzul`.`puntosUsuarios`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `puntosUsuarios`() 
-	NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
+CREATE PROCEDURE `puntosUsuarios`()
+	NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
 BEGIN
-	SELECT u.nombreUsuario, u.puntosActuales, u.puntosGastados, u.puntosTotales 
+	SELECT u.nombreUsuario, u.puntosActuales, u.puntosGastados, u.puntosTotales
         FROM usuario u
         GROUP BY u.nombreUsuario
         ORDER BY u.puntosTotales DESC;
@@ -1349,17 +1347,17 @@ DROP procedure IF EXISTS `BanderaAzul`.`top5UsuarioTotal`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `top5UsuarioTotal`() 
-	NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
-BEGIN 
-	SELECT u.nombreUsuario, SUM(p.puntos) 
-    FROM usuario u, puntos p 
-    WHERE p.Usuario_nombreUsuario = u.nombreUsuario 
-	GROUP BY u.nombreUsuario 
-    ORDER BY SUM(p.puntos) DESC 
-    LIMIT 5; 
+CREATE PROCEDURE `top5UsuarioTotal`()
+	NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
+BEGIN
+	SELECT u.nombreUsuario, SUM(p.puntos)
+    FROM usuario u, puntos p
+    WHERE p.Usuario_nombreUsuario = u.nombreUsuario
+	GROUP BY u.nombreUsuario
+    ORDER BY SUM(p.puntos) DESC
+    LIMIT 5;
 END$$
 
 DELIMITER ;
@@ -1373,14 +1371,14 @@ DROP procedure IF EXISTS `BanderaAzul`.`totalProductos`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `totalProductos`() 
-	NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
+CREATE PROCEDURE `totalProductos`()
+	NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
 BEGIN
-SELECT MONTH(c.fecCreacion), YEAR(c.fecCreacion), SUM(c.cantidad) 
+SELECT MONTH(c.fecCreacion), YEAR(c.fecCreacion), SUM(c.cantidad)
     FROM canjes c
-    GROUP BY YEAR(c.fecCreacion), MONTH(c.fecCreacion) 
+    GROUP BY YEAR(c.fecCreacion), MONTH(c.fecCreacion)
     ORDER BY SUM(c.cantidad) DESC;
 END$$
 
@@ -1395,10 +1393,10 @@ DROP procedure IF EXISTS `BanderaAzul`.`cambiarClave`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `cambiarClave`(IN `pUser` VARCHAR(45), IN `pPass` VARCHAR(512)) 
-	NOT DETERMINISTIC 
-    CONTAINS SQL 
-    SQL SECURITY DEFINER 
+CREATE PROCEDURE `cambiarClave`(IN `pUser` VARCHAR(45), IN `pPass` VARCHAR(512))
+	NOT DETERMINISTIC
+    CONTAINS SQL
+    SQL SECURITY DEFINER
 BEGIN
     INSERT INTO `cambioclave`(`claveNueva`, `claveVieja`, `Usuario_nombreUsuario`) VALUES (pPass,OBTENERCONTRASENA(pUser),pUser);
     UPDATE `Usuario`
@@ -1418,12 +1416,12 @@ DROP function IF EXISTS `BanderaAzul`.`obtenerContrasena`;
 DELIMITER $$
 USE `BanderaAzul`$$
 CREATE FUNCTION `obtenerContrasena`(`pUser` VARCHAR(45))
-	RETURNS VARCHAR(512) 
-    NOT DETERMINISTIC 
-    CONTAINS SQL 
-    SQL SECURITY DEFINER 
+	RETURNS VARCHAR(512)
+    NOT DETERMINISTIC
+    CONTAINS SQL
+    SQL SECURITY DEFINER
 BEGIN
-	RETURN (SELECT u.contrasena FROM `Usuario` u WHERE u.nombreUsuario = pUser); 
+	RETURN (SELECT u.contrasena FROM `Usuario` u WHERE u.nombreUsuario = pUser);
 END$$
 
 DELIMITER ;
@@ -1437,18 +1435,18 @@ DROP procedure IF EXISTS `BanderaAzul`.`verPersona`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE verPersona(IN pUser VARCHAR(45)) NOT DETERMINISTIC READS SQL DATA SQL SECURITY DEFINER 
-BEGIN 
-	SELECT p.cedula, p.nombrePersona, p.primerApellidoPersona, p.segundoApellidoPersona, t.telefono, co.correo, 
-		DATE(p.fechaNacimiento), d.nombreDistrito, pr.nombreProvincia, c.nombreCanton, pa.nombrePais, u.puntosActuales 
+CREATE PROCEDURE verPersona(IN pUser VARCHAR(45)) NOT DETERMINISTIC READS SQL DATA SQL SECURITY DEFINER
+BEGIN
+	SELECT p.cedula, p.nombrePersona, p.primerApellidoPersona, p.segundoApellidoPersona, t.telefono, co.correo,
+		DATE(p.fechaNacimiento), d.nombreDistrito, pr.nombreProvincia, c.nombreCanton, pa.nombrePais, u.puntosActuales
         FROM persona p, usuario u, provincia pr, canton c, distrito d, telefonoxpersona t, correoxpersona co, pais pa
-        WHERE pUser = u.nombreUsuario 
-			AND u.Persona_cedula = p.cedula 
-            AND p.Distrito_idDistrito = d.idDistrito 
-            AND c.idCanton = d.Canton_idCanton 
-            AND c.Provincia_idProvincia = pr.idProvincia 
-            AND t.Persona_cedula = p.cedula 
-            AND co.Persona_cedula = p.cedula 
+        WHERE pUser = u.nombreUsuario
+			AND u.Persona_cedula = p.cedula
+            AND p.Distrito_idDistrito = d.idDistrito
+            AND c.idCanton = d.Canton_idCanton
+            AND c.Provincia_idProvincia = pr.idProvincia
+            AND t.Persona_cedula = p.cedula
+            AND co.Persona_cedula = p.cedula
             AND pa.idPais = p.Pais_idPais;
 END$$
 
@@ -1463,14 +1461,14 @@ DROP procedure IF EXISTS `BanderaAzul`.`cambiosClaveUltimoMes`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `cambiosClaveUltimoMes`() 
-	NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
+CREATE PROCEDURE `cambiosClaveUltimoMes`()
+	NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
 BEGIN
-	SELECT a.usu, cedula, nombre, apellido, CONCAT(MONTH(fecha), '-', YEAR(fecha))fecha 
-		FROM (SELECT DISTINCT u.nombreUsuario usu, p.cedula cedula, p.nombrePersona nombre, 
-			 CONCAT(p.primerApellidoPersona,' ',p.segundoApellidoPersona) apellido, 
+	SELECT a.usu, cedula, nombre, apellido, CONCAT(MONTH(fecha), '-', YEAR(fecha))fecha
+		FROM (SELECT DISTINCT u.nombreUsuario usu, p.cedula cedula, p.nombrePersona nombre,
+			 CONCAT(p.primerApellidoPersona,' ',p.segundoApellidoPersona) apellido,
              (SELECT ci.fecCreacion
 				FROM cambioclave AS ci
 				WHERE ci.Usuario_nombreUsuario = u.nombreUsuario
@@ -1497,11 +1495,11 @@ DROP function IF EXISTS `BanderaAzul`.`obtenerCedula`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE FUNCTION `obtenerCedula`(`pUser` INT) 
-	RETURNS VARCHAR(45) 
-    NOT DETERMINISTIC 
-    READS SQL DATA 
-    SQL SECURITY DEFINER 
+CREATE FUNCTION `obtenerCedula`(`pUser` INT)
+	RETURNS VARCHAR(45)
+    NOT DETERMINISTIC
+    READS SQL DATA
+    SQL SECURITY DEFINER
 BEGIN
 	RETURN (SELECT u.Persona_cedula
            	FROM usuario u
@@ -1519,13 +1517,13 @@ DROP procedure IF EXISTS `BanderaAzul`.`updateTelefono`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE updateTelefono(IN pCedula INT(11), IN pTelefono INT(11)) 
-	NOT DETERMINISTIC 
-    MODIFIES SQL DATA 
-    SQL SECURITY DEFINER 
+CREATE PROCEDURE updateTelefono(IN pCedula INT(11), IN pTelefono INT(11))
+	NOT DETERMINISTIC
+    MODIFIES SQL DATA
+    SQL SECURITY DEFINER
 BEGIN
-	UPDATE telefonoxpersona 
-		SET telefono = pTelefono 
+	UPDATE telefonoxpersona
+		SET telefono = pTelefono
 		WHERE Persona_cedula = pCedula;
 END$$
 
@@ -1540,14 +1538,14 @@ DROP procedure IF EXISTS `BanderaAzul`.`updateCorreo`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE updateCorreo(IN pCedula INT(11), IN pCorreo VARCHAR(45)) 
-	NOT DETERMINISTIC 
-    MODIFIES SQL DATA 
-    SQL SECURITY DEFINER 
+CREATE PROCEDURE updateCorreo(IN pCedula INT(11), IN pCorreo VARCHAR(45))
+	NOT DETERMINISTIC
+    MODIFIES SQL DATA
+    SQL SECURITY DEFINER
 BEGIN
-    UPDATE correoxpersona 
-		SET correo = pCorreo 
-		WHERE Persona_cedula = pCedula; 
+    UPDATE correoxpersona
+		SET correo = pCorreo
+		WHERE Persona_cedula = pCedula;
 END$$
 
 DELIMITER ;
@@ -1561,18 +1559,18 @@ DROP procedure IF EXISTS `BanderaAzul`.`updatePersona`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE updatePersona(IN pCedula INT(11), IN pNombre VARCHAR(45), IN pApellido1 VARCHAR(45), IN pApellido2 VARCHAR(45), IN pDistrito INT(11), IN pPais INT(11)) 
-	NOT DETERMINISTIC 
-    MODIFIES SQL DATA 
-    SQL SECURITY DEFINER 
+CREATE PROCEDURE updatePersona(IN pCedula INT(11), IN pNombre VARCHAR(45), IN pApellido1 VARCHAR(45), IN pApellido2 VARCHAR(45), IN pDistrito INT(11), IN pPais INT(11))
+	NOT DETERMINISTIC
+    MODIFIES SQL DATA
+    SQL SECURITY DEFINER
 BEGIN
-    UPDATE persona 
-		SET nombrePersona = pNombre, 
-        primerApellidoPersona = pApellido1, 
-        segundoApellidoPersona = pApellido2, 
-        Distrito_idDistrito = pDistrito, 
-        Pais_idPais = pPais 
-		WHERE cedula = pCedula; 
+    UPDATE persona
+		SET nombrePersona = pNombre,
+        primerApellidoPersona = pApellido1,
+        segundoApellidoPersona = pApellido2,
+        Distrito_idDistrito = pDistrito,
+        Pais_idPais = pPais
+		WHERE cedula = pCedula;
 END$$
 
 DELIMITER ;
@@ -1586,15 +1584,15 @@ DROP procedure IF EXISTS `BanderaAzul`.`editarComercio`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE  PROCEDURE editarComercio(IN pIdComercio INT, IN pNombreComercio VARCHAR(45), IN pContacto INT, IN pDescripcion VARCHAR(45), IN pTipo INT) 
-	NOT DETERMINISTIC 
-    MODIFIES SQL DATA 
-    SQL SECURITY DEFINER 
+CREATE  PROCEDURE editarComercio(IN pIdComercio INT, IN pNombreComercio VARCHAR(45), IN pContacto INT, IN pDescripcion VARCHAR(45), IN pTipo INT)
+	NOT DETERMINISTIC
+    MODIFIES SQL DATA
+    SQL SECURITY DEFINER
 BEGIN
     UPDATE Comercio
         SET Comercio.nombreComercio = pNombreComercio,
             Comercio.contacto = pContacto,
-            Comercio.descripcion = pDescripcion, 
+            Comercio.descripcion = pDescripcion,
             Comercio.TipoComercio_idTipoComercio = pTipo
         WHERE idComercio = pIdComercio;
 END$$
@@ -1610,10 +1608,10 @@ DROP procedure IF EXISTS `BanderaAzul`.`editarCentro`;
 
 DELIMITER $$
 USE `BanderaAzul`$$
-CREATE PROCEDURE `editarCentro`(IN `pIdCentro` INT, IN `pNombre` VARCHAR(45), IN `pContacto` INT, IN `pCoordX` FLOAT, IN `pCoordy` FLOAT, IN `pDistrito` INT) 
-	NOT DETERMINISTIC 
-    MODIFIES SQL DATA 
-    SQL SECURITY DEFINER 
+CREATE PROCEDURE `editarCentro`(IN `pIdCentro` INT, IN `pNombre` VARCHAR(45), IN `pContacto` INT, IN `pCoordX` FLOAT, IN `pCoordy` FLOAT, IN `pDistrito` INT)
+	NOT DETERMINISTIC
+    MODIFIES SQL DATA
+    SQL SECURITY DEFINER
 BEGIN
 	UPDATE centroacopio
         SET centroacopio.nombreCentroAcopio = pNombre,
@@ -1629,7 +1627,7 @@ DELIMITER ;
 -- -----------------------------------------------------
 DROP VIEW IF EXISTS `BanderaAzul`.`usuarios` ;
 USE `BanderaAzul`;
-CREATE OR REPLACE VIEW `usuarios` (Nombre, Username, Cedula, Distrito, Canton, Provincia) AS 
+CREATE OR REPLACE VIEW `usuarios` (Nombre, Username, Cedula, Distrito, Canton, Provincia) AS
 SELECT
     CONCAT(`persona`.`nombrePersona`, ' ', `persona`.`primerApellidoPersona`, ' ', `persona`.`segundoApellidoPersona`),
     `usuario`.`nombreUsuario`,
@@ -1653,9 +1651,9 @@ DROP VIEW IF EXISTS `BanderaAzul`.`comercios` ;
 USE `BanderaAzul`;
 CREATE OR REPLACE VIEW `comercios`(Comercio, Tipo, Descripcion, Contacto, Encargado)
 	AS SELECT `comercio`.`nombreComercio`, `tipocomercio`.`nombre`, `comercio`.`descripcion`, `comercio`.`contacto`, CONCAT(`persona`.`nombrePersona`, ' ', `persona`.`primerApellidoPersona`, ' ', `persona`.`segundoApellidoPersona`)
-		FROM `comercio`, `tipocomercio`, `persona`, `usuario` 
-		WHERE (tipocomercio.idTipoComercio = comercio.TipoComercio_idTipoComercio) 
-		AND (comercio.Usuario_nombreUsuario = usuario.nombreUsuario) 
+		FROM `comercio`, `tipocomercio`, `persona`, `usuario`
+		WHERE (tipocomercio.idTipoComercio = comercio.TipoComercio_idTipoComercio)
+		AND (comercio.Usuario_nombreUsuario = usuario.nombreUsuario)
 		AND (persona.cedula = usuario.Persona_cedula);
 
 -- -----------------------------------------------------
@@ -1663,7 +1661,7 @@ CREATE OR REPLACE VIEW `comercios`(Comercio, Tipo, Descripcion, Contacto, Encarg
 -- -----------------------------------------------------
 DROP VIEW IF EXISTS `BanderaAzul`.`comerciosXTipo` ;
 USE `BanderaAzul`;
-CREATE OR REPLACE VIEW `comerciosXTipo` (Tipo, Cantidad) AS 
+CREATE OR REPLACE VIEW `comerciosXTipo` (Tipo, Cantidad) AS
 	SELECT tc.nombre, COUNT(c.TipoComercio_idTipoComercio)
 	FROM comercio c, tipocomercio tc
 	WHERE tc.idTipoComercio = c.TipoComercio_idTipoComercio
@@ -1677,15 +1675,15 @@ USE `BanderaAzul`;
 CREATE OR REPLACE
  VIEW `centros`
  (Nombre, Contacto, Encagado, Provincia, Canton, Distrito, Latitud, Longitud)
- AS SELECT ca.nombreCentroAcopio, ca.contacto, 
+ AS SELECT ca.nombreCentroAcopio, ca.contacto,
 	CONCAT(p.nombrePersona,' ', p.primerApellidoPersona,' ', p.segundoApellidoPersona),
     pr.nombreProvincia, c.nombreCanton, d.nombreDistrito, l.coordenadaX, l.coordenadaY
 FROM centroacopio ca, usuario u, persona p, localizacion l, distrito d, canton c, provincia pr
 WHERE ca.Usuario_nombreUsuario = u.nombreUsuario
 AND u.Persona_cedula = p.cedula
 AND ca.Localizacion_codigo = l.codigo
-AND ca.Distrito_idDistrito = d.idDistrito 
-AND d.Canton_idCanton = c.idCanton 
+AND ca.Distrito_idDistrito = d.idDistrito
+AND d.Canton_idCanton = c.idCanton
 AND c.Provincia_idProvincia = pr.idProvincia;
 
 -- -----------------------------------------------------
@@ -1708,8 +1706,8 @@ DELIMITER $$
 USE `BanderaAzul`$$
 DROP TRIGGER IF EXISTS `BanderaAzul`.`Pais_BEFORE_INSERT` $$
 USE `BanderaAzul`$$
-CREATE DEFINER = CURRENT_USER() TRIGGER `BanderaAzul`.`Pais_BEFORE_INSERT` BEFORE INSERT ON `Pais` 
-	FOR EACH ROW 
+CREATE DEFINER = CURRENT_USER() TRIGGER `BanderaAzul`.`Pais_BEFORE_INSERT` BEFORE INSERT ON `Pais`
+	FOR EACH ROW
 	SET NEW.fecCreacion = NOW(),
 		NEW.usuarioCreacion = CURRENT_USER();$$
 
@@ -1718,7 +1716,7 @@ USE `BanderaAzul`$$
 DROP TRIGGER IF EXISTS `BanderaAzul`.`Pais_BEFORE_UPDATE` $$
 USE `BanderaAzul`$$
 CREATE DEFINER = CURRENT_USER() TRIGGER `BanderaAzul`.`Pais_BEFORE_UPDATE` BEFORE UPDATE ON `Pais`
-	FOR EACH ROW 
+	FOR EACH ROW
 	SET NEW.fecUltimaModificacion = NOW(),
 		NEW.usuarioUltimaModificacion = CURRENT_USER();$$
 
