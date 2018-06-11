@@ -58,7 +58,7 @@
                                         <div class="dropdown-menu" aria-labelledby="dropdownHuerta">
                                             <a class="dropdown-item" href="verUsuarioTotal.php">Ver usuarios</a>
                                             <a class="dropdown-item" href="verComercioTotal.php">Ver comercios</a>
-                                            <a class="dropdown-item" href="#">Cambios de clave</a>
+                                            <a class="dropdown-item" href="verCambiosClave.php">Cambios de clave</a>
                                             <a class="dropdown-item" href="verProductosMasCanjeados.php">Productos con mayor solicitud</a>
                                             <a class="dropdown-item" href="verPuntosUsuarios.php">Puntaje de usuarios</a>
                                         </div>
