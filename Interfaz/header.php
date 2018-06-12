@@ -128,7 +128,7 @@
                                             </div>
                                         </div>
                                         <li class='nav-item'>
-                                            <button type='button' class='btn btn-outline-dark' style='margin: 0 8px 0 0 ' id='obtenerPuntos' role='button' onclick='location.href=\"obtenerPuntos.php\"' aria-expanded='false'>
+                                            <button type='button' class='btn btn-outline-dark' style='margin: 0 8px 0 0 ' id='obtenerPuntos' role='button' onclick='location.href=\"darPuntos.php\"' aria-expanded='false'>
                                                 Obtener puntos
                                             </button>
                                         </li>";

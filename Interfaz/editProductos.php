@@ -46,7 +46,7 @@
 
     <script>
  $(document).ready(function(){
-      $('#data').DataTable( );
+      $('#data').DataTable( {ordering: false} );
  });
 </script>
 

@@ -19,7 +19,8 @@
         echo "<div class='panel-body' style='margin: 0 2% 0 2%'>";
         echo "<div class='table-responsive'>";
 
-        echo "<table border=\"0\" cellspacing=\"5\" cellpadding=\"5\" style=\"margin: 0 0 3% 0\">
+        echo "<div class=\"row justify-content-center\" style=\"margin: 2% 0 0 0\">
+			<table border=\"0\" cellspacing=\"5\" cellpadding=\"5\" style=\"margin: 0 0 3% 0%\">
         <tbody><tr>
             <td>Nombre:</td>
             <td><input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\" ></td>
@@ -33,7 +34,7 @@
             <td><input type=\"text\" id=\"distrito\" name=\"distrito\" class=\"form-control\" ></td>
 
         </tr>
-    </tbody></table>";
+    </tbody></table></div>";
 
         echo "<table width='100%' class='table table-fixed table-bordered table-hover table-condensed table-hover' id='data' style='font-size: 11px;'>";
         echo "<thead style='background-color: #f8f8f8;'>";
@@ -84,7 +85,7 @@
 );
 
         $(document).ready(function(){
-          var table = $('#data').DataTable( );
+          var table = $('#data').DataTable( {ordering: false} )
 
         $('#name, #ced, #prov, #canton, #distrito').keyup( function() {
         table.draw();

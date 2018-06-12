@@ -15,16 +15,16 @@
             if (!$stmt)
             {
                 $error = $conn->errorCode();
-                header("Location: ../obtenerPuntos.php?error=$error)");
+                header("Location: ../darPuntos.php?error=$error)");
             }
             else
             // echo $producto;
-            header("Location: ../obtenerPuntos.php?success");
+            header("Location: ../darPuntos.php?success");
         }
         catch (\Exception $e)
         {
             $error = $conn->errorCode();
-            header("Location: ../obtenerPuntos.php?error=$error");
+            header("Location: ../darPuntos.php?error=$error");
 
         }
 

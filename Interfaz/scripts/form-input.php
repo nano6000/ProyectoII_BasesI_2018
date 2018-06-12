@@ -30,7 +30,7 @@
             $passwd = password_hash($passwd, PASSWORD_DEFAULT);
 
             $stmt = $conn->query("call insertarUsuario('$cedula', '$pNombre', '$pApellido', '$sApellido', '$fechNac',
-                                        $distrito, $nacionalidad, '$usuario', '$passwd', 1)");
+                                        $distrito, $nacionalidad, '$usuario', '$passwd', 1, $pTel, '$pEmail')");
 
             if (!$stmt)
             {

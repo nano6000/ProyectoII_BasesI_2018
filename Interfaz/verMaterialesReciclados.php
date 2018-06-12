@@ -71,7 +71,7 @@
     }
 );
         $(document).ready(function(){
-          var table = $('#data').DataTable( );
+          var table = $('#data').DataTable( {ordering: false} );
 
         $('#mes, #año').keyup( function() {
         table.draw();

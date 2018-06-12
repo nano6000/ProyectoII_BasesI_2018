@@ -17,7 +17,7 @@
             $stmt = $conn->query("call insertarEquivalenciaMaterial($peso, $puntaje, '$material');");
             if (!$stmt)
             {
-                header("Location: ../obtenerPuntos.php?error&peso=$peso&material=$material&puntaje=$puntaje)");
+                header("Location: ../darPuntos.php?error&peso=$peso&material=$material&puntaje=$puntaje)");
             }
             else
             // echo $producto;
@@ -25,7 +25,7 @@
         }
         catch (\Exception $e)
         {
-            header("Location: ../obtenerPuntos.php?error=$error&peso=$peso&material=$material&puntaje=$puntaje");
+            header("Location: ../darPuntos.php?error=$error&peso=$peso&material=$material&puntaje=$puntaje");
 
         }
 

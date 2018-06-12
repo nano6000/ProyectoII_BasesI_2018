@@ -67,7 +67,7 @@
 );
 
         $(document).ready(function(){
-          var table = $('#data').DataTable( );
+          var table = $('#data').DataTable( {ordering: false} );
 
         $('#ced, #user').keyup( function() {
         table.draw();
